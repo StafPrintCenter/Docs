@@ -14,21 +14,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "STAF Docs — Documentation STAF PRINT CENTER" },
-      {
-        name: "description",
-        content:
-          "Documentation officielle de l'écosystème STAF PRINT CENTER : utilisateurs, développeurs et équipe support.",
-      },
-      { name: "author", content: "STAF PRINT CENTER" },
+      { title: DOCS_TITLE },
+      { name: "description", content: DOCS_DESC },
+      { name: "author", content: SITE.name },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: SITE.name },
+      { property: "og:title", content: DOCS_TITLE },
+      { property: "og:description", content: DOCS_DESC },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
+      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" },
