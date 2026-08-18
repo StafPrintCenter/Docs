@@ -58,10 +58,7 @@ export function DocsHeader({
         )}
 
         {/* Logo & Titre */}
-        <Link
-          to={variant.startsWith("support") ? "/support" : "/"}
-          className="flex shrink-0 items-center gap-2.5"
-        >
+        <Link to="/" className="flex shrink-0 items-center gap-2.5">
           <span className="grid size-9 place-items-center rounded-lg bg-brand text-brand-foreground shadow-sm">
             <Printer className="size-4.5" />
           </span>
