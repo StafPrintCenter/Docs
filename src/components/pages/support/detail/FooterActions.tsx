@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, LifeBuoy } from "lucide-react";
 
-export function SupportArticleFooterActions() {
+export function SupportDetailFooterActions() {
   return (
     <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
       <Link

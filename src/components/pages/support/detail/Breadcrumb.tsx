@@ -1,15 +1,15 @@
 import { Link } from "@tanstack/react-router";
 import { ChevronRight, Clock } from "lucide-react";
 
-interface SupportArticleBreadcrumbProps {
+interface SupportDetailBreadcrumbProps {
   categoryTitle?: string;
   readTime: string;
 }
 
-export function SupportArticleBreadcrumb({
+export function SupportDetailBreadcrumb({
   categoryTitle,
   readTime,
-}: SupportArticleBreadcrumbProps) {
+}: SupportDetailBreadcrumbProps) {
   return (
     <>
       <nav

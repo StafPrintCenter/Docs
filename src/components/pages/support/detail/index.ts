@@ -1,3 +1,3 @@
-export { SupportArticleBreadcrumb } from "./Breadcrumb";
-export { SupportArticleFooterActions } from "./FooterActions";
-export { SupportArticleHeader } from "./Header";
+export { SupportDetailBreadcrumb } from "./Breadcrumb";
+export { SupportDetailFooterActions } from "./FooterActions";
+export { SupportDetailHeader } from "./Header";

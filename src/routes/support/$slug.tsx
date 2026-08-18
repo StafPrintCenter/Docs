@@ -2,9 +2,9 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 import { MarkdownRenderer } from "@/components/docs/MarkdownRenderer";
 import { getSupportArticle, supportCategories } from "@/data/support-center";
 import {
-  SupportArticleBreadcrumb,
-  SupportArticleFooterActions,
-  SupportArticleHeader,
+  SupportDetailBreadcrumb,
+  SupportDetailFooterActions,
+  SupportDetailHeader,
 } from "@/components/pages/support/detail";
 
 export const Route = createFileRoute("/support/$slug")({
@@ -49,10 +49,10 @@ function SupportArticlePage() {
       <div className="pointer-events-none absolute inset-0 paper-grid opacity-50" />
 
       <div className="relative z-10">
-        <SupportArticleHeader />
+        <SupportDetailHeader />
 
         <main className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
-          <SupportArticleBreadcrumb
+          <SupportDetailBreadcrumb
             categoryTitle={category?.title}
             readTime={article.readTime}
           />
@@ -61,7 +61,7 @@ function SupportArticlePage() {
             <MarkdownRenderer content={article.content} />
           </article>
 
-          <SupportArticleFooterActions />
+          <SupportDetailFooterActions />
         </main>
       </div>
     </div>
