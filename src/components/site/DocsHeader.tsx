@@ -25,13 +25,6 @@ export function DocsHeader({
   onToggleSidebar,
 }: HeaderProps) {
   const navigate = useNavigate();
-
-  // Détermination automatique des titres par défaut
-  const headerTitle =
-    title ??
-    (variant.startsWith("support") ? "Centre d'aide" : "SPC Docs");
-
-  const isSupportDetail = variant === "support-detail";
   const isDocs = variant === "docs";
   const showSubTitle = !isSupportDetail && Boolean(subtitle);
 
