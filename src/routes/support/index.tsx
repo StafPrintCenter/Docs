@@ -7,10 +7,11 @@ import {
   SupportHomeCategories,
   SupportHomeSearchHero,
 } from "@/components/pages/support/home";
+import { SITE } from "@/data/site";
 
 export const Route = createFileRoute("/support/")({
   head: () => {
-    const title = "Centre d'aide STAF - Support client STAF PRINT CENTER";
+    const title = `Centre d'aide STAF | ${SITE.name}`;
     const description =
       "Trouvez des réponses sur les commandes, la facturation, les comptes, la confidentialité et les problèmes techniques, ou contactez l'équipe support STAF.";
     return {
