@@ -117,7 +117,7 @@ function DocsHome() {
 
         <main className="mx-auto flex-1 max-w-6xl px-4 sm:px-6 w-full">
           {/* Hero deux colonnes */}
-          <section className="grid grid-cols-1 gap-12 py-16 lg:grid-cols-2 lg:items-center lg:gap-10 lg:py-24">
+          <section className="relative mx-auto grid max-w-6xl grid-cols-1 gap-14 px-6 py-20 lg:grid-cols-2 lg:items-center lg:gap-10">
             <div className="flex flex-col items-start text-left">
               <span className="inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/8 px-3.5 py-1.5 text-xs font-medium text-brand-strong">
                 <BookOpen className="size-3.5" />
@@ -125,8 +125,8 @@ function DocsHome() {
               </span>
 
               <h1 className="mt-7 text-balance text-4xl font-extralight leading-[1.08] tracking-tight sm:text-6xl">
-                La <span className="font-black">documentation</span> de<br />
-                l'écosystème <span className="text-primary">{SITE.name}.</span>
+                La <span className="font-black">documentation</span><br />
+                de l'écosystème <span className="text-primary">{SITE.name}.</span>
               </h1>
 
               <p className="mt-6 max-w-xl text-balance text-base leading-relaxed text-muted-foreground sm:text-lg">

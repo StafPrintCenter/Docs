@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Check, Copy, Facebook, Linkedin, Mail, MessageCircle, Share2, X } from "lucide-react";
+import { Check, Copy, Mail, MessageCircle, Share2, X } from "lucide-react";
+import { WhatsAppIcon, FacebookIcon, InstagramIcon, LinkedinIcon, XIcon } from "@/components/site/icons";
 
 interface ShareModalProps {
   open: boolean;
@@ -32,13 +33,13 @@ export function ShareModal({ open, onOpenChange, title, description, url }: Shar
     },
     {
       label: "Facebook",
-      icon: Facebook,
+      icon: FacebookIcon,
       href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
       className: "text-info",
     },
     {
       label: "LinkedIn",
-      icon: Linkedin,
+      icon: LinkedinIcon,
       href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
       className: "text-info",
     },
