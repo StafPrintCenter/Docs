@@ -10,6 +10,164 @@ const a = (
   content: string,
 ): DocArticle => ({ slug, title, description, tags, status, updatedAt, content });
 
+/* ------------------------------------------------------------ SITE VITRINE */
+
+const siteVitrine: DocSpace = {
+  id: "site-vitrine",
+  name: "Site Vitrine",
+  shortName: "Vitrine",
+  tagline: "Site public, devis et commandes d'impression",
+  description:
+    "Le site public de STAF PRINT CENTER : demander un devis, suivre une commande, préparer des fichiers d'impression conformes et gérer votre compte client.",
+  groups: [
+    {
+      id: "commandes",
+      title: "Commandes & devis",
+      articles: [
+        a(
+          "demander-un-devis",
+          "Demander un devis d'impression",
+          "Le parcours complet du formulaire de devis jusqu'à la validation du BAT.",
+          ["devis", "commande"],
+          "new",
+          "14 août 2026",
+          `# Demander un devis d'impression
+
+## Étapes
+
+1. Rendez-vous sur **stafprint.com → Demander un devis**.
+2. Choisissez la famille de produit (affiche, flyer, bâche, textile…).
+3. Renseignez le format, le support, la quantité et la finition.
+4. Déposez vos fichiers (PDF, AI, PSD — 200 Mo max).
+5. Validez : un numéro de dossier **DVS-XXXXXX** vous est attribué.
+
+## Délais de réponse
+
+| Type de projet | Délai de devis |
+| --- | --- |
+| Standard catalogue | 2 h ouvrées |
+| Grand format | 4 h ouvrées |
+| Sur-mesure / façonnage | 24 h ouvrées |
+
+:::note
+Le devis reste valable 30 jours. Passé ce délai, les prix matière sont recalculés.
+:::`,
+        ),
+        a(
+          "suivre-une-commande",
+          "Suivre une commande",
+          "États de production, notifications et retrait en atelier à Porto-Novo.",
+          ["suivi", "livraison"],
+          "new",
+          "13 août 2026",
+          `# Suivre une commande
+
+## Les états de production
+
+1. **Reçue** — dossier créé, paiement en attente.
+2. **Prépresse** — contrôle des fichiers et BAT.
+3. **En production** — impression lancée.
+4. **Façonnage** — découpe, pliage, plastification.
+5. **Prête** — retrait ou livraison.
+
+## Où suivre
+
+Depuis **Mon compte → Commandes**, ou avec le numéro **CMD-XXXXXX** sur la page de suivi publique.
+
+:::tip
+Activez les notifications WhatsApp dans votre profil pour recevoir chaque changement d'état.
+:::`,
+        ),
+      ],
+    },
+    {
+      id: "fichiers",
+      title: "Préparation des fichiers",
+      articles: [
+        a(
+          "preparer-ses-fichiers",
+          "Préparer un fichier prêt à imprimer",
+          "Fonds perdus, colorimétrie, résolution et polices vectorisées.",
+          ["prépresse", "pdf"],
+          "updated",
+          "11 août 2026",
+          `# Préparer un fichier prêt à imprimer
+
+## Règles de base
+
+- **Fonds perdus** : 3 mm pour le petit format, 10 mm pour le grand format.
+- **Zone de sécurité** : gardez 5 mm entre le texte et la coupe.
+- **Résolution** : 300 dpi (petit format), 150 dpi (grand format), 72 dpi (bâche géante).
+- **Colorimétrie** : CMJN, profil *Coated FOGRA39*.
+- **Polices** : vectorisées ou incorporées.
+
+## Export PDF recommandé
+
+\`\`\`text~~export-pdf.txt
+Norme        : PDF/X-4
+Compression  : ZIP (sans perte)
+Repères      : traits de coupe + fonds perdus
+Transparence : conservée
+\`\`\`
+
+:::danger
+Un fichier RVB sera converti automatiquement : les couleurs vives (bleus, verts fluo) peuvent se ternir. Fournissez toujours du CMJN.
+:::`,
+        ),
+        a(
+          "formats-supportes",
+          "Formats de fichiers supportés",
+          "Ce que l'atelier accepte, et ce qu'il faut éviter.",
+          ["fichiers", "formats"],
+          "stable",
+          "28 juillet 2026",
+          `# Formats de fichiers supportés
+
+| Format | Accepté | Remarque |
+| --- | --- | --- |
+| PDF/X-4 | Oui | Format recommandé |
+| AI / EPS | Oui | Polices vectorisées obligatoires |
+| PSD / TIFF | Oui | Aplatir les calques inutiles |
+| JPG / PNG | Oui | Uniquement si 300 dpi |
+| DOCX / PPTX | Non | À convertir en PDF avant envoi |
+| CANVA (lien) | Non | Exportez en PDF impression |
+
+:::warning
+Les exports Canva "PDF standard" sont en RVB 96 dpi. Choisissez toujours **PDF pour impression**.
+:::`,
+        ),
+      ],
+    },
+    {
+      id: "compte-client",
+      title: "Compte client",
+      articles: [
+        a(
+          "gerer-son-compte",
+          "Gérer son compte et ses factures",
+          "Coordonnées de facturation, historique et téléchargement des reçus.",
+          ["compte", "facturation"],
+          "stable",
+          "20 juillet 2026",
+          `# Gérer son compte et ses factures
+
+## Coordonnées de facturation
+
+**Mon compte → Facturation** : raison sociale, IFU, adresse. Ces informations apparaissent sur chaque facture.
+
+## Télécharger une facture
+
+Chaque commande payée génère un PDF téléchargeable pendant **5 ans** depuis l'historique.
+
+## Supprimer son compte
+
+Écrivez à **support@stafprint.com**. Les données de facturation sont conservées le temps légal, le reste est supprimé sous 30 jours.`,
+        ),
+      ],
+    },
+  ],
+};
+
 /* ---------------------------------------------------------------- SPC MEET */
 
 const spcMeet: DocSpace = {
@@ -188,164 +346,6 @@ L'écho vient presque toujours de haut-parleurs ouverts près d'un micro. Utilis
 :::warning
 Un VPN d'entreprise ajoute souvent 80 à 150 ms de latence. Désactivez-le si votre politique le permet.
 :::`,
-        ),
-      ],
-    },
-  ],
-};
-
-/* ------------------------------------------------------------ SITE VITRINE */
-
-const siteVitrine: DocSpace = {
-  id: "site-vitrine",
-  name: "Site Vitrine",
-  shortName: "Vitrine",
-  tagline: "Site public, devis et commandes d'impression",
-  description:
-    "Le site public de STAF PRINT CENTER : demander un devis, suivre une commande, préparer des fichiers d'impression conformes et gérer votre compte client.",
-  groups: [
-    {
-      id: "commandes",
-      title: "Commandes & devis",
-      articles: [
-        a(
-          "demander-un-devis",
-          "Demander un devis d'impression",
-          "Le parcours complet du formulaire de devis jusqu'à la validation du BAT.",
-          ["devis", "commande"],
-          "new",
-          "14 août 2026",
-          `# Demander un devis d'impression
-
-## Étapes
-
-1. Rendez-vous sur **stafprint.com → Demander un devis**.
-2. Choisissez la famille de produit (affiche, flyer, bâche, textile…).
-3. Renseignez le format, le support, la quantité et la finition.
-4. Déposez vos fichiers (PDF, AI, PSD — 200 Mo max).
-5. Validez : un numéro de dossier **DVS-XXXXXX** vous est attribué.
-
-## Délais de réponse
-
-| Type de projet | Délai de devis |
-| --- | --- |
-| Standard catalogue | 2 h ouvrées |
-| Grand format | 4 h ouvrées |
-| Sur-mesure / façonnage | 24 h ouvrées |
-
-:::note
-Le devis reste valable 30 jours. Passé ce délai, les prix matière sont recalculés.
-:::`,
-        ),
-        a(
-          "suivre-une-commande",
-          "Suivre une commande",
-          "États de production, notifications et retrait en atelier à Porto-Novo.",
-          ["suivi", "livraison"],
-          "new",
-          "13 août 2026",
-          `# Suivre une commande
-
-## Les états de production
-
-1. **Reçue** — dossier créé, paiement en attente.
-2. **Prépresse** — contrôle des fichiers et BAT.
-3. **En production** — impression lancée.
-4. **Façonnage** — découpe, pliage, plastification.
-5. **Prête** — retrait ou livraison.
-
-## Où suivre
-
-Depuis **Mon compte → Commandes**, ou avec le numéro **CMD-XXXXXX** sur la page de suivi publique.
-
-:::tip
-Activez les notifications WhatsApp dans votre profil pour recevoir chaque changement d'état.
-:::`,
-        ),
-      ],
-    },
-    {
-      id: "fichiers",
-      title: "Préparation des fichiers",
-      articles: [
-        a(
-          "preparer-ses-fichiers",
-          "Préparer un fichier prêt à imprimer",
-          "Fonds perdus, colorimétrie, résolution et polices vectorisées.",
-          ["prépresse", "pdf"],
-          "updated",
-          "11 août 2026",
-          `# Préparer un fichier prêt à imprimer
-
-## Règles de base
-
-- **Fonds perdus** : 3 mm pour le petit format, 10 mm pour le grand format.
-- **Zone de sécurité** : gardez 5 mm entre le texte et la coupe.
-- **Résolution** : 300 dpi (petit format), 150 dpi (grand format), 72 dpi (bâche géante).
-- **Colorimétrie** : CMJN, profil *Coated FOGRA39*.
-- **Polices** : vectorisées ou incorporées.
-
-## Export PDF recommandé
-
-\`\`\`text~~export-pdf.txt
-Norme        : PDF/X-4
-Compression  : ZIP (sans perte)
-Repères      : traits de coupe + fonds perdus
-Transparence : conservée
-\`\`\`
-
-:::danger
-Un fichier RVB sera converti automatiquement : les couleurs vives (bleus, verts fluo) peuvent se ternir. Fournissez toujours du CMJN.
-:::`,
-        ),
-        a(
-          "formats-supportes",
-          "Formats de fichiers supportés",
-          "Ce que l'atelier accepte, et ce qu'il faut éviter.",
-          ["fichiers", "formats"],
-          "stable",
-          "28 juillet 2026",
-          `# Formats de fichiers supportés
-
-| Format | Accepté | Remarque |
-| --- | --- | --- |
-| PDF/X-4 | Oui | Format recommandé |
-| AI / EPS | Oui | Polices vectorisées obligatoires |
-| PSD / TIFF | Oui | Aplatir les calques inutiles |
-| JPG / PNG | Oui | Uniquement si 300 dpi |
-| DOCX / PPTX | Non | À convertir en PDF avant envoi |
-| CANVA (lien) | Non | Exportez en PDF impression |
-
-:::warning
-Les exports Canva "PDF standard" sont en RVB 96 dpi. Choisissez toujours **PDF pour impression**.
-:::`,
-        ),
-      ],
-    },
-    {
-      id: "compte-client",
-      title: "Compte client",
-      articles: [
-        a(
-          "gerer-son-compte",
-          "Gérer son compte et ses factures",
-          "Coordonnées de facturation, historique et téléchargement des reçus.",
-          ["compte", "facturation"],
-          "stable",
-          "20 juillet 2026",
-          `# Gérer son compte et ses factures
-
-## Coordonnées de facturation
-
-**Mon compte → Facturation** : raison sociale, IFU, adresse. Ces informations apparaissent sur chaque facture.
-
-## Télécharger une facture
-
-Chaque commande payée génère un PDF téléchargeable pendant **5 ans** depuis l'historique.
-
-## Supprimer son compte
-
-Écrivez à **support@stafprint.com**. Les données de facturation sont conservées le temps légal, le reste est supprimé sous 30 jours.`,
         ),
       ],
     },
@@ -732,8 +732,8 @@ Nommez votre fichier \`NOM_Prenom_Module.pdf\` : les dépôts mal nommés retard
 };
 
 export const docsRegistry: DocSpace[] = [
-  spcMeet,
   siteVitrine,
+  spcMeet,
   spcArcade,
   instructorHub,
   studentHub,
