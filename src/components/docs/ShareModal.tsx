@@ -26,7 +26,7 @@ export function ShareModal({ open, onOpenChange, title, description, url }: Shar
       className: "text-emerald",
     },
     {
-      label: "X (Twitter)",
+      label: "X",
       icon: Share2,
       href: `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`,
       className: "text-foreground",
