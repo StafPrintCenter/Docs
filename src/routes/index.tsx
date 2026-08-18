@@ -160,19 +160,24 @@ function DocsHome() {
             </div>
 
             {/* Simulation d'une page de documentation */}
-            <div className="relative">
-              <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-xl">
+            <div className="relative mx-auto w-full max-w-md min-w-0 lg:mx-0 lg:max-w-none">
+              <div className="absolute -inset-10 -z-10 rounded-full bg-primary/10 blur-3xl" />
+
+              <div className="w-full min-w-0 overflow-hidden rounded-2xl border border-border bg-card shadow-xl">
+                {/* Barre navigateur */}
                 <div className="flex items-center gap-2 border-b border-border bg-muted px-4 py-2.5">
-                  <span className="size-2.5 rounded-full bg-coral" />
-                  <span className="size-2.5 rounded-full bg-amber" />
-                  <span className="size-2.5 rounded-full bg-emerald" />
-                  <span className="ml-3 truncate rounded-md bg-background px-2 py-0.5 font-mono text-[10px] text-muted-foreground">
+                  <span className="size-2.5 rounded-full bg-coral shrink-0" />
+                  <span className="size-2.5 rounded-full bg-amber shrink-0" />
+                  <span className="size-2.5 rounded-full bg-emerald shrink-0" />
+                  <span className="ml-3 min-w-0 flex-1 truncate rounded-md bg-background px-2 py-0.5 font-mono text-[10px] text-muted-foreground block">
                     {docUrl}
                   </span>
                 </div>
 
-                <div className="grid grid-cols-[110px_1fr] gap-3 p-4 sm:grid-cols-[130px_1fr_90px]">
-                  <aside className="space-y-2 rounded-xl bg-muted/70 p-3">
+                {/* Body : 1 colonne sur très petit écran, 2 colonnes sur SM, 3 colonnes sur MD/LG */}
+                <div className="grid grid-cols-1 gap-3 p-4 sm:grid-cols-[110px_1fr] md:grid-cols-[130px_1fr_90px]">
+                  {/* Sommaire gauche : masqué en-dessous de SM */}
+                  <aside className="hidden space-y-2 rounded-xl bg-muted/70 p-3 sm:block">
                     <p className="text-[9px] font-semibold uppercase tracking-wide text-muted-foreground">
                       Sommaire
                     </p>
@@ -184,7 +189,8 @@ function DocsHome() {
                     <div className="h-2 w-4/5 rounded bg-border" />
                   </aside>
 
-                  <div className="space-y-2.5">
+                  {/* Zone de contenu principale (hauteur d'origine conservée) */}
+                  <div className="min-w-0 space-y-2.5">
                     <div className="h-3.5 w-4/5 rounded bg-foreground/80" />
                     <div className="h-2 w-full rounded bg-border" />
                     <div className="h-2 w-11/12 rounded bg-border" />
@@ -201,7 +207,8 @@ function DocsHome() {
                     <div className="h-2 w-3/4 rounded bg-border" />
                   </div>
 
-                  <aside className="hidden space-y-2 sm:block">
+                  {/* Sommaire droit : masqué en-dessous de MD */}
+                  <aside className="hidden space-y-2 md:block">
                     <p className="text-[9px] font-semibold uppercase tracking-wide text-muted-foreground">
                       Sur cette page
                     </p>
@@ -212,6 +219,7 @@ function DocsHome() {
                 </div>
               </div>
 
+              {/* Badge flottant en bas */}
               <div className="absolute -bottom-5 -left-4 hidden items-center gap-2 rounded-xl border border-border bg-card px-3 py-2 shadow-lg sm:flex">
                 <Search className="size-4 text-brand" />
                 <span className="text-xs text-muted-foreground">Recherche ⌘K sur {total} articles</span>
