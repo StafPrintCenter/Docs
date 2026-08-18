@@ -4,7 +4,7 @@ import { spaceNav } from "@/data/docs-registry";
 import { ThemeToggle } from "@/components/docs/ThemeToggle";
 
 interface HeaderProps {
-  variant?: HeaderVariant;
+  variant?: "default" | "docs";
   title?: string;
   subtitle?: string;
   maxWidthClass?: string;
