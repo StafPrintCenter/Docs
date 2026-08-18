@@ -77,7 +77,7 @@ export function DocsHeader({
           </span>
         </Link>
 
-        {/* Navigation des Espaces Docs (Desktop - Vue Docs) */}
+        {/* Navigation des Espaces Docs (Variant Docs - Desktop) */}
         {isDocs && (
           <nav
             aria-label="Espaces de documentation"
