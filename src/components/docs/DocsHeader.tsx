@@ -38,7 +38,7 @@ export function DocsHeader({ activeSpaceId, onOpenSearch, onToggleSidebar }: Doc
           </span>
           <span className="hidden leading-tight sm:block">
             <span className="block font-display text-[15px] font-semibold tracking-tight text-foreground">
-              STAF Docs
+              STAF Docs SAVE
             </span>
             <span className="block text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
               Staf Print Center
