@@ -58,8 +58,8 @@ export function DocsHeader({ activeSpaceId, onOpenSearch, onToggleSidebar }: Doc
                 to="/docs/$space/$slug"
                 params={{ space: entry.id, slug: entry.slug }}
                 className={`rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${isActive
-                    ? "bg-brand text-brand-foreground shadow-sm"
-                    : "text-muted-foreground hover:text-foreground"
+                  ? "bg-brand text-brand-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-foreground"
                   }`}
               >
                 {entry.label}
