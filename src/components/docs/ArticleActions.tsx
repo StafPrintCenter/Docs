@@ -62,7 +62,7 @@ export function ArticleActions({ resolved }: { resolved: ResolvedArticle }) {
         aria-pressed={saved}
       >
         {saved ? <BookmarkCheck className="size-3.5" /> : <Bookmark className="size-3.5" />}
-        {saved ? "Enregistré" : "Enregistrer"}
+        {saved ? "Retirer" : "Enregistrer"}
       </button>
 
       <ShareModal

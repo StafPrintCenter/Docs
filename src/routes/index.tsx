@@ -94,7 +94,7 @@ function DocsHome() {
                 Centre d'aide
               </Link>
               <Link
-                to="/enregistrements"
+                to="/saves"
                 className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-border bg-card px-3 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground"
               >
                 <Bookmark className="size-4 text-brand" />

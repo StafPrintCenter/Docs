@@ -5,7 +5,7 @@ import { DocsHeader } from "@/components/docs/DocsHeader";
 import { SearchModal } from "@/components/docs/SearchModal";
 import { RETENTION_DAYS, expiresAt, useSavedArticles } from "@/hooks/useSavedArticles";
 
-export const Route = createFileRoute("/enregistrements")({
+export const Route = createFileRoute("/saves")({
   head: () => {
     const title = "Pages enregistrées — STAF Docs";
     const description =
