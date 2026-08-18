@@ -4,22 +4,15 @@ import { docsRegistry, articleCount } from "@/data/docs-registry";
 import { SearchModal } from "@/components/docs/SearchModal";
 import { DocsHeader, DocsFooter } from "@/components/site";
 import { HeroSection, SpacesSection } from "@/components/pages/home";
+import { SITE } from "@/data/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "STAF Docs - Documentation de STAF PRINT CENTER" },
-      {
-        name: "description",
-        content:
-          "Documentation officielle de l'écosystème STAF PRINT CENTER : SPC Meet, Site Vitrine, SPC Arcade, Instructor Hub et Student Hub, plus un centre d'aide complet.",
-      },
-      { property: "og:title", content: "STAF Docs - Documentation de STAF PRINT CENTER" },
-      {
-        property: "og:description",
-        content:
-          "Cinq espaces de documentation et un centre d'aide. Recherche instantanée avec ⌘K.",
-      },
+      { title: `SPC Docs - Documentation de ${SITE.name}` },
+      { name: "description", content: `Documentation officielle de l'écosystème ${SITE.name}.` },
+      { property: "og:title", content: `SPC Docs - Documentation de ${SITE.name}` },
+      { property: "og:description", content: "Cinq espaces de documentation et un centre d'aide." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
