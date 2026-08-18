@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Home, ArrowLeft, Terminal, FileCode2 } from "lucide-react";
+import { Home, ArrowLeft, Terminal } from "lucide-react";
 
 export function NotFoundComponent() {
   return (
