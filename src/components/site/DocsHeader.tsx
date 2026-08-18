@@ -3,8 +3,6 @@ import { Bookmark, LifeBuoy, Menu, Printer, Search } from "lucide-react";
 import { spaceNav } from "@/data/docs-registry";
 import { ThemeToggle } from "@/components/docs/ThemeToggle";
 
-export type HeaderVariant = "docs" | "home" | "support-home" | "support-detail";
-
 interface HeaderProps {
   variant?: HeaderVariant;
   title?: string;
