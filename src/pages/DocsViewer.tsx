@@ -59,13 +59,13 @@ export function DocsViewer({ resolved }: { resolved: ResolvedArticle }) {
             <button
               type="button"
               onClick={() => setSidebarCollapsed(false)}
-              className="sticky top-[4.5rem] hidden shrink-0 rounded-lg border border-border bg-card p-2 text-muted-foreground shadow-sm transition-colors hover:text-brand lg:block cursor-pointer"
+              className="sticky top-18 hidden shrink-0 rounded-lg border border-border bg-card p-2 text-muted-foreground shadow-sm transition-colors hover:text-brand lg:block cursor-pointer"
               aria-label="Déplier le sommaire"
             >
               <PanelLeftOpen className="size-4" />
             </button>
           ) : (
-            <aside className="sticky top-[4.5rem] hidden h-[calc(100vh-6rem)] w-64 shrink-0 overflow-hidden rounded-2xl border border-border bg-muted/70 shadow-sm lg:block">
+            <aside className="sticky top-18 hidden h-[calc(100vh-6rem)] w-64 shrink-0 overflow-hidden rounded-2xl border border-border bg-muted/70 shadow-sm lg:block">
               <div className="flex items-center justify-between gap-2 border-b border-border/70 px-3 py-2">
                 <span className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
                   Sommaire
@@ -206,7 +206,7 @@ export function DocsViewer({ resolved }: { resolved: ResolvedArticle }) {
             </div>
           </main>
 
-          <aside className="sticky top-[4.5rem] hidden max-h-[calc(100vh-6rem)] w-64 shrink-0 overflow-y-auto rounded-2xl border border-border bg-card p-5 shadow-sm xl:block">
+          <aside className="sticky top-18 hidden max-h-[calc(100vh-6rem)] w-64 shrink-0 overflow-y-auto rounded-2xl border border-border bg-card p-5 shadow-sm xl:block">
             <TableOfContents items={toc} />
             <CarbonAds />
           </aside>
