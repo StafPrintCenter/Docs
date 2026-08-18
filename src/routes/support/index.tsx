@@ -1,18 +1,6 @@
 import { useMemo, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  CreditCard,
-  FileQuestion,
-  LifeBuoy,
-  Lock,
-  Package,
-  Printer,
-  Search,
-  ShieldCheck,
-  UserRound,
-  Wrench,
-} from "lucide-react";
+import { ArrowRight, CreditCard, FileQuestion, LifeBuoy, Lock, Package, Printer, Search, ShieldCheck, UserRound, Wrench } from "lucide-react";
 import { ThemeToggle } from "@/components/docs/ThemeToggle";
 import {
   articlesByCategory,
