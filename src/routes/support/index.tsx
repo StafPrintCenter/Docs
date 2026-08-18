@@ -1,10 +1,10 @@
 import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
+import { DocsHeader } from "@/components/site";
 import { supportArticles } from "@/data/support-center";
 import {
   SupportHomePopularAndContact,
   SupportHomeCategories,
-  SupportHomeHeader,
   SupportHomeSearchHero,
 } from "@/components/pages/support/home";
 
@@ -48,7 +48,7 @@ function SupportHome() {
       <div className="pointer-events-none absolute inset-0 paper-grid opacity-50" />
 
       <div className="relative z-10">
-        <SupportHomeHeader />
+        <DocsHeader variant="home" />
 
         <SupportHomeSearchHero
           query={query}
