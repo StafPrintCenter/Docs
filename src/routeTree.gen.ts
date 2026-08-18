@@ -10,7 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as EnregistrementsRouteImport } from './routes/enregistrements'
+import { Route as SavesRouteImport } from './routes/saves'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SupportIndexRouteImport } from './routes/support/index'
 import { Route as SupportSlugRouteImport } from './routes/support/$slug'
@@ -21,9 +21,9 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EnregistrementsRoute = EnregistrementsRouteImport.update({
-  id: '/enregistrements',
-  path: '/enregistrements',
+const SavesRoute = SavesRouteImport.update({
+  id: '/saves',
+  path: '/saves',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -49,7 +49,7 @@ const DocsSpaceSlugRoute = DocsSpaceSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/enregistrements': typeof EnregistrementsRoute
+  '/saves': typeof SavesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support/$slug': typeof SupportSlugRoute
   '/support/': typeof SupportIndexRoute
@@ -57,7 +57,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/enregistrements': typeof EnregistrementsRoute
+  '/saves': typeof SavesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support/$slug': typeof SupportSlugRoute
   '/support': typeof SupportIndexRoute
@@ -66,7 +66,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/enregistrements': typeof EnregistrementsRoute
+  '/saves': typeof SavesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support/$slug': typeof SupportSlugRoute
   '/support/': typeof SupportIndexRoute
@@ -76,7 +76,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/enregistrements'
+    | '/saves'
     | '/sitemap.xml'
     | '/support/$slug'
     | '/support/'
@@ -84,7 +84,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/enregistrements'
+    | '/saves'
     | '/sitemap.xml'
     | '/support/$slug'
     | '/support'
@@ -92,7 +92,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/enregistrements'
+    | '/saves'
     | '/sitemap.xml'
     | '/support/$slug'
     | '/support/'
@@ -101,7 +101,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  EnregistrementsRoute: typeof EnregistrementsRoute
+  SavesRoute: typeof SavesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SupportSlugRoute: typeof SupportSlugRoute
   SupportIndexRoute: typeof SupportIndexRoute
@@ -117,11 +117,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/enregistrements': {
-      id: '/enregistrements'
-      path: '/enregistrements'
-      fullPath: '/enregistrements'
-      preLoaderRoute: typeof EnregistrementsRouteImport
+    '/saves': {
+      id: '/saves'
+      path: '/saves'
+      fullPath: '/saves'
+      preLoaderRoute: typeof SavesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -157,7 +157,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  EnregistrementsRoute: EnregistrementsRoute,
+  SavesRoute: SavesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SupportSlugRoute: SupportSlugRoute,
   SupportIndexRoute: SupportIndexRoute,
