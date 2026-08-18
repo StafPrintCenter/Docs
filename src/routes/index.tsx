@@ -186,7 +186,7 @@ function DocsHome() {
                       <div className="h-2 w-1/3 rounded bg-info/60" />
                       <div className="mt-1.5 h-2 w-4/5 rounded bg-info/25" />
                     </div>
-                    <div className="rounded-lg bg-[var(--code-bg)] p-2.5">
+                    <div className="rounded-lg bg-code p-2.5">
                       <div className="h-2 w-2/3 rounded bg-brand/50" />
                       <div className="mt-1.5 h-2 w-1/2 rounded bg-emerald/50" />
                       <div className="mt-1.5 h-2 w-3/5 rounded bg-white/20" />
