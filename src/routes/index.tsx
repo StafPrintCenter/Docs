@@ -66,7 +66,7 @@ function DocsHome() {
 
   return (
     <div className="relative min-h-screen bg-background overflow-hidden">
-      {/* Fond de grille décoratif isolé et atténué pour ne pas déranger la lecture */}
+      {/* Fond de grille décoratif isolé et atténué */}
       <div className="pointer-events-none absolute inset-0 paper-grid opacity-50" />
 
       {/* Contenu principal surélevé */}
