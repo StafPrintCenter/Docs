@@ -12,8 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EnregistrementsRouteImport } from './routes/enregistrements'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as SupportIndexRouteImport } from './routes/support.index'
-import { Route as SupportSlugRouteImport } from './routes/support.$slug'
+import { Route as SupportIndexRouteImport } from './routes/support/index'
+import { Route as SupportSlugRouteImport } from './routes/support/$slug'
 import { Route as DocsSpaceSlugRouteImport } from './routes/docs.$space.$slug'
 
 const IndexRoute = IndexRouteImport.update({
