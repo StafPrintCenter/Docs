@@ -14,7 +14,7 @@ import { Route as SavesRouteImport } from './routes/saves'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SupportIndexRouteImport } from './routes/support/index'
 import { Route as SupportSlugRouteImport } from './routes/support/$slug'
-import { Route as DocsDocsSpaceSlugRouteImport } from './routes/docs/docs.$space.$slug'
+import { Route as DocsSpaceSlugRouteImport } from './routes/docs/$space.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -41,9 +41,9 @@ const SupportSlugRoute = SupportSlugRouteImport.update({
   path: '/support/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DocsDocsSpaceSlugRoute = DocsDocsSpaceSlugRouteImport.update({
-  id: '/docs/docs/$space/$slug',
-  path: '/docs/docs/$space/$slug',
+const DocsSpaceSlugRoute = DocsSpaceSlugRouteImport.update({
+  id: '/docs/$space/$slug',
+  path: '/docs/$space/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -53,7 +53,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support/$slug': typeof SupportSlugRoute
   '/support/': typeof SupportIndexRoute
-  '/docs/docs/$space/$slug': typeof DocsDocsSpaceSlugRoute
+  '/docs/$space/$slug': typeof DocsSpaceSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -61,7 +61,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support/$slug': typeof SupportSlugRoute
   '/support': typeof SupportIndexRoute
-  '/docs/docs/$space/$slug': typeof DocsDocsSpaceSlugRoute
+  '/docs/$space/$slug': typeof DocsSpaceSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -70,7 +70,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support/$slug': typeof SupportSlugRoute
   '/support/': typeof SupportIndexRoute
-  '/docs/docs/$space/$slug': typeof DocsDocsSpaceSlugRoute
+  '/docs/$space/$slug': typeof DocsSpaceSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -80,7 +80,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/support/$slug'
     | '/support/'
-    | '/docs/docs/$space/$slug'
+    | '/docs/$space/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -88,7 +88,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/support/$slug'
     | '/support'
-    | '/docs/docs/$space/$slug'
+    | '/docs/$space/$slug'
   id:
     | '__root__'
     | '/'
@@ -96,7 +96,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/support/$slug'
     | '/support/'
-    | '/docs/docs/$space/$slug'
+    | '/docs/$space/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -105,7 +105,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SupportSlugRoute: typeof SupportSlugRoute
   SupportIndexRoute: typeof SupportIndexRoute
-  DocsDocsSpaceSlugRoute: typeof DocsDocsSpaceSlugRoute
+  DocsSpaceSlugRoute: typeof DocsSpaceSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -145,11 +145,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SupportSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/docs/docs/$space/$slug': {
-      id: '/docs/docs/$space/$slug'
-      path: '/docs/docs/$space/$slug'
-      fullPath: '/docs/docs/$space/$slug'
-      preLoaderRoute: typeof DocsDocsSpaceSlugRouteImport
+    '/docs/$space/$slug': {
+      id: '/docs/$space/$slug'
+      path: '/docs/$space/$slug'
+      fullPath: '/docs/$space/$slug'
+      preLoaderRoute: typeof DocsSpaceSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -161,7 +161,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SupportSlugRoute: SupportSlugRoute,
   SupportIndexRoute: SupportIndexRoute,
-  DocsDocsSpaceSlugRoute: DocsDocsSpaceSlugRoute,
+  DocsSpaceSlugRoute: DocsSpaceSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
