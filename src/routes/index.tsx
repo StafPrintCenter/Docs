@@ -49,6 +49,7 @@ const SPACE_ICON: Record<string, typeof BookOpen> = {
 
 function DocsHome() {
   const [searchOpen, setSearchOpen] = useState(false);
+  const docUrl = `${SITE.docsUrl}/docs/site-vitrine/demander-un-devis`;
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -161,7 +162,7 @@ function DocsHome() {
                   <span className="size-2.5 rounded-full bg-amber" />
                   <span className="size-2.5 rounded-full bg-emerald" />
                   <span className="ml-3 truncate rounded-md bg-background px-2 py-0.5 font-mono text-[10px] text-muted-foreground">
-                    docs.stafprint.com/docs/spc-meet/premiere-connexion
+                    {docUrl}
                   </span>
                 </div>
 
