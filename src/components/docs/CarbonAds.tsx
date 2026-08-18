@@ -15,7 +15,7 @@ export function CarbonAds() {
           className="block rounded-lg bg-muted p-3 leading-relaxed text-muted-foreground transition-colors hover:bg-muted/80 hover:border-foreground border-2"
         >
           <span className="block font-medium text-foreground">
-            Annonce STAF.
+            Annonce SPC.
           </span>
           <span className="block">Emplacement Carbon Ads réservé à la documentation.</span>
         </a>
