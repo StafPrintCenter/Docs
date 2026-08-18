@@ -7,7 +7,7 @@ import { MarkdownRenderer, extractToc } from "@/components/docs/MarkdownRenderer
 import { ArticleFeedback } from "@/components/docs/ArticleFeedback";
 import { CarbonAds } from "@/components/docs/CarbonAds";
 import type { ResolvedArticle } from "@/data/docs-registry";
-export {
+import {
   DocsBreadcrumb,
   DesktopSidebar,
   MobileSidebar,
