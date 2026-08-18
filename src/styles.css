@@ -189,11 +189,14 @@
   }
 }
 
+/* Remplacez l'ancien @utility paper-grid */
 @utility paper-grid {
   background-image:
     linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-size: 36px 36px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 20%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 20%, transparent 85%);
 }
 
 @layer base {
