@@ -38,7 +38,7 @@ export function HeroSection({ totalArticles }: HeroSectionProps) {
         <div className="mt-8 flex w-full flex-col items-start gap-3 sm:flex-row sm:items-center">
           <Link
             to="/docs/$space/$slug"
-            params={firstArticleParams("spc-meet")}
+            params={firstArticleParams("site-vitrine")}
             className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand px-5 py-3 text-sm font-medium text-brand-foreground shadow-sm transition-transform hover:-translate-y-0.5 sm:w-auto"
           >
             <BookOpen className="size-4" />
