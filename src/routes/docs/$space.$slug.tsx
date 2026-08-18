@@ -16,12 +16,12 @@ export const Route = createFileRoute("/docs/$space/$slug")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "Article introuvable — STAF Docs" },
+          { title: "Article introuvable - STAF Docs" },
           { name: "robots", content: "noindex" },
         ],
       };
     }
-    const title = `${loaderData.title} — ${loaderData.spaceName} | STAF Docs`;
+    const title = `${loaderData.title} - ${loaderData.spaceName} | STAF Docs`;
     return {
       meta: [
         { title },

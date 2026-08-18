@@ -17,12 +17,12 @@ export const Route = createFileRoute("/support/$slug")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "Article introuvable — Centre d'aide STAF" },
+          { title: "Article introuvable - Centre d'aide STAF" },
           { name: "robots", content: "noindex" },
         ],
       };
     }
-    const title = `${loaderData.title} — Centre d'aide STAF`;
+    const title = `${loaderData.title} - Centre d'aide STAF`;
     return {
       meta: [
         { title },

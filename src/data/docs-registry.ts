@@ -38,7 +38,7 @@ const siteVitrine: DocSpace = {
 1. Rendez-vous sur **stafprint.com → Demander un devis**.
 2. Choisissez la famille de produit (affiche, flyer, bâche, textile…).
 3. Renseignez le format, le support, la quantité et la finition.
-4. Déposez vos fichiers (PDF, AI, PSD — 200 Mo max).
+4. Déposez vos fichiers (PDF, AI, PSD - 200 Mo max).
 5. Validez : un numéro de dossier **DVS-XXXXXX** vous est attribué.
 
 ## Délais de réponse
@@ -64,11 +64,11 @@ Le devis reste valable 30 jours. Passé ce délai, les prix matière sont recalc
 
 ## Les états de production
 
-1. **Reçue** — dossier créé, paiement en attente.
-2. **Prépresse** — contrôle des fichiers et BAT.
-3. **En production** — impression lancée.
-4. **Façonnage** — découpe, pliage, plastification.
-5. **Prête** — retrait ou livraison.
+1. **Reçue** - dossier créé, paiement en attente.
+2. **Prépresse** - contrôle des fichiers et BAT.
+3. **En production** - impression lancée.
+4. **Façonnage** - découpe, pliage, plastification.
+5. **Prête** - retrait ou livraison.
 
 ## Où suivre
 

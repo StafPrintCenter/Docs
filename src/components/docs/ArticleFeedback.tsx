@@ -59,7 +59,7 @@ export function ArticleFeedback({ articleKey }: { articleKey: string }) {
           />
           <button
             type="button"
-            onClick={() => addComment(comment.trim() || "—")}
+            onClick={() => addComment(comment.trim() || "-")}
             className="mt-3 rounded-lg bg-brand px-4 py-2 text-sm font-medium text-brand-foreground transition-colors hover:bg-brand-strong"
           >
             Envoyer mon retour

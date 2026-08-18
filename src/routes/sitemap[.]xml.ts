@@ -14,7 +14,7 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        // /r/$alias pages are noindex interstitials — excluded on purpose.
+        // /r/$alias pages are noindex interstitials - excluded on purpose.
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
         ];

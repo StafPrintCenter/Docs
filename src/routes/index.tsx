@@ -8,13 +8,13 @@ import { HeroSection, SpacesSection } from "@/components/pages/home";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "STAF Docs — Documentation de STAF PRINT CENTER" },
+      { title: "STAF Docs - Documentation de STAF PRINT CENTER" },
       {
         name: "description",
         content:
           "Documentation officielle de l'écosystème STAF PRINT CENTER : SPC Meet, Site Vitrine, SPC Arcade, Instructor Hub et Student Hub, plus un centre d'aide complet.",
       },
-      { property: "og:title", content: "STAF Docs — Documentation de STAF PRINT CENTER" },
+      { property: "og:title", content: "STAF Docs - Documentation de STAF PRINT CENTER" },
       {
         property: "og:description",
         content:

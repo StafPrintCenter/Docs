@@ -11,7 +11,7 @@ import {
 
 export const Route = createFileRoute("/saves")({
   head: () => {
-    const title = "Pages enregistrées — STAF Docs";
+    const title = "Pages enregistrées - STAF Docs";
     const description =
       "Retrouvez les articles STAF Docs que vous avez enregistrés localement pour une consultation rapide.";
     return {
