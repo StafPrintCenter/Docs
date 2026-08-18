@@ -64,7 +64,7 @@ export function DocsHeader({
           </span>
           <span className={`${isDocs ? "hidden sm:block" : ""} leading-tight`}>
             <span className="block font-display text-[15px] font-semibold tracking-tight text-foreground">
-              {headerTitle}
+              {title}
             </span>
             {!hideSubtitle && subtitle && (
               <span className="block text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
