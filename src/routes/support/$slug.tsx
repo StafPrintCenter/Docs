@@ -38,59 +38,65 @@ function SupportArticlePage() {
   const category = supportCategories.find((c) => c.id === article.category);
 
   return (
-    <div className="min-h-screen bg-background">
-      <header className="border-b border-border">
-        <div className="mx-auto flex h-16 max-w-3xl items-center justify-between gap-3 px-4 sm:px-6">
-          <Link to="/support" className="flex items-center gap-2.5">
-            <span className="grid size-9 place-items-center rounded-lg bg-brand text-brand-foreground">
-              <Printer className="size-4.5" />
-            </span>
-            <span className="font-display text-[15px] font-semibold text-foreground">
-              Centre d'aide
-            </span>
-          </Link>
-          <ThemeToggle />
-        </div>
-      </header>
+    <div className="relative min-h-screen bg-background overflow-hidden">
+      {/* Fond de grille décoratif isolé */}
+      <div className="pointer-events-none absolute inset-0 paper-grid opacity-50" />
 
-      <main className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
-        <nav
-          aria-label="Fil d'Ariane"
-          className="flex items-center gap-1 text-xs text-muted-foreground"
-        >
-          <Link to="/support" className="hover:text-brand">
-            Aide
-          </Link>
-          <ChevronRight className="size-3" />
-          <span className="text-foreground">{category?.title ?? "Article"}</span>
-        </nav>
+      {/* Contenu principal surélevé */}
+      <div className="relative z-10">
+        <header className="border-b border-border bg-background/80 backdrop-blur-md">
+          <div className="mx-auto flex h-16 max-w-3xl items-center justify-between gap-3 px-4 sm:px-6">
+            <Link to="/support" className="flex items-center gap-2.5">
+              <span className="grid size-9 place-items-center rounded-lg bg-brand text-brand-foreground shadow-sm">
+                <Printer className="size-4.5" />
+              </span>
+              <span className="font-display text-[15px] font-semibold text-foreground">
+                Centre d'aide
+              </span>
+            </Link>
+            <ThemeToggle />
+          </div>
+        </header>
 
-        <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-muted-foreground">
-          <Clock className="size-3.5 text-brand" />
-          Lecture {article.readTime}
-        </p>
-
-        <article className="mt-4 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
-          <MarkdownRenderer content={article.content} />
-        </article>
-
-        <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
-          <Link
-            to="/support"
-            className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground hover:text-foreground"
+        <main className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
+          <nav
+            aria-label="Fil d'Ariane"
+            className="flex items-center gap-1 text-xs text-muted-foreground"
           >
-            <ArrowLeft className="size-4" />
-            Retour au centre d'aide
-          </Link>
-          <a
-            href="mailto:support@stafprint.com"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-brand px-3 py-2 text-sm font-medium text-brand-foreground"
-          >
-            <LifeBuoy className="size-4" />
-            Contacter le support
-          </a>
-        </div>
-      </main>
+            <Link to="/support" className="hover:text-brand">
+              Aide
+            </Link>
+            <ChevronRight className="size-3" />
+            <span className="text-foreground">{category?.title ?? "Article"}</span>
+          </nav>
+
+          <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+            <Clock className="size-3.5 text-brand" />
+            Lecture {article.readTime}
+          </p>
+
+          <article className="mt-4 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+            <MarkdownRenderer content={article.content} />
+          </article>
+
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
+            <Link
+              to="/support"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-2 text-sm text-muted-foreground hover:text-foreground"
+            >
+              <ArrowLeft className="size-4" />
+              Retour au centre d'aide
+            </Link>
+            <a
+              href="mailto:support@stafprint.com"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-brand px-3 py-2 text-sm font-medium text-brand-foreground"
+            >
+              <LifeBuoy className="size-4" />
+              Contacter le support
+            </a>
+          </div>
+        </main>
+      </div>
     </div>
   );
 }
