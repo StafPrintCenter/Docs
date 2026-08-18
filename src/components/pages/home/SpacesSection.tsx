@@ -1,14 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  BookOpen,
-  Gamepad2,
-  GraduationCap,
-  LifeBuoy,
-  Printer,
-  Users,
-  Video,
-} from "lucide-react";
+import { ArrowRight, BookOpen, Gamepad2, GraduationCap, LifeBuoy, Printer, Users, Video } from "lucide-react";
 import { docsRegistry, articleCount, firstArticleParams } from "@/data/docs-registry";
 
 const SPACE_ICON: Record<string, typeof BookOpen> = {
