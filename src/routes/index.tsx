@@ -49,7 +49,7 @@ function DocsHome() {
       <div className="pointer-events-none absolute inset-0 paper-grid opacity-50" />
 
       <div className="relative z-10 flex min-h-screen flex-col">
-        <DocsHeader onSearchClick={() => setSearchOpen(true)} />
+        <DocsHeader variant="home" onOpenSearch={() => setSearchOpen(true)} />
 
         <main className="mx-auto flex-1 max-w-6xl px-4 sm:px-6 w-full">
           <HeroSection totalArticles={totalArticles} />
