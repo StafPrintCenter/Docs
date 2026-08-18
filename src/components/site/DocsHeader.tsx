@@ -66,7 +66,7 @@ export function DocsHeader({
             <span className="block font-display text-[15px] font-semibold tracking-tight text-foreground">
               {headerTitle}
             </span>
-            {showSubTitle && (
+            {!hideSubtitle && subtitle && (
               <span className="block text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                 {subtitle}
               </span>
