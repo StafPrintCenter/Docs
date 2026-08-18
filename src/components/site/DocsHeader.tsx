@@ -26,7 +26,6 @@ export function DocsHeader({
 }: HeaderProps) {
   const navigate = useNavigate();
   const isDocs = variant === "docs";
-  const showSubTitle = !isSupportDetail && Boolean(subtitle);
 
   const goToSpace = (id: string) => {
     const entry = spaceNav.find((p) => p.id === id);
