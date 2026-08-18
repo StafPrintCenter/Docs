@@ -70,9 +70,9 @@
   --color-code-header: var(--code-header);
   --color-code-foreground: var(--code-fg);
   --color-code-muted: var(--code-muted);
-  --font-display: "Fraunces", ui-serif, Georgia, serif;
-  --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
 }
 
 :root {
@@ -179,6 +179,14 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
 }
 
 @utility paper-grid {
@@ -195,15 +203,15 @@
   }
 }
 
-.docs-prose > *:first-child {
+.docs-prose>*:first-child {
   margin-top: 0;
 }
 
-.callout-body > *:first-child {
+.callout-body>*:first-child {
   margin-top: 0;
 }
 
-.callout-body > *:last-child {
+.callout-body>*:last-child {
   margin-bottom: 0;
 }
 
@@ -214,16 +222,20 @@
 .tok-kw {
   color: oklch(0.78 0.13 45);
 }
+
 .tok-str {
   color: oklch(0.82 0.13 150);
 }
+
 .tok-num {
   color: oklch(0.82 0.11 90);
 }
+
 .tok-com {
   color: oklch(0.62 0.02 90);
   font-style: italic;
 }
+
 .tok-key {
   color: oklch(0.79 0.11 230);
 }
