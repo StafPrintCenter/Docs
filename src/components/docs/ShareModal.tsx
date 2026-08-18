@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Check, Copy, Mail, MessageCircle, Share2, X } from "lucide-react";
-import { WhatsAppIcon, FacebookIcon, InstagramIcon, LinkedinIcon, XIcon } from "@/components/site/icons";
+import { Check, Copy, Mail, X } from "lucide-react";
+import { WhatsAppIcon, FacebookIcon, LinkedinIcon, XIcon } from "@/components/site/icons";
 
 interface ShareModalProps {
   open: boolean;
@@ -21,13 +21,13 @@ export function ShareModal({ open, onOpenChange, title, description, url }: Shar
   const targets = [
     {
       label: "WhatsApp",
-      icon: MessageCircle,
+      icon: WhatsAppIcon,
       href: `https://wa.me/?text=${encodedText}%20${encodedUrl}`,
       className: "text-emerald",
     },
     {
       label: "X",
-      icon: Share2,
+      icon: XIcon,
       href: `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`,
       className: "text-foreground",
     },
