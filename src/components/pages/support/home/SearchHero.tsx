@@ -2,17 +2,17 @@ import { Link } from "@tanstack/react-router";
 import { FileQuestion, Search } from "lucide-react";
 import type { SupportArticle } from "@/data/support-center";
 
-interface SupportSearchHeroProps {
+interface SupportHomeSearchHeroProps {
   query: string;
   onQueryChange: (query: string) => void;
   results: SupportArticle[];
 }
 
-export function SupportSearchHero({
+export function SupportHomeSearchHero({
   query,
   onQueryChange,
   results,
-}: SupportSearchHeroProps) {
+}: SupportHomeSearchHeroProps) {
   return (
     <section className="border-b border-border bg-muted/40 py-14">
       <div className="mx-auto max-w-2xl px-4 text-center sm:px-6">

@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { popularSupportArticles } from "@/data/support-center";
 
-export function SupportPopularAndContact() {
+export function SupportHomePopularAndContact() {
   return (
     <>
       <section className="mt-14">

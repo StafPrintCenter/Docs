@@ -11,7 +11,7 @@ const ICONS = {
   contact: LifeBuoy,
 } as const;
 
-export function SupportCategories() {
+export function SupportHomeCategories() {
   return (
     <section>
       <h2 className="font-display text-xl font-semibold text-foreground">

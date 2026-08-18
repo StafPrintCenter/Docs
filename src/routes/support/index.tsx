@@ -2,10 +2,10 @@ import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { supportArticles } from "@/data/support-center";
 import {
-  SupportPopularAndContact,
-  SupportCategories,
-  SupportHeader,
-  SupportSearchHero,
+  SupportHomePopularAndContact,
+  SupportHomeCategories,
+  SupportHomeHeader,
+  SupportHomeSearchHero,
 } from "@/components/pages/support/home";
 
 export const Route = createFileRoute("/support/")({
@@ -48,17 +48,17 @@ function SupportHome() {
       <div className="pointer-events-none absolute inset-0 paper-grid opacity-50" />
 
       <div className="relative z-10">
-        <SupportHeader />
+        <SupportHomeHeader />
 
-        <SupportSearchHero
+        <SupportHomeSearchHero
           query={query}
           onQueryChange={setQuery}
           results={results}
         />
 
         <main className="mx-auto max-w-5xl px-4 py-14 sm:px-6">
-          <SupportCategories />
-          <SupportPopularAndContact />
+          <SupportHomeCategories />
+          <SupportHomePopularAndContact />
         </main>
       </div>
     </div>

@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Printer } from "lucide-react";
 import { ThemeToggle } from "@/components/docs/ThemeToggle";
 
-export function SupportHeader() {
+export function SupportHomeHeader() {
   return (
     <header className="border-b border-border bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between gap-3 px-4 sm:px-6">

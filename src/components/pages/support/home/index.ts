@@ -1,4 +1,4 @@
-export { SupportCategories } from "./Categories";
-export { SupportHeader } from "./Header";
-export { SupportPopularAndContact } from "./PopularAndContact";
-export { SupportSearchHero } from "./SearchHero";
+export { SupportHomeCategories } from "./Categories";
+export { SupportHomeHeader } from "./Header";
+export { SupportHomePopularAndContact } from "./PopularAndContact";
+export { SupportHomeSearchHero } from "./SearchHero";
