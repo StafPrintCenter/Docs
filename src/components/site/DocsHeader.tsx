@@ -104,8 +104,8 @@ export function DocsHeader({
 
         {/* Zone d'actions Droite */}
         <div className="flex flex-1 items-center justify-end gap-2">
-          {/* Lien Documentation (sur Support Home) */}
-          {variant === "support-home" && (
+          {/* Bouton Documentation (Variant Default) */}
+          {!isDocs && (
             <Link
               to="/"
               className="hidden h-9 items-center rounded-lg border border-border bg-card px-3 text-sm text-muted-foreground transition-colors hover:text-foreground sm:inline-flex"
