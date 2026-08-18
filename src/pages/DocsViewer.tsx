@@ -6,10 +6,6 @@ import { TableOfContents } from "@/components/docs/TableOfContents";
 import { MarkdownRenderer, extractToc } from "@/components/docs/MarkdownRenderer";
 import { ArticleFeedback } from "@/components/docs/ArticleFeedback";
 import { CarbonAds } from "@/components/docs/CarbonAds";
-import { DocsBreadcrumb } from "./DocsBreadcrumb";
-import { DesktopSidebar, MobileSidebar } from "./DocsSidebarContainer";
-import { ArticlePaginationNav } from "./ArticlePaginationNav";
-import { ArticleMeta } from "./ArticleMeta";
 import type { ResolvedArticle } from "@/data/docs-registry";
 export {
   DocsBreadcrumb,
