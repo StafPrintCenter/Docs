@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CheckCircle2, ThumbsDown, ThumbsUp } from "lucide-react";
 import { useArticleFeedback } from "@/hooks/useArticleFeedback";
+import { SITE } from "@/data/site";
 
 export function ArticleFeedback({ articleKey }: { articleKey: string }) {
   const { feedback, vote, addComment } = useArticleFeedback(articleKey);
@@ -17,7 +18,7 @@ export function ArticleFeedback({ articleKey }: { articleKey: string }) {
             Cet article vous a-t-il été utile ?
           </h2>
           <p className="mt-1 text-sm text-muted-foreground">
-            Votre retour nous aide à améliorer la documentation STAF PRINT CENTER.
+            Votre retour nous aide à améliorer la documentation {SITE.name}.
           </p>
           <div className="mt-4 flex flex-wrap gap-3">
             <button
