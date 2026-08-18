@@ -27,6 +27,7 @@ export function DocsHeader({
   const navigate = useNavigate();
   const isDocs = variant === "docs";
 
+  // Navigation vers un espace de doc via le select mobile
   const goToSpace = (id: string) => {
     const entry = spaceNav.find((p) => p.id === id);
     if (!entry) return;
