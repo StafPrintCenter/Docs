@@ -45,7 +45,7 @@ export function DocsHeader({
       <div
         className={`mx-auto flex h-16 items-center gap-3 px-4 sm:px-6 ${maxWidthClass}`}
       >
-        {/* Bouton Sidebar Mobile (Vue Docs) */}
+        {/* Bouton Sidebar Mobile (Variant Docs) */}
         {isDocs && onToggleSidebar && (
           <button
             type="button"
