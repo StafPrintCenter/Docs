@@ -127,12 +127,12 @@ function DocsHome() {
                 className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
               >
                 <BookOpen className="h-3.5 w-3.5 text-primary" />
-                La documentation officielle {SITE.name} · {total} articles
+                La doc de {SITE.name} · {total} articles
               </a>
 
               <h1 className="mt-7 text-balance text-4xl font-extralight leading-[1.08] tracking-tight sm:text-6xl">
-                La <span className="font-black">documentation</span><br />
-                de l'écosystème <span className="text-primary">{SITE.name}.</span>
+                La <span className="text-primary">documentation</span><br />
+                de l'écosystème <span className="font-black">{SITE.name}.</span>
               </h1>
 
               <p className="mt-6 max-w-xl text-balance text-base leading-relaxed text-muted-foreground sm:text-lg">
