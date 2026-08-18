@@ -16,7 +16,7 @@ export function DocsHeader({ onSearchClick }: DocsHeaderProps) {
           </span>
           <span className="leading-tight">
             <span className="block font-display text-[15px] font-semibold tracking-tight text-foreground">
-              STAF Docs
+              STAF Docs HOME
             </span>
             <span className="block text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
               Staf Print Center
