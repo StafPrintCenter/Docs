@@ -163,7 +163,7 @@ export function DocsHeader({
         </div>
       </div>
 
-      {/* Select Espaces Mobile (Vue Docs) */}
+      {/* Select Espaces Mobile (Variant Docs) */}
       {isDocs && (
         <div className="border-t border-border/70 px-4 py-2 xl:hidden">
           <select
