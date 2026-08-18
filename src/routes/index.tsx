@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { docsRegistry, articleCount } from "@/data/docs-registry";
 import { SearchModal } from "@/components/docs/SearchModal";
 import { DocsHeader, DocsFooter } from "@/components/site";
-import { HeroSection, SpacesSection } from "@/components/pages/docs";
+import { HeroSection, SpacesSection } from "@/components/pages/home";
 
 export const Route = createFileRoute("/")({
   head: () => ({
