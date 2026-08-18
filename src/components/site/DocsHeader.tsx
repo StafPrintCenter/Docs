@@ -15,8 +15,8 @@ interface HeaderProps {
 }
 
 export function DocsHeader({
-  variant = "home",
-  title,
+  variant = "default",
+  title = "SPC Docs",
   subtitle = "Staf Print Center",
   maxWidthClass = "max-w-6xl",
   activeSpaceId,
