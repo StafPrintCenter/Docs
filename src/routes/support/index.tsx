@@ -49,7 +49,7 @@ function SupportHome() {
       <div className="pointer-events-none absolute inset-0 paper-grid opacity-50" />
 
       <div className="relative z-10">
-        <DocsHeader variant="home" />
+        <DocsHeader />
 
         <SupportHomeSearchHero
           query={query}
