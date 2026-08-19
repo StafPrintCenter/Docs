@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { ListTree } from "lucide-react";
-import { DocsHeader } from "@/components/docs/DocsHeader";
+import { DocsHeader } from "@/components/site";
 import { SearchModal } from "@/components/docs/SearchModal";
 import { TableOfContents } from "@/components/docs/TableOfContents";
 import { MarkdownRenderer, extractToc } from "@/components/docs/MarkdownRenderer";
@@ -45,6 +45,15 @@ export function DocsViewer({ resolved }: { resolved: ResolvedArticle }) {
           activeSpaceId={space.id}
           onOpenSearch={() => setSearchOpen(true)}
           onToggleSidebar={() => setSidebarOpen((v) => !v)}
+        />
+
+        <DocsHeader
+          variant="docs"
+          maxWidthClass="max-w-[1600px]"
+          sticky
+          activeSpaceId={activeSpaceId}
+          onOpenSearch={() => setSearchOpen(true)}
+          onToggleSidebar={() => setSidebarOpen(true)}
         />
 
         <div className="mx-auto flex w-full max-w-[1600px] flex-1 items-start gap-6 px-4 py-6 sm:px-6">
