@@ -16,8 +16,12 @@ export function SupportDetailBreadcrumb({
         aria-label="Fil d'Ariane"
         className="flex items-center gap-1 text-xs text-muted-foreground"
       >
+        <Link to="/" className="hover:text-brand">
+          Accueil
+        </Link>
+        <ChevronRight className="size-3" />
         <Link to="/support" className="hover:text-brand">
-          Aide
+          Centre d'aide
         </Link>
         <ChevronRight className="size-3" />
         <span className="text-foreground">{categoryTitle ?? "Article"}</span>
