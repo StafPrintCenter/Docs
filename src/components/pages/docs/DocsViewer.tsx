@@ -42,12 +42,6 @@ export function DocsViewer({ resolved }: { resolved: ResolvedArticle }) {
 
       <div className="relative z-10 flex min-h-screen flex-col">
         <DocsHeader
-          activeSpaceId={space.id}
-          onOpenSearch={() => setSearchOpen(true)}
-          onToggleSidebar={() => setSidebarOpen((v) => !v)}
-        />
-
-        <DocsHeader
           variant="docs"
           maxWidthClass="max-w-[1600px]"
           sticky
