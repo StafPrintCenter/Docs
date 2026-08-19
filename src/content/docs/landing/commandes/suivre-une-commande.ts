@@ -4,7 +4,7 @@ export const article = defineArticle("suivre-une-commande",
   "Suivre une demande ou commande",
   "Consultez l'état d'avancement de votre demande grâce à votre adresse email et votre numéro de ticket.",
   ["suivi", "livraison"],
-  "new",
+  "updated",
   "19 août 2026",
   `# Suivre une demande
 
