@@ -114,25 +114,23 @@ export function DocsHeader({
             </Link>
           )}
 
-          {/* Boutons Aide & Enregistrés (Variant Docs) */}
-          {isDocs && (
-            <>
-              <Link
-                to="/support"
-                className="hidden h-9 items-center gap-1.5 rounded-lg border border-border bg-card px-3 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground sm:inline-flex"
-              >
-                <LifeBuoy className="size-4 text-brand" />
-                Aide
-              </Link>
-              <Link
-                to="/saves"
-                className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-border bg-card px-3 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground"
-              >
-                <Bookmark className="size-4 text-brand" />
-                <span className="hidden sm:inline">Enregistrés</span>
-              </Link>
-            </>
-          )}
+          {/* Centre d'aide (Présent sur tous les variants) */}
+          <Link
+            to="/support"
+            className="hidden h-9 items-center gap-1.5 rounded-lg border border-border bg-card px-3 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground sm:inline-flex"
+          >
+            <LifeBuoy className="size-4 text-brand" />
+            {isDocs ? "Aide" : "Centre d'aide"}
+          </Link>
+
+          {/* Pages Enregistrées (Présent sur tous les variants) */}
+          <Link
+            to="/saves"
+            className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-border bg-card px-3 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground"
+          >
+            <Bookmark className="size-4 text-brand" />
+            <span className="hidden sm:inline">Enregistrés</span>
+          </Link>
 
           {/* Recherche (Si fonction fournie) */}
           {onOpenSearch && (
