@@ -4,7 +4,7 @@ export const article = defineArticle("demander-un-devis",
   "Demander un devis d'impression",
   "Le parcours complet de la demande de devis via le formulaire de contact jusqu'à la réception de votre ticket.",
   ["devis", "commande"],
-  "new",
+  "stable",
   "19 août 2026",
   `# Demander un devis d'impression
 
