@@ -51,9 +51,9 @@ export function DocsViewer({ resolved }: { resolved: ResolvedArticle }) {
           variant="docs"
           maxWidthClass="max-w-[1600px]"
           sticky
-          activeSpaceId={activeSpaceId}
+          activeSpaceId={space.id}
           onOpenSearch={() => setSearchOpen(true)}
-          onToggleSidebar={() => setSidebarOpen(true)}
+          onToggleSidebar={() => setSidebarOpen((v) => !v)}
         />
 
         <div className="mx-auto flex w-full max-w-[1600px] flex-1 items-start gap-6 px-4 py-6 sm:px-6">
