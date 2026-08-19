@@ -4,11 +4,11 @@ import { useSavedArticles } from "@/hooks/useSavedArticles";
 import type { DocSpace, ArticleStatus } from "@/types/docs";
 
 const STATUS_STYLE: Record<Exclude<ArticleStatus, "stable">, { label: string; className: string }> =
-  {
-    new: { label: "Nouveau", className: "bg-emerald/12 text-emerald" },
-    updated: { label: "Maj", className: "bg-info/12 text-info" },
-    beta: { label: "Bêta", className: "bg-amber/15 text-amber" },
-  };
+{
+  new: { label: "Nouveau", className: "bg-emerald/12 text-emerald" },
+  updated: { label: "Maj", className: "bg-info/12 text-info" },
+  beta: { label: "Bêta", className: "bg-amber/15 text-amber" },
+};
 
 interface DocsSidebarProps {
   space: DocSpace;
@@ -43,11 +43,10 @@ export function DocsSidebar({ space, activeSlug, onNavigate }: DocsSidebarProps)
                     to="/docs/$space/$slug"
                     params={{ space: space.id, slug: article.slug }}
                     onClick={onNavigate}
-                    className={`flex items-center justify-between gap-2 rounded-md px-2 py-1.5 transition-colors ${
-                      isActive
-                        ? "bg-brand/10 font-medium text-brand-strong"
-                        : "text-muted-foreground hover:bg-background hover:text-foreground"
-                    }`}
+                    className={`flex items-center justify-between gap-2 rounded-md px-2 py-1.5 transition-colors ${isActive
+                      ? "bg-brand/10 font-medium text-brand-strong"
+                      : "text-muted-foreground hover:bg-background hover:text-foreground"
+                      }`}
                   >
                     <span className="flex min-w-0 items-center gap-1.5">
                       {saved && (
