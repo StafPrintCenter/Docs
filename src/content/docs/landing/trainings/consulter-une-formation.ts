@@ -4,7 +4,7 @@ export const article = defineArticle("consulter-une-formation",
   "Consulter les détails d'une formation",
   "Informations clés, prérequis, tarifs et suivi du statut d'ouverture des sessions.",
   ["formation", "indesign", "apprentissage"],
-  "new",
+  "stable",
   "19 août 2026",
   `# Consulter une fiche de formation
 
