@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { Bookmark, LifeBuoy, Menu, Printer, Search } from "lucide-react";
-import { spaceNav } from "@/data/docs-registry";
+import { spaceNav, firstArticleParams } from "@/data/docs-registry";
 import { ThemeToggle } from "@/components/docs/ThemeToggle";
 
 interface HeaderProps {
@@ -106,7 +106,8 @@ export function DocsHeader({
           {/* Bouton Documentation (Variant Default) */}
           {!isDocs && (
             <Link
-              to="/"
+              to="/docs/$space/$slug"
+              params={firstArticleParams("site-vitrine")}
               className="hidden h-9 items-center rounded-lg border border-border bg-card px-3 text-sm text-muted-foreground transition-colors hover:text-foreground sm:inline-flex"
             >
               Documentation
