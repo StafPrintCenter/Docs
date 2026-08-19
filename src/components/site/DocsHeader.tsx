@@ -29,6 +29,37 @@ export function DocsHeader({
   const navigate = useNavigate();
   const isDocs = variant === "docs";
 
+  // Source unique de vérité pour les liens de navigation
+  const navLinks = [
+    {
+      key: "docs",
+      to: "/docs/$space/$slug",
+      params: firstArticleParams("site-vitrine"),
+      icon: BookOpen,
+      label: "Documentation",
+      hideOnDocs: true,
+    },
+    {
+      key: "support",
+      to: "/support",
+      icon: LifeBuoy,
+      label: "Centre d'aide",
+      hideOnDocs: false,
+    },
+    {
+      key: "saves",
+      to: "/saves",
+      icon: Bookmark,
+      label: "Enregistrés",
+      hideOnDocs: false,
+    },
+  ];
+
+  // Filter les liens selon la variante
+  const activeNavLinks = navLinks.filter(
+    (link) => !(isDocs && link.hideOnDocs)
+  );
+
   // Navigation vers un espace de doc via le select mobile
   const goToSpace = (id: string) => {
     const entry = spaceNav.find((p) => p.id === id);
@@ -103,37 +134,26 @@ export function DocsHeader({
 
         {/* Zone d'actions Droite */}
         <div className="flex flex-1 items-center justify-end gap-2">
-          {/* Bouton Documentation (Variant Default) */}
-          {!isDocs && (
-            <Link
-              to="/docs/$space/$slug"
-              params={firstArticleParams("site-vitrine")}
-              className="hidden h-9 items-center gap-1.5 rounded-lg border border-border bg-card px-3 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground sm:inline-flex"
-            >
-              <BookOpen className="size-4 text-brand" />
-              <span>Documentation</span>
-            </Link>
-          )}
+          {/* Rendu dynamique des liens filtrés */}
+          {activeNavLinks.map((link) => {
+            const Icon = link.icon;
+            return (
+              <Link
+                key={link.key}
+                to={link.to}
+                params={link.params}
+                className={`h-9 items-center gap-1.5 rounded-lg border border-border bg-card px-3 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground ${link.key === "saves" ? "inline-flex" : "hidden sm:inline-flex"
+                  }`}
+              >
+                <Icon className="size-4 text-brand" />
+                <span className={link.key === "saves" ? "hidden sm:inline" : ""}>
+                  {link.label}
+                </span>
+              </Link>
+            );
+          })}
 
-          {/* Centre d'aide */}
-          <Link
-            to="/support"
-            className="hidden h-9 items-center gap-1.5 rounded-lg border border-border bg-card px-3 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground sm:inline-flex"
-          >
-            <LifeBuoy className="size-4 text-brand" />
-            {isDocs ? "Aide" : "Centre d'aide"}
-          </Link>
-
-          {/* Pages Enregistrées */}
-          <Link
-            to="/saves"
-            className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-border bg-card px-3 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground"
-          >
-            <Bookmark className="size-4 text-brand" />
-            <span className="hidden sm:inline">Enregistrés</span>
-          </Link>
-
-          {/* Recherche (Si fonction fournie) */}
+          {/* Recherche */}
           {onOpenSearch && (
             <button
               type="button"
