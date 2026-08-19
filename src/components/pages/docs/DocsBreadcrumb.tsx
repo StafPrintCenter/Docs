@@ -17,7 +17,7 @@ export function DocsBreadcrumb({ resolved }: DocsBreadcrumbProps) {
         className="flex flex-wrap items-center gap-1 text-xs text-muted-foreground"
       >
         <Link to="/" className="hover:text-brand">
-          STAF Docs
+          Accueil
         </Link>
         <ChevronRight className="size-3" />
         <span>{space.name}</span>

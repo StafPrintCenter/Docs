@@ -8,10 +8,11 @@ import {
   SavedEmptyState,
   SavedPrivacyBanner,
 } from "@/components/pages/saves";
+import { SITE } from "@/data/site";
 
 export const Route = createFileRoute("/saves")({
   head: () => {
-    const title = "Pages enregistrées - STAF Docs";
+    const title = `Pages enregistrées | ${SITE.name}`;
     const description =
       "Retrouvez les articles STAF Docs que vous avez enregistrés localement pour une consultation rapide.";
     return {
