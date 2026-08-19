@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import type { ResolvedArticle } from "@/data/docs-registry";
+import type { ResolvedArticle } from "@/data/content/docs";
 
 interface ArticlePaginationNavProps {
   prev: ResolvedArticle["prev"];

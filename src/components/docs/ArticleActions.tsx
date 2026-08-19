@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Bookmark, BookmarkCheck, Check, Copy, Share2 } from "lucide-react";
 import { useSavedArticles } from "@/hooks/useSavedArticles";
 import { ShareModal } from "@/components/docs/ShareModal";
-import type { ResolvedArticle } from "@/data/docs-registry";
+import type { ResolvedArticle } from "@/data/content/docs";
 
 const BTN =
   "inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-brand/60 hover:text-brand";

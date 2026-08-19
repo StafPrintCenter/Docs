@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { allHits } from "@/data/docs-registry";
+import { allHits } from "@/data/content/docs";
 import type { SearchHit } from "@/types/docs";
 
 const HISTORY_KEY = "staf-docs-search-history";

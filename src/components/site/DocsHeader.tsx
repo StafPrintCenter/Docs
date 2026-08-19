@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { Bookmark, BookOpen, LifeBuoy, Menu, Printer, Search } from "lucide-react";
-import { spaceNav, firstArticleParams } from "@/data/docs-registry";
+import { spaceNav, firstArticleParams } from "@/data/content/docs";
 import { ThemeToggle } from "@/components/docs/ThemeToggle";
 
 interface HeaderProps {

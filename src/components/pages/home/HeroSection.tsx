@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { BookOpen, LifeBuoy } from "lucide-react";
 import { SITE } from "@/data/site";
-import { firstArticleParams } from "@/data/docs-registry";
+import { firstArticleParams } from "@/data/content/docs";
 import { DocPreviewIllustration } from "./DocPreviewIllustration";
 
 interface HeroSectionProps {

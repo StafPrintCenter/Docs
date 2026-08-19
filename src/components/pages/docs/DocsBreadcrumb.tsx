@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ChevronRight } from "lucide-react";
 import { ArticleActions } from "@/components/docs/ArticleActions";
-import type { ResolvedArticle } from "@/data/docs-registry";
+import type { ResolvedArticle } from "@/data/content/docs";
 
 interface DocsBreadcrumbProps {
   resolved: ResolvedArticle;

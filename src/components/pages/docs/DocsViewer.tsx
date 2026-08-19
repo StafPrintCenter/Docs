@@ -6,7 +6,7 @@ import { TableOfContents } from "@/components/docs/TableOfContents";
 import { MarkdownRenderer, extractToc } from "@/components/docs/MarkdownRenderer";
 import { ArticleFeedback } from "@/components/docs/ArticleFeedback";
 import { CarbonAds } from "@/components/docs/CarbonAds";
-import type { ResolvedArticle } from "@/data/docs-registry";
+import type { ResolvedArticle } from "@/data/content/docs";
 import {
   DocsBreadcrumb,
   DesktopSidebar,

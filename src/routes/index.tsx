@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { docsRegistry, articleCount } from "@/data/docs-registry";
+import { docsRegistry, articleCount } from "@/data/content/docs";
 import { SearchModal } from "@/components/docs/SearchModal";
 import { DocsHeader, DocsFooter } from "@/components/site";
 import { HeroSection, SpacesSection } from "@/components/pages/home";

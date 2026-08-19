@@ -1,5 +1,5 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import { resolveArticle } from "@/data/docs-registry";
+import { resolveArticle } from "@/data/content/docs";
 import { DocsViewer } from "@/components/pages/docs/DocsViewer";
 
 export const Route = createFileRoute("/docs/$space/$slug")({
