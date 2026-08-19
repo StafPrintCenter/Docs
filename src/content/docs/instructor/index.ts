@@ -3,8 +3,8 @@ import { group as g0 } from "./sessions";
 import { group as g1 } from "./evaluation";
 
 export const space: DocSpace = {
-  id: "instructor-hub",
-  name: "Instructor Hub",
+  id: "instructor",
+  name: "Espace Formateur",
   shortName: "Instructor",
   tagline: "Espace des formateurs STAF",
   description:
