@@ -50,7 +50,7 @@ export function SavedArticlesList({
             key={item.key}
             className="flex flex-wrap items-start justify-between gap-3 rounded-xl border border-border bg-background p-4"
           >
-            <div className="min-w-0">
+            <div className="min-w-0 flex-1">
               <Link
                 to="/docs/$space/$slug"
                 params={{ space: item.spaceId, slug: item.slug }}
@@ -78,45 +78,72 @@ export function SavedArticlesList({
         ))}
       </ul>
 
+      {/* Pagination Réactive */}
       {pageCount > 1 && (
         <nav
           aria-label="Pagination des pages enregistrées"
-          className="mt-6 flex items-center justify-between gap-3"
+          className="mt-6 flex flex-wrap items-center justify-between gap-2 border-t border-border/50 pt-4"
         >
+          {/* Bouton Précédent */}
           <button
             type="button"
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={page === 1}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground disabled:cursor-not-allowed disabled:opacity-40"
+            className="inline-flex h-8 items-center gap-1 rounded-lg border border-border px-2.5 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground disabled:cursor-not-allowed disabled:opacity-40 sm:h-9 sm:px-3"
           >
             <ChevronLeft className="size-3.5" />
-            Précédent
+            <span className="hidden sm:inline">Précédent</span>
           </button>
 
+          {/* Numéros de page */}
           <div className="flex items-center gap-1">
-            {Array.from({ length: pageCount }, (_, i) => i + 1).map((n) => (
-              <button
-                key={n}
-                type="button"
-                onClick={() => setPage(n)}
-                aria-current={n === page ? "page" : undefined}
-                className={`size-8 rounded-lg border text-xs font-medium transition-colors ${n === page
-                  ? "border-brand bg-brand/10 text-brand-strong"
-                  : "border-border text-muted-foreground hover:text-foreground"
-                  }`}
-              >
-                {n}
-              </button>
-            ))}
+            {Array.from({ length: pageCount }, (_, i) => i + 1).map((n) => {
+              // Sur mobile, si beaucoup de pages, on n'affiche que la page courante, première, dernière et proches
+              const isMobileHidden =
+                pageCount > 5 &&
+                Math.abs(n - page) > 1 &&
+                n !== 1 &&
+                n !== pageCount;
+
+              if (isMobileHidden) {
+                if (n === 2 || n === pageCount - 1) {
+                  return (
+                    <span
+                      key={n}
+                      className="hidden px-1 text-xs text-muted-foreground sm:inline-block"
+                    >
+                      …
+                    </span>
+                  );
+                }
+                return null;
+              }
+
+              return (
+                <button
+                  key={n}
+                  type="button"
+                  onClick={() => setPage(n)}
+                  aria-current={n === page ? "page" : undefined}
+                  className={`size-8 rounded-lg border text-xs font-medium transition-colors sm:size-9 ${n === page
+                    ? "border-brand bg-brand/10 text-brand-strong font-semibold"
+                    : "border-border text-muted-foreground hover:text-foreground"
+                    }`}
+                >
+                  {n}
+                </button>
+              );
+            })}
           </div>
 
+          {/* Bouton Suivant */}
           <button
             type="button"
             onClick={() => setPage((p) => Math.min(pageCount, p + 1))}
             disabled={page === pageCount}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground disabled:cursor-not-allowed disabled:opacity-40"
+            className="inline-flex h-8 items-center gap-1 rounded-lg border border-border px-2.5 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground disabled:cursor-not-allowed disabled:opacity-40 sm:h-9 sm:px-3"
           >
-            Suivant
+            <span className="hidden sm:inline">Suivant</span>
             <ChevronRight className="size-3.5" />
           </button>
         </nav>
