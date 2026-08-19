@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ChevronRight, Clock } from "lucide-react";
+import { ChevronRight, Clock, Home, LifeBuoy } from "lucide-react";
 
 interface SupportDetailBreadcrumbProps {
   categoryTitle?: string;
@@ -14,22 +14,36 @@ export function SupportDetailBreadcrumb({
     <>
       <nav
         aria-label="Fil d'Ariane"
-        className="flex items-center gap-1 text-xs text-muted-foreground"
+        className="flex flex-wrap items-center gap-1.5 text-xs text-muted-foreground"
       >
-        <Link to="/" className="hover:text-brand">
-          Accueil
+        <Link
+          to="/"
+          className="inline-flex items-center gap-1 transition-colors hover:text-brand"
+        >
+          <Home className="size-3.5" />
+          <span>Accueil</span>
         </Link>
-        <ChevronRight className="size-3" />
-        <Link to="/support" className="hover:text-brand">
-          Centre d'aide
+
+        <ChevronRight className="size-3 shrink-0 text-muted-foreground/60" />
+
+        <Link
+          to="/support"
+          className="inline-flex items-center gap-1 transition-colors hover:text-brand"
+        >
+          <LifeBuoy className="size-3.5 text-brand" />
+          <span>Centre d'aide</span>
         </Link>
-        <ChevronRight className="size-3" />
-        <span className="text-foreground">{categoryTitle ?? "Article"}</span>
+
+        <ChevronRight className="size-3 shrink-0 text-muted-foreground/60" />
+
+        <span className="font-medium text-foreground">
+          {categoryTitle ?? "Article"}
+        </span>
       </nav>
 
       <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-muted-foreground">
         <Clock className="size-3.5 text-brand" />
-        Lecture {readTime}
+        <span>Lecture {readTime}</span>
       </p>
     </>
   );
