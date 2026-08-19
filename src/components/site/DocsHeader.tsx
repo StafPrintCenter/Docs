@@ -142,7 +142,11 @@ export function DocsHeader({
                 key={link.key}
                 to={link.to}
                 params={link.params}
-                className={`h-9 items-center gap-1.5 rounded-lg border border-border bg-card px-3 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground ${link.key === "saves" ? "inline-flex" : "hidden sm:inline-flex"
+                activeOptions={{ exact: false }}
+                activeProps={{
+                  className: "border-brand/60 bg-brand/10 text-brand hover:border-brand",
+                }}
+                className={`h-9 items-center gap-1.5 rounded-lg border border-border px-3 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground ${link.key === "saves" ? "inline-flex" : "hidden sm:inline-flex"
                   }`}
               >
                 <Icon className="size-4 text-brand" />
