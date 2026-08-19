@@ -34,7 +34,7 @@ export function DocsHeader({
     {
       key: "docs",
       to: "/docs/$space/$slug",
-      params: firstArticleParams("site-vitrine"),
+      params: firstArticleParams("landing"),
       icon: BookOpen,
       label: "Documentation",
       hideOnDocs: true,

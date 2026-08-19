@@ -1,5 +1,5 @@
 import type { DocSpace } from "@/types/docs";
-import { space as s0 } from "./site-vitrine";
+import { space as s0 } from "../landing";
 import { space as s1 } from "./instructor";
 import { space as s2 } from "./student-hub";
 import { space as s3 } from "./spc-meet";

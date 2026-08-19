@@ -4,7 +4,7 @@ import { docsRegistry, articleCount, firstArticleParams } from "@/data/docs-regi
 
 const SPACE_ICON: Record<string, typeof BookOpen> = {
   "spc-meet": Video,
-  "site-vitrine": Printer,
+  "landing": Printer,
   "spc-arcade": Gamepad2,
   "instructor-hub": GraduationCap,
   "student-hub": Users,

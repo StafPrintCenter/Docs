@@ -3,7 +3,6 @@ import type { DocArticle, DocSpace, DocSpaceId, SearchHit } from "@/types/docs";
 
 /**
  * Le contenu vit dans `src/content/docs/<space>/<groupe>/<article>.ts`.
- * Ce module ne contient plus que l'API de lecture.
  */
 export const docsRegistry: DocSpace[] = spaces;
 

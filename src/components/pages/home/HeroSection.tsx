@@ -9,7 +9,7 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({ totalArticles }: HeroSectionProps) {
-  const docUrl = `${SITE.docsUrl}/docs/site-vitrine/demander-un-devis`;
+  const docUrl = `${SITE.docsUrl}/docs/landing/demander-un-devis`;
 
   return (
     <section className="relative mx-auto grid max-w-6xl grid-cols-1 gap-14 px-6 py-20 lg:grid-cols-2 lg:items-center lg:gap-10">
@@ -38,7 +38,7 @@ export function HeroSection({ totalArticles }: HeroSectionProps) {
         <div className="mt-8 flex w-full flex-col items-start gap-3 sm:flex-row sm:items-center">
           <Link
             to="/docs/$space/$slug"
-            params={firstArticleParams("site-vitrine")}
+            params={firstArticleParams("landing")}
             className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand px-5 py-3 text-sm font-medium text-brand-foreground shadow-sm transition-transform hover:-translate-y-0.5 sm:w-auto"
           >
             <BookOpen className="size-4" />
