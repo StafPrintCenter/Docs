@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, ShieldCheck } from "lucide-react";
-import { popularSupportArticles } from "@/data/support-center";
+import { popularSupportArticles } from "@/data/content/support";
 
 export function SupportHomePopularAndContact() {
   return (

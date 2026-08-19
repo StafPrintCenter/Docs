@@ -1,7 +1,7 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { MarkdownRenderer } from "@/components/docs/MarkdownRenderer";
 import { DocsHeader } from "@/components/site";
-import { getSupportArticle, supportCategories } from "@/data/support-center";
+import { getSupportArticle, supportCategories } from "@/data/content/support";
 import {
   SupportDetailBreadcrumb,
   SupportDetailFooterActions

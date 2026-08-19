@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { DocsHeader } from "@/components/site";
-import { supportArticles } from "@/data/support-center";
+import { supportArticles } from "@/data/content/support";
 import {
   SupportHomePopularAndContact,
   SupportHomeCategories,

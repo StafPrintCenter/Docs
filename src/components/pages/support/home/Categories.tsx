@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { CreditCard, LifeBuoy, Lock, Package, UserRound, Wrench } from "lucide-react";
-import { articlesByCategory, supportCategories } from "@/data/support-center";
+import { articlesByCategory, supportCategories } from "@/data/content/support";
 
 const ICONS = {
   account: UserRound,

@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { FileQuestion, Search } from "lucide-react";
-import type { SupportArticle } from "@/data/support-center";
+import type { SupportArticle } from "@/data/content/support";
 
 interface SupportHomeSearchHeroProps {
   query: string;
