@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "@tanstack/react-router";
-import { Bookmark, LifeBuoy, Menu, Printer, Search } from "lucide-react";
+import { Bookmark, BookOpen, LifeBuoy, Menu, Printer, Search } from "lucide-react";
 import { spaceNav, firstArticleParams } from "@/data/docs-registry";
 import { ThemeToggle } from "@/components/docs/ThemeToggle";
 
