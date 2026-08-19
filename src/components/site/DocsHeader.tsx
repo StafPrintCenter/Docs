@@ -55,7 +55,7 @@ export function DocsHeader({
     },
   ];
 
-  // Filter les liens selon la variante
+  // Filtrer les liens selon la variante
   const activeNavLinks = navLinks.filter(
     (link) => !(isDocs && link.hideOnDocs)
   );
