@@ -1,6 +1,6 @@
 import type { DocSpace } from "@/types/docs";
 import { group as g0 } from "./1. commandes";
-import { group as g1 } from "./trainings";
+import { group as g1 } from "./2. trainings";
 import { group as g2 } from "./fichiers";
 import { group as g3 } from "./compte-client";
 
