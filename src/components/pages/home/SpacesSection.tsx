@@ -1,13 +1,14 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, BookOpen, Gamepad2, GraduationCap, LifeBuoy, Printer, Users, Video } from "lucide-react";
+import { ArrowRight, BookOpen, Gamepad2, GraduationCap, LifeBuoy, Globe, Users, Video } from "lucide-react";
 import { docsRegistry, articleCount, firstArticleParams } from "@/data/docs-registry";
 
 const SPACE_ICON: Record<string, typeof BookOpen> = {
-  "spc-meet": Video,
-  "landing": Printer,
-  "spc-arcade": Gamepad2,
-  "instructor-hub": GraduationCap,
-  "student-hub": Users,
+  "landing": Globe,
+  "instructor": GraduationCap,
+  "student": Users,
+  "meet": Video,
+  "arcade": Gamepad2,
+
 };
 
 export function SpacesSection() {

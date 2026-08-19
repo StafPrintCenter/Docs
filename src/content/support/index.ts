@@ -6,14 +6,7 @@ import { category as c3, articles as c3a } from "./confidentialite";
 import { category as c4, articles as c4a } from "./technique";
 import { category as c5, articles as c5a } from "./contact";
 
-export const categories: SupportCategory[] = [
-  c0,
-  c1,
-  c2,
-  c3,
-  c4,
-  c5,
-];
+export const categories: SupportCategory[] = [c0, c1, c2, c3, c4, c5];
 
 export const articles: SupportArticle[] = [
   ...c0a,
