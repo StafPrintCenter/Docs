@@ -3,7 +3,6 @@ import type { SupportArticle, SupportCategory } from "@/types/support";
 
 /**
  * Le contenu vit dans `src/content/support/<categorie>/<article>.ts`.
- * Ce module ne contient plus que l'API de lecture.
  */
 export type { SupportArticle, SupportCategory };
 
