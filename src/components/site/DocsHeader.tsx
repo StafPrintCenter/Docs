@@ -108,13 +108,14 @@ export function DocsHeader({
             <Link
               to="/docs/$space/$slug"
               params={firstArticleParams("site-vitrine")}
-              className="hidden h-9 items-center rounded-lg border border-border bg-card px-3 text-sm text-muted-foreground transition-colors hover:text-foreground sm:inline-flex"
+              className="hidden h-9 items-center gap-1.5 rounded-lg border border-border bg-card px-3 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground sm:inline-flex"
             >
-              Documentation
+              <BookOpen className="size-4 text-brand" />
+              <span>Documentation</span>
             </Link>
           )}
 
-          {/* Centre d'aide (Présent sur tous les variants) */}
+          {/* Centre d'aide */}
           <Link
             to="/support"
             className="hidden h-9 items-center gap-1.5 rounded-lg border border-border bg-card px-3 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground sm:inline-flex"
@@ -123,7 +124,7 @@ export function DocsHeader({
             {isDocs ? "Aide" : "Centre d'aide"}
           </Link>
 
-          {/* Pages Enregistrées (Présent sur tous les variants) */}
+          {/* Pages Enregistrées */}
           <Link
             to="/saves"
             className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-border bg-card px-3 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground"
@@ -137,19 +138,13 @@ export function DocsHeader({
             <button
               type="button"
               onClick={onOpenSearch}
-              className={`flex h-9 items-center gap-2 rounded-lg border border-border bg-card px-3 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground cursor-pointer ${isDocs ? "sm:w-48" : ""
-                }`}
+              className="flex h-9 items-center gap-2 rounded-lg border border-border bg-card px-3 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground cursor-pointer sm:w-48"
             >
               <Search className="size-4 text-brand" />
-              {isDocs && (
-                <span className="hidden flex-1 text-left sm:inline">
-                  Rechercher…
-                </span>
-              )}
-              <kbd
-                className={`${isDocs ? "hidden sm:inline" : ""
-                  } rounded border border-border bg-muted px-1.5 py-0.5 font-mono text-[10px]`}
-              >
+              <span className="hidden flex-1 text-left sm:inline">
+                Rechercher…
+              </span>
+              <kbd className="hidden rounded border border-border bg-muted px-1.5 py-0.5 font-mono text-[10px] sm:inline">
                 ⌘K
               </kbd>
             </button>
