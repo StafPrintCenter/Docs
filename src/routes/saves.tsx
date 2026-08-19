@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { DocsHeader } from "@/components/docs/DocsHeader";
+import { DocsHeader } from "@/components/site";
 import { SearchModal } from "@/components/docs/SearchModal";
 import { useSavedArticles } from "@/hooks/useSavedArticles";
 import {
@@ -37,7 +37,10 @@ function SavedPage() {
       <div className="pointer-events-none absolute inset-0 paper-grid opacity-50" />
 
       <div className="relative z-10 flex min-h-screen flex-col">
-        <DocsHeader onOpenSearch={() => setSearchOpen(true)} />
+        <DocsHeader variant="docs" maxWidthClass="max-w-[1600px]"
+          sticky
+          onOpenSearch={() => setSearchOpen(true)}
+        />
 
         <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-10 sm:px-6">
           <div className="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
