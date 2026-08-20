@@ -19,9 +19,6 @@ interface HeaderProps {
 
 export function DocsHeader({
   variant = "default",
-  title = "SPC Docs",
-  subtitle = "Staf Print Center",
-  hideSubtitle = false,
   maxWidthClass = "max-w-6xl",
   activeSpaceId,
   sticky = false,
@@ -30,6 +27,10 @@ export function DocsHeader({
 }: HeaderProps) {
   const navigate = useNavigate();
   const isDocs = variant === "docs";
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Logo fallback handler
+  const [logoSrc, setLogoSrc] = useState(logos.dc || logos.base);
 
   // Source unique de vérité pour les liens de navigation
   const navLinks = [
