@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type { } from "@tanstack/react-start";
+import { docsRegistry, spaceArticles } from "@/data/content/docs";
+import { supportArticles } from "@/data/content/support";
 
 const RAW_URL = import.meta.env.VITE_DOCS_URL || "https://docs.stafprint.com";
 const BASE_URL = RAW_URL.replace(/\/$/, "");
@@ -16,7 +18,27 @@ export const Route = createFileRoute("/sitemap.xml")({
       GET: async () => {
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
+          { path: "/support", changefreq: "weekly", priority: "0.9" },
+          { path: "/saves", changefreq: "monthly", priority: "0.3" },
         ];
+
+        for (const space of docsRegistry) {
+          for (const article of spaceArticles(space)) {
+            entries.push({
+              path: `/docs/${space.id}/${article.slug}`,
+              changefreq: "monthly",
+              priority: "0.8",
+            });
+          }
+        }
+
+        for (const article of supportArticles) {
+          entries.push({
+            path: `/support/${article.slug}`,
+            changefreq: "monthly",
+            priority: "0.7",
+          });
+        }
 
         const urls = entries.map((e) =>
           [
