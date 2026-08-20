@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { Bookmark, BookOpen, LifeBuoy, Menu, Search, X } from "lucide-react";
+import { Bookmark, BookOpen, LifeBuoy, SquareMenu, PanelLeftOpen, Search, X } from "lucide-react";
 import logos from "@/assets/logos.json";
 import { spaceNav, firstArticleParams } from "@/data/content/docs";
 import { ThemeToggle } from "@/components/docs/ThemeToggle";
@@ -29,7 +29,7 @@ export function DocsHeader({
   const isDocs = variant === "docs";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Source unique de vérité pour les liens de navigation
+  // Liens de navigation
   const navLinks = [
     {
       key: "docs",
@@ -72,12 +72,10 @@ export function DocsHeader({
 
   return (
     <header
-      className={`border-b border-border bg-background/85 backdrop-blur-md ${sticky ? "sticky top-0 z-40" : ""
-        }`}
-    >
-      <div
-        className={`mx-auto flex h-16 items-center gap-3 px-4 sm:px-6 ${maxWidthClass}`}
-      >
+      className={`border-b border-border bg-background backdrop-blur-md
+         ${sticky ? "sticky top-0 z-40" : ""}`}
+         >
+      <div className={`mx-auto flex h-16 items-center gap-3 px-4 sm:px-6 ${maxWidthClass}`} >
         {/* Bouton Sidebar Mobile (Variant Docs) */}
         {isDocs && onToggleSidebar && (
           <button
@@ -86,7 +84,7 @@ export function DocsHeader({
             className="rounded-md p-2 text-muted-foreground hover:bg-muted lg:hidden"
             aria-label="Ouvrir la navigation"
           >
-            <Menu className="size-5" />
+            <PanelLeftOpen className="size-5" />
           </button>
         )}
 
@@ -95,43 +93,22 @@ export function DocsHeader({
           {isDocs ? (
             <>
               {/* Variant DOCS - Mobile */}
-              <img
-                src={logos.mc}
-                alt="SPC Docs"
-                className="h-9 w-auto object-contain dark:hidden sm:hidden"
-              />
-              <img
-                src={logos.mw}
-                alt="SPC Docs"
-                className="hidden h-9 w-auto object-contain dark:block dark:sm:hidden"
+              <img src={logos.mc} alt="SPC Docs" className="h-10 w-auto object-contain dark:hidden sm:hidden" />
+              <img src={logos.mw} alt="SPC Docs"className="hidden h-10 w-auto object-contain dark:block dark:sm:hidden"
               />
 
               {/* Variant DOCS - Desktop */}
               <img
-                src={logos.dc}
-                alt="SPC Docs"
-                className="hidden h-9 w-auto object-contain dark:hidden sm:block"
-              />
-              <img
-                src={logos.dw}
-                alt="SPC Docs"
-                className="hidden h-9 w-auto object-contain dark:sm:block"
-              />
+                src={logos.dc} alt="SPC Docs" className="hidden h-12 w-auto object-contain dark:hidden sm:block" />
+              <img src={logos.dw} alt="SPC Docs" className="hidden h-12 w-auto object-contain dark:sm:block" />
             </>
           ) : (
             <>
               {/* Variant DEFAULT - Clair */}
-              <img
-                src={logos.dc}
-                alt="SPC Docs"
-                className="h-9 w-auto object-contain dark:hidden"
-              />
+              <img src={logos.dc} alt="SPC Docs" className="h-12 w-auto object-contain dark:hidden" />
               {/* Variant DEFAULT - Sombre */}
               <img
-                src={logos.dw}
-                alt="SPC Docs"
-                className="hidden h-9 w-auto object-contain dark:block"
-              />
+                src={logos.dw}  alt="SPC Docs" className="hidden h-12 w-auto object-contain dark:block" />
             </>
           )}
         </Link>
@@ -212,35 +189,14 @@ export function DocsHeader({
             className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-muted-foreground hover:bg-muted sm:hidden"
             aria-label="Toggle Navigation Menu"
           >
-            {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+            {mobileMenuOpen ? <X className="size-5" /> : <SquareMenu className="size-5" />}
           </button>
         </div>
       </div>
 
-      {/* Select Espaces Mobile (Variant Docs) */}
-      {isDocs && (
-        <div className="border-t border-border/70 px-4 py-2 xl:hidden">
-          <select
-            aria-label="Choisir un espace"
-            value={activeSpaceId ?? ""}
-            onChange={(e) => goToSpace(e.target.value)}
-            className="w-full rounded-lg border border-border bg-card px-3 py-2 text-sm text-foreground"
-          >
-            <option value="" disabled>
-              Choisir un espace
-            </option>
-            {spaceNav.map((entry) => (
-              <option key={entry.id} value={entry.id}>
-                {entry.label}
-              </option>
-            ))}
-          </select>
-        </div>
-      )}
-
       {/* Dropdown Menu Mobile Hamburger */}
       {mobileMenuOpen && (
-        <div className="border-t border-border bg-background p-4 space-y-2 sm:hidden">
+        <div className="border-t border-border bg-card/80 p-4 space-y-2 sm:hidden">
           {activeNavLinks.map((link) => {
             const Icon = link.icon;
             return (
@@ -260,6 +216,27 @@ export function DocsHeader({
               </Link>
             );
           })}
+        </div>
+      )}
+
+      {/* Select Espaces Mobile (Variant Docs) */}
+      {isDocs && (
+        <div className="border-t border-border/70 px-4 py-2 xl:hidden">
+          <select
+            aria-label="Choisir un espace"
+            value={activeSpaceId ?? ""}
+            onChange={(e) => goToSpace(e.target.value)}
+            className="w-full rounded-lg border border-border bg-card px-3 py-2 text-sm text-foreground"
+          >
+            <option value="" disabled>
+              Choisir un espace
+            </option>
+            {spaceNav.map((entry) => (
+              <option key={entry.id} value={entry.id}>
+                {entry.label}
+              </option>
+            ))}
+          </select>
         </div>
       )}
     </header>
