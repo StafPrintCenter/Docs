@@ -1,6 +1,7 @@
 import type { DocSpace } from "@/types/docs";
 import { group as g0 } from "./1. commandes";
 import { group as g1 } from "./2. trainings";
+import { group as g5 } from "./carrers";
 import { group as g2 } from "./fichiers";
 import { group as g3 } from "./compte-client";
 import { group as g4 } from "./general";
@@ -11,7 +12,7 @@ export const space: DocSpace = {
   shortName: "Vitrine",
   tagline: "Site public, devis et commandes d'impression",
   description: "Le site public de STAF PRINT CENTER : demander un devis, suivre une commande, préparer des fichiers d'impression conformes et gérer votre compte client.",
-  groups: [g0, g1, g2, g3, g4],
+  groups: [g0, g1, g2, g3, g4, g5],
 };
 
 export default space;
