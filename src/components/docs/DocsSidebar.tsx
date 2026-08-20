@@ -22,22 +22,28 @@ export function DocsSidebar({ space, activeSlug, onNavigate }: DocsSidebarProps)
   return (
     <nav aria-label={`Sommaire ${space.name}`} className="pb-16 text-sm">
       <div className="mb-5">
-        <div className="flex items-center gap-1.5">
-          {space.url && (
+        <div className="flex items-center">
+          {space.url ? (
             <a
               href={space.url}
               target="_blank"
               rel="noopener noreferrer"
               title={`Ouvrir ${space.name}`}
               aria-label={`Ouvrir ${space.name} dans un nouvel onglet`}
-              className="rounded p-0.5 text-muted-foreground transition-colors hover:text-brand"
+              className="group inline-flex items-center gap-1.5 transition-colors hover:text-brand"
             >
-              <h2 className="font-display text-base font-semibold text-foreground">{space.name}</h2>
-              <ExternalLink className="size-3.5" />
+              <h2 className="font-display text-base font-semibold text-foreground transition-colors group-hover:underline">
+                {space.name}
+              </h2>
+              <ExternalLink className="size-3.5 shrink-0 text-muted-foreground transition-colors group-hover:text-brand" />
             </a>
+          ) : (
+            <h2 className="font-display text-base font-semibold text-foreground">
+              {space.name}
+            </h2>
           )}
         </div>
-        <p className="text-[11px] uppercase tracking-wide text-brand">{space.tagline}</p>
+        <p className="mt-0.5 text-[11px] uppercase tracking-wide text-brand">{space.tagline}</p>
         <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{space.description}</p>
       </div>
 
