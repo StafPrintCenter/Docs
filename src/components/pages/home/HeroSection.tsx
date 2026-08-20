@@ -31,8 +31,7 @@ export function HeroSection({ totalArticles }: HeroSectionProps) {
         </h1>
 
         <p className="mt-6 max-w-xl text-balance text-base leading-relaxed text-muted-foreground sm:text-lg">
-          Un espace par plateforme, sans mélange : SPC Meet, Site Vitrine, SPC Arcade, Instructor Hub
-          et Student Hub. Et un centre d'aide pour tout le reste.
+          Un espace dédié à chaque outil de l'écosystème, structuré sans mélange. Retrouvez des guides détaillés pour chaque solution et un centre d'aide centralisé pour toutes vos questions.
         </p>
 
         <div className="mt-8 flex w-full flex-col items-start gap-3 sm:flex-row sm:items-center">
