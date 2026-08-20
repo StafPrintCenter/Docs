@@ -1,15 +1,12 @@
-import type { DocSpace } from "@/types/docs";
-import { group as g0 } from "./sessions";
-import { group as g1 } from "./evaluation";
+import type { DocSpaceMeta } from "@/types/docs";
 
-export const space: DocSpace = {
+export const space: DocSpaceMeta = {
   id: "instructor",
   name: "Espace Formateur",
   shortName: "Instructor",
   tagline: "Espace des formateurs SPC",
-  description:
-    "Préparer, animer et évaluer vos sessions de formation : parcours, supports, présence, notation et suivi des apprenants.",
-  groups: [g0, g1],
+  description: "Préparer, animer et évaluer vos sessions de formation : parcours, supports, présence, notation et suivi des apprenants.",
+  url: "https://instructor.stafprint.com",
 };
 
 export default space;
