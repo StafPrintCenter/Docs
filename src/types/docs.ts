@@ -12,19 +12,27 @@ export interface DocArticle {
   content: string;
 }
 
-export interface DocGroup {
+/** Métadonnées d'un groupe */
+export interface DocGroupMeta {
   id: string;
   title: string;
+}
+
+export interface DocGroup extends DocGroupMeta {
   articles: DocArticle[];
 }
 
-/** Un espace = une plateforme (SPC Meet, Site Vitrine, SPC Arcade, …) */
-export interface DocSpace {
+/** Métadonnées d'un espace */
+export interface DocSpaceMeta {
   id: DocSpaceId;
   name: string;
   shortName: string;
   tagline: string;
   description: string;
+  url?: string;
+}
+
+export interface DocSpace extends DocSpaceMeta {
   groups: DocGroup[];
 }
 
