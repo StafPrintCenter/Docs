@@ -3,7 +3,7 @@ import { defineSupportArticle } from "@/content/support/define";
 export const article = defineSupportArticle("faire-une-demande-de-stage",
   "Faire et suivre une demande de stage",
   "Soumettre une candidature spontanée de stage et consulter l'avancement du dossier.",
-  "recrutement",
+  "carrers",
   "3 min",
   `# Faire et suivre une demande de stage
 

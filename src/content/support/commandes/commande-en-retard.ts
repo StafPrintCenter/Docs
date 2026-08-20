@@ -1,11 +1,11 @@
 import { defineSupportArticle } from "@/content/support/define";
 
 export const article = defineSupportArticle("commande-en-retard",
-"Ma commande est en retard",
-"Que faire lorsqu'une commande dépasse la date annoncée.",
-"commandes",
-"2 min",
-`# Ma commande est en retard
+  "Ma commande est en retard",
+  "Que faire lorsqu'une commande dépasse la date annoncée.",
+  "commandes",
+  "2 min",
+  `# Ma commande est en retard
 
 ## Vérifier l'état
 

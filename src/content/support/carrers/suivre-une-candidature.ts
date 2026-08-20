@@ -3,7 +3,7 @@ import { defineSupportArticle } from "@/content/support/define";
 export const article = defineSupportArticle("suivre-une-candidature",
   "Suivre sa candidature",
   "Consulter l'état d'avancement de votre candidature via le lien sécurisé ou la recherche manuelle.",
-  "recrutement",
+  "carrers",
   "2 min",
   `# Suivre sa candidature
 

@@ -6,7 +6,7 @@ import { article as a3 } from "./brouillons-automatiques-candidature";
 import { article as a4 } from "./raccourcir-un-lien";
 
 export const category: SupportCategory = {
-  id: "carrer",
+  id: "carrers",
   title: "Emploi & stage",
   description: "Postuler et suivre sa candidature.",
   icon: "account",

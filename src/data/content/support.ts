@@ -21,6 +21,7 @@ export const popularSupportArticles = [
   "suivre-ou-recuperer-sa-commande",
   "mot-de-passe-oublie",
   "moyens-de-paiement",
+  "suivre-une-candidature",
   "donnees-personnelles",
 ]
   .map((slug) => getSupportArticle(slug))
