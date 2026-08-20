@@ -90,7 +90,7 @@ export function ShareModal({ open, onOpenChange, title, description, url }: Shar
           <button
             type="button"
             onClick={() => onOpenChange(false)}
-            className="rounded-md p-1 text-muted-foreground hover:text-foreground"
+            className="rounded-md p-1 text-muted-foreground hover:text-foreground cursor-pointer"
             aria-label="Fermer"
           >
             <X className="size-4" />
@@ -129,7 +129,7 @@ export function ShareModal({ open, onOpenChange, title, description, url }: Shar
         <button
           type="button"
           onClick={more}
-          className="mt-3 w-full rounded-xl border border-border px-3 py-2 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground"
+          className="mt-3 w-full rounded-xl border border-border px-3 py-2 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground cursor-pointer"
         >
           Plus d'options de partage…
         </button>
