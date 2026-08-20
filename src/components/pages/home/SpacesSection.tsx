@@ -1,15 +1,12 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, BookOpen, Gamepad2, GraduationCap, LifeBuoy, Globe, Users, Video } from "lucide-react";
+import { ArrowRight, LifeBuoy } from "lucide-react";
+import logos from "@/assets/logos.json";
 import { docsRegistry, articleCount, firstArticleParams } from "@/data/content/docs";
 
-const SPACE_ICON: Record<string, typeof BookOpen> = {
-  "landing": Globe,
-  "instructor": GraduationCap,
-  "student": Users,
-  "meet": Video,
-  "arcade": Gamepad2,
-
-};
+function getSpaceLogo(spaceId: string): string {
+  const logoKey = spaceId === "landing" ? "base" : spaceId;
+  return (logos as Record<string, string>)[logoKey] ?? logos.base;
+}
 
 export function SpacesSection() {
   return (
@@ -17,7 +14,8 @@ export function SpacesSection() {
       <h2 className="font-display text-2xl font-semibold text-foreground">Espaces</h2>
       <div className="mt-5 grid gap-5 md:grid-cols-3">
         {docsRegistry.map((space) => {
-          const Icon = SPACE_ICON[space.id] ?? BookOpen;
+          const logoSrc = getSpaceLogo(space.id);
+
           return (
             <Link
               key={space.id}
@@ -25,8 +23,15 @@ export function SpacesSection() {
               params={firstArticleParams(space.id)}
               className="group flex flex-col rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-brand/50 hover:shadow-lg"
             >
-              <span className="grid size-10 place-items-center rounded-xl bg-brand/10 text-brand">
-                <Icon className="size-5" />
+              <span className="grid size-10 place-items-center overflow-hidden rounded-xl bg-brand/10 p-1.5">
+                <img
+                  src={logoSrc}
+                  alt={space.name}
+                  className="size-full object-contain"
+                  onError={(e) => {
+                    e.currentTarget.src = logos.base;
+                  }}
+                />
               </span>
               <h3 className="mt-4 font-display text-xl font-semibold text-foreground">
                 {space.name}
