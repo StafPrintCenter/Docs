@@ -1,14 +1,12 @@
-import type { DocSpace } from "@/types/docs";
-import { group as g0 } from "./inscription";
-import { group as g1 } from "./suivi";
+import type { DocSpaceMeta } from "@/types/docs";
 
-export const space: DocSpace = {
+export const space: DocSpaceMeta = {
   id: "student",
   name: "Espace Apprenant",
   shortName: "Student",
   tagline: "Espace des apprenants SPC",
   description: "S'inscrire à une formation, suivre ses cours, rendre ses devoirs et récupérer ses attestations depuis le Student Hub.",
-  groups: [g0, g1],
+  url: "https://student.stafprint.com",
 };
 
 export default space;
