@@ -1,17 +1,5 @@
 import type { DocArticle, DocGroup, DocGroupMeta, DocSpace, DocSpaceMeta } from "@/types/docs";
 
-/**
- * Découverte automatique du contenu (façon Docusaurus).
- *
- * Arborescence :
- *   src/content/docs/<espace>/index.ts                      → métadonnées de l'espace
- *   src/content/docs/<espace>/<N. groupe>/index.ts          → métadonnées du groupe
- *   src/content/docs/<espace>/<N. groupe>/<N. article>.ts   → article
- *
- * Le préfixe numérique (« 1. », « 2. » …) définit l'ordre d'affichage
- * et n'apparaît jamais dans les URLs.
- */
-
 const spaceModules = import.meta.glob<{ space: DocSpaceMeta }>("./*/index.ts", { eager: true });
 const groupModules = import.meta.glob<{ group: DocGroupMeta }>("./*/*/index.ts", { eager: true });
 const articleModules = import.meta.glob<{ article: DocArticle }>("./*/*/*.ts", { eager: true });
