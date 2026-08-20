@@ -4,6 +4,7 @@ import { Bookmark, BookOpen, LifeBuoy, Menu, Search, X } from "lucide-react";
 import logos from "@/assets/logos.json";
 import { spaceNav, firstArticleParams } from "@/data/content/docs";
 import { ThemeToggle } from "@/components/docs/ThemeToggle";
+import { useTheme } from "@/hooks/useTheme";
 
 interface HeaderProps {
   variant?: "default" | "docs";
@@ -26,11 +27,10 @@ export function DocsHeader({
   onToggleSidebar,
 }: HeaderProps) {
   const navigate = useNavigate();
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
   const isDocs = variant === "docs";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  // Logo fallback handler
-  const [logoSrc, setLogoSrc] = useState(logos.dc || logos.base);
 
   // Source unique de vérité pour les liens de navigation
   const navLinks = [
@@ -93,14 +93,31 @@ export function DocsHeader({
           </button>
         )}
 
-        {/* Logo purement image (logos.dc) */}
+        {/* Logo réactif (Thème & Variante Mobile/Desktop) */}
         <Link to="/" className="flex shrink-0 items-center">
-          <img
-            src={logoSrc}
-            alt="SPC Docs"
-            className="h-9 w-auto object-contain"
-            onError={() => setLogoSrc(logos.base)}
-          />
+          {isDocs ? (
+            <>
+              {/* Variant docs sur Mobile : mc / mw */}
+              <img
+                src={isDark ? logos.mw : logos.mc}
+                alt="SPC Docs"
+                className="h-9 w-auto object-contain sm:hidden"
+              />
+              {/* Variant docs sur Desktop : dc / dw */}
+              <img
+                src={isDark ? logos.dw : logos.dc}
+                alt="SPC Docs"
+                className="hidden h-9 w-auto object-contain sm:block"
+              />
+            </>
+          ) : (
+            /* Variant default : dc / dw */
+            <img
+              src={isDark ? logos.dw : logos.dc}
+              alt="SPC Docs"
+              className="h-9 w-auto object-contain"
+            />
+          )}
         </Link>
 
         {/* Navigation des Espaces Docs (Variant Docs - Desktop) */}
@@ -117,8 +134,8 @@ export function DocsHeader({
                   to="/docs/$space/$slug"
                   params={{ space: entry.id, slug: entry.slug }}
                   className={`rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${isActive
-                    ? "bg-brand text-brand-foreground shadow-sm"
-                    : "text-muted-foreground hover:text-foreground"
+                      ? "bg-brand text-brand-foreground shadow-sm"
+                      : "text-muted-foreground hover:text-foreground"
                     }`}
                 >
                   {entry.label}
