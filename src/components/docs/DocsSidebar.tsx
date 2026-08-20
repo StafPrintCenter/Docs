@@ -23,7 +23,6 @@ export function DocsSidebar({ space, activeSlug, onNavigate }: DocsSidebarProps)
     <nav aria-label={`Sommaire ${space.name}`} className="pb-16 text-sm">
       <div className="mb-5">
         <div className="flex items-center gap-1.5">
-          <h2 className="font-display text-base font-semibold text-foreground">{space.name}</h2>
           {space.url && (
             <a
               href={space.url}
@@ -33,6 +32,7 @@ export function DocsSidebar({ space, activeSlug, onNavigate }: DocsSidebarProps)
               aria-label={`Ouvrir ${space.name} dans un nouvel onglet`}
               className="rounded p-0.5 text-muted-foreground transition-colors hover:text-brand"
             >
+              <h2 className="font-display text-base font-semibold text-foreground">{space.name}</h2>
               <ExternalLink className="size-3.5" />
             </a>
           )}
