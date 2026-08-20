@@ -1,43 +1,44 @@
 import { defineArticle } from "@/content/docs/define";
 
 export const article = defineArticle("faire-une-demande-de-stage",
-  "Faire une demande de stage",
-  "Soumettre une candidature spontanée pour un stage académique ou professionnel.",
-  ["stage", "recrutement", "candidature", "formation"],
+  "Faire et suivre une demande de stage",
+  "Soumettre une candidature spontanée pour un stage et suivre son avancement en ligne.",
+  ["stage", "recrutement", "candidature", "suivi"],
   "stable",
   "20 août 2026",
-  `# Faire une demande de stage
+  `# Faire et suivre une demande de stage
 
-Que vous soyez étudiant(e) ou jeune diplômé(e), vous pouvez soumettre une candidature spontanée pour réaliser un stage académique ou professionnel au sein de STAF PRINT CENTER.
-
----
-
-## Formulaire de demande de stage
-
-Le formulaire est accessible à l'adresse **stafprint.com/careers/internship** et comprend les champs suivants :
-
-### 1. Coordonnées personnelles (Obligatoires)
-* **Prénom & Nom :** Vos identités complètes.
-* **Email & Téléphone :** Vos coordonnées directes pour vous recontacter.
-
-### 2. Détailler son projet de stage (Optionnel)
-* **Établissement :** Votre université, école ou centre de formation (ex: *Université d'Abomey-Calavi*).
-* **Filière / Domaine :** Votre secteur d'étude ou spécialité (ex: *Informatique*, *Graphisme*, *Marketing*…).
-* **Date de début souhaitée :** La date envisagée pour le démarrage.
-* **Durée souhaitée :** La durée prévue pour votre convention de stage (ex: *3 mois*).
-* **Message / Motivations :** Un texte de présentation de votre parcours, objectifs et attentes.
-* **Votre CV :** Fichier joint aux formats **PDF, DOC ou DOCX** (taille maximale : 5 Mo).
-
-### 3. Consentement et validation
-* **Traitement des données (Obligatoire) :** Cocher la case d'autorisation du traitement de vos données personnelles.
-* Cliquez sur **Soumettre ma demande de stage** pour transmettre votre dossier à notre équipe RH.
+Que vous soyez étudiant(e) ou jeune diplômé(e), vous pouvez soumettre une candidature spontanée pour réaliser un stage académique ou professionnel chez STAF PRINT CENTER, puis suivre l'évolution de votre dossier.
 
 ---
 
-## Suivi de votre demande
+## 1. Soumettre une demande de stage
 
-* Une notification de confirmation s'affiche immédiatement après la soumission.
-* L'équipe étudie votre profil et vous recontacte dès qu'une opportunité d'encadrement correspond à vos dates et à votre domaine.
+Le formulaire est accessible à l'adresse **stafprint.com/careers/internship** :
+
+* **Coordonnées personnelles (Obligatoires) :** Prénom, Nom, Email et Téléphone.
+* **Projet de stage (Optionnel) :** Établissement, Filière/Domaine, Date de début souhaitée, Durée (ex: *3 mois*), Message de motivation et dépôt du CV (**PDF, DOC, DOCX** — 5 Mo max).
+* **Consentement :** Validation des conditions de traitement des données personnelles.
+
+---
+
+## 2. Suivre l'état de sa demande
+
+Après la soumission, vous pouvez vérifier le statut de votre demande de deux manières :
+
+1. **Via le lien direct :** Cliquez sur le lien **« Suivre ma demande de stage »** présent dans l'e-mail de confirmation reçu.
+2. **Via la recherche manuelle :** Rendez-vous sur **stafprint.com/careers/internship/check** et renseignez :
+   * Votre **Adresse email**
+   * Votre **Clé / Code de suivi** (fourni lors de la confirmation)
+
+---
+
+## Informations consultables sur la fiche
+
+Une fois identifié, l'écran de suivi récapitule :
+* Le **statut en temps réel** de votre demande (ex: *En cours d'étude*, *Retenue*, *Classée*).
+* Le rappel de vos **coordonnées** et des **informations sur votre projet** (filière, dates, durée).
+* L'accès au **CV transmis**.
 `,);
 
 export default article;
