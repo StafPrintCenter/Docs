@@ -1,11 +1,8 @@
-import type { DocGroup } from "@/types/docs";
-import { article as a0 } from "./consulter-une-formation";
-import { article as a1 } from "./s-inscrire-a-une-formation";
+import type { DocGroupMeta } from "@/types/docs";
 
-export const group: DocGroup = {
+export const group: DocGroupMeta = {
   id: "trainings",
   title: "Formations",
-  articles: [a0, a1],
 };
 
 export default group;
