@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { BookmarkCheck } from "lucide-react";
+import { BookmarkCheck, ExternalLink } from "lucide-react";
 import { useSavedArticles } from "@/hooks/useSavedArticles";
 import type { DocSpace, ArticleStatus } from "@/types/docs";
 
@@ -22,7 +22,21 @@ export function DocsSidebar({ space, activeSlug, onNavigate }: DocsSidebarProps)
   return (
     <nav aria-label={`Sommaire ${space.name}`} className="pb-16 text-sm">
       <div className="mb-5">
-        <h2 className="font-display text-base font-semibold text-foreground">{space.name}</h2>
+        <div className="flex items-center gap-1.5">
+          <h2 className="font-display text-base font-semibold text-foreground">{space.name}</h2>
+          {space.url && (
+            <a
+              href={space.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={`Ouvrir ${space.name}`}
+              aria-label={`Ouvrir ${space.name} dans un nouvel onglet`}
+              className="rounded p-0.5 text-muted-foreground transition-colors hover:text-brand"
+            >
+              <ExternalLink className="size-3.5" />
+            </a>
+          )}
+        </div>
         <p className="text-[11px] uppercase tracking-wide text-brand">{space.tagline}</p>
         <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{space.description}</p>
       </div>
