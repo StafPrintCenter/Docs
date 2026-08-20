@@ -93,21 +93,14 @@ export function DocsHeader({
           </button>
         )}
 
-        {/* Logo & Titre */}
-        <Link to="/" className="flex shrink-0 items-center gap-2.5">
-          <span className="grid size-9 place-items-center rounded-lg bg-brand text-brand-foreground shadow-sm">
-            <Printer className="size-4.5" />
-          </span>
-          <span className={`${isDocs ? "hidden sm:block" : ""} leading-tight`}>
-            <span className="block font-display text-[15px] font-semibold tracking-tight text-foreground">
-              {title}
-            </span>
-            {!hideSubtitle && subtitle && (
-              <span className="block text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-                {subtitle}
-              </span>
-            )}
-          </span>
+        {/* Logo purement image (logos.dc) */}
+        <Link to="/" className="flex shrink-0 items-center">
+          <img
+            src={logoSrc}
+            alt="SPC Docs"
+            className="h-9 w-auto object-contain"
+            onError={() => setLogoSrc(logos.base)}
+          />
         </Link>
 
         {/* Navigation des Espaces Docs (Variant Docs - Desktop) */}
@@ -137,28 +130,28 @@ export function DocsHeader({
 
         {/* Zone d'actions Droite */}
         <div className="flex flex-1 items-center justify-end gap-2">
-          {/* Rendu dynamique des liens filtrés */}
-          {activeNavLinks.map((link) => {
-            const Icon = link.icon;
-            return (
-              <Link
-                key={link.key}
-                to={link.to}
-                params={link.params}
-                activeOptions={{ exact: false }}
-                activeProps={{
-                  className: "border-brand/60 bg-brand/10 text-brand hover:border-brand",
-                }}
-                className={`h-9 items-center gap-1.5 rounded-lg border border-border px-3 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground ${link.key === "saves" ? "inline-flex" : "hidden sm:inline-flex"
-                  }`}
-              >
-                <Icon className="size-4 text-brand" />
-                <span className={link.key === "saves" ? "hidden sm:inline" : ""}>
-                  {link.label}
-                </span>
-              </Link>
-            );
-          })}
+          {/* Navigation Desktop */}
+          <div className="hidden sm:flex items-center gap-2">
+            {activeNavLinks.map((link) => {
+              const Icon = link.icon;
+              return (
+                <Link
+                  key={link.key}
+                  to={link.to}
+                  params={link.params}
+                  activeOptions={{ exact: false }}
+                  activeProps={{
+                    className:
+                      "border-brand/60 bg-brand/10 text-brand hover:border-brand",
+                  }}
+                  className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-border px-3 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground"
+                >
+                  <Icon className="size-4 text-brand" />
+                  <span>{link.label}</span>
+                </Link>
+              );
+            })}
+          </div>
 
           {/* Recherche */}
           {onOpenSearch && (
@@ -178,6 +171,16 @@ export function DocsHeader({
           )}
 
           <ThemeToggle />
+
+          {/* Bouton Hamburger Mobile (Visible sous sm:) */}
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-muted-foreground hover:bg-muted sm:hidden"
+            aria-label="Toggle Navigation Menu"
+          >
+            {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
         </div>
       </div>
 
@@ -199,6 +202,31 @@ export function DocsHeader({
               </option>
             ))}
           </select>
+        </div>
+      )}
+
+      {/* Dropdown Menu Mobile Hamburger */}
+      {mobileMenuOpen && (
+        <div className="border-t border-border bg-background p-4 space-y-2 sm:hidden">
+          {activeNavLinks.map((link) => {
+            const Icon = link.icon;
+            return (
+              <Link
+                key={link.key}
+                to={link.to}
+                params={link.params}
+                onClick={() => setMobileMenuOpen(false)}
+                activeOptions={{ exact: false }}
+                activeProps={{
+                  className: "border-brand/60 bg-brand/10 text-brand",
+                }}
+                className="flex items-center gap-3 rounded-lg border border-border px-4 py-2.5 text-sm font-medium text-foreground hover:border-brand/50"
+              >
+                <Icon className="size-4 text-brand" />
+                <span>{link.label}</span>
+              </Link>
+            );
+          })}
         </div>
       )}
     </header>
