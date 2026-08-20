@@ -4,7 +4,6 @@ import { Bookmark, BookOpen, LifeBuoy, Menu, Search, X } from "lucide-react";
 import logos from "@/assets/logos.json";
 import { spaceNav, firstArticleParams } from "@/data/content/docs";
 import { ThemeToggle } from "@/components/docs/ThemeToggle";
-import { useTheme } from "@/hooks/useTheme";
 
 interface HeaderProps {
   variant?: "default" | "docs";
@@ -27,8 +26,6 @@ export function DocsHeader({
   onToggleSidebar,
 }: HeaderProps) {
   const navigate = useNavigate();
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
   const isDocs = variant === "docs";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -93,30 +90,49 @@ export function DocsHeader({
           </button>
         )}
 
-        {/* Logo réactif (Thème & Variante Mobile/Desktop) */}
+        {/* Logo */}
         <Link to="/" className="flex shrink-0 items-center">
           {isDocs ? (
             <>
-              {/* Variant docs sur Mobile : mc / mw */}
+              {/* Variant DOCS - Mobile */}
               <img
-                src={isDark ? logos.mw : logos.mc}
+                src={logos.mc}
                 alt="SPC Docs"
-                className="h-9 w-auto object-contain sm:hidden"
+                className="h-9 w-auto object-contain dark:hidden sm:hidden"
               />
-              {/* Variant docs sur Desktop : dc / dw */}
               <img
-                src={isDark ? logos.dw : logos.dc}
+                src={logos.mw}
                 alt="SPC Docs"
-                className="hidden h-9 w-auto object-contain sm:block"
+                className="hidden h-9 w-auto object-contain dark:block dark:sm:hidden"
+              />
+
+              {/* Variant DOCS - Desktop */}
+              <img
+                src={logos.dc}
+                alt="SPC Docs"
+                className="hidden h-9 w-auto object-contain dark:hidden sm:block"
+              />
+              <img
+                src={logos.dw}
+                alt="SPC Docs"
+                className="hidden h-9 w-auto object-contain dark:sm:block"
               />
             </>
           ) : (
-            /* Variant default : dc / dw */
-            <img
-              src={isDark ? logos.dw : logos.dc}
-              alt="SPC Docs"
-              className="h-9 w-auto object-contain"
-            />
+            <>
+              {/* Variant DEFAULT - Clair */}
+              <img
+                src={logos.dc}
+                alt="SPC Docs"
+                className="h-9 w-auto object-contain dark:hidden"
+              />
+              {/* Variant DEFAULT - Sombre */}
+              <img
+                src={logos.dw}
+                alt="SPC Docs"
+                className="hidden h-9 w-auto object-contain dark:block"
+              />
+            </>
           )}
         </Link>
 
@@ -134,8 +150,8 @@ export function DocsHeader({
                   to="/docs/$space/$slug"
                   params={{ space: entry.id, slug: entry.slug }}
                   className={`rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${isActive
-                      ? "bg-brand text-brand-foreground shadow-sm"
-                      : "text-muted-foreground hover:text-foreground"
+                    ? "bg-brand text-brand-foreground shadow-sm"
+                    : "text-muted-foreground hover:text-foreground"
                     }`}
                 >
                   {entry.label}
