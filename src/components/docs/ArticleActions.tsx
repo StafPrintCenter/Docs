@@ -5,7 +5,7 @@ import { ShareModal } from "@/components/docs/ShareModal";
 import type { ResolvedArticle } from "@/data/content/docs";
 
 const BTN =
-  "inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-brand/60 hover:text-brand";
+  "inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-2.5 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-brand/60 hover:text-brand cursor-pointer";
 
 export function ArticleActions({ resolved }: { resolved: ResolvedArticle }) {
   const { space, article } = resolved;
