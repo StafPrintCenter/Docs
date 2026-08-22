@@ -34,7 +34,7 @@ export const Route = createFileRoute("/sitemap.xml")({
 
         for (const article of supportArticles) {
           entries.push({
-            path: `/support/${article.slug}`,
+            path: `/support/${article.category}/${article.slug}`,
             changefreq: "monthly",
             priority: "0.7",
           });
