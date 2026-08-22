@@ -18,7 +18,7 @@ export const Route = createFileRoute("/support/$slug")({
     if (!loaderData) {
       return {
         meta: [
-          { title: "Article introuvable - Centre d'aide STAF" },
+          { title: `Article introuvable | ${SITE.name}` },
           { name: "robots", content: "noindex" },
         ],
       };
