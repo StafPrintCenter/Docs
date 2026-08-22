@@ -81,7 +81,16 @@ export function DocsViewer({ resolved }: { resolved: ResolvedArticle }) {
               )}
 
               <article className="max-w-3xl">
-                <MarkdownRenderer content={article.content} />
+                <header className="mb-8 border-b border-border pb-6">
+                  <h1 className="font-display text-3xl font-semibold text-foreground sm:text-4xl">
+                    {article.title}
+                  </h1>
+                  <p className="mt-3 text-base leading-7 text-muted-foreground">
+                    {article.description}
+                  </p>
+                </header>
+                <MarkdownRenderer content={article.content.replace(/^#\s+.*(?:\r?\n)+/, "")} />
+
                 <ArticleMeta updatedAt={article.updatedAt} tags={article.tags} />
                 <ArticlePaginationNav prev={prev} next={next} />
                 <ArticleFeedback articleKey={`${space.id}/${article.slug}`} />
