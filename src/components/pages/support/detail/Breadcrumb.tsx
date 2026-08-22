@@ -38,9 +38,13 @@ export function SupportDetailBreadcrumb({
 
         <ChevronRight className="size-3 shrink-0 text-muted-foreground/60" />
 
-        <span className="font-medium text-foreground">
-          {categoryTitle ?? "Article"}
-        </span>
+        <Link
+          to="/support/$categoryId"
+          params={{ categoryId }}
+          className="font-medium text-foreground transition-colors hover:text-brand"
+        >
+          {categoryTitle ?? "Catégorie"}
+        </Link>
       </nav>
 
       <p className="mt-4 inline-flex items-center gap-1.5 text-xs text-muted-foreground">
