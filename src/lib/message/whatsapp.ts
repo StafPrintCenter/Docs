@@ -1,5 +1,5 @@
 import { SITE } from "@/data/site";
-import { buildQuoteMessage } from "./support";
+import { buildSupportMessage } from "./support";
 
 /**
  * Ajoute un message pré-rempli à un lien WhatsApp existant
@@ -28,5 +28,5 @@ export function createWhatsAppContactMessage(company: string) {
  * avec message déjà pré-rempli.
  */
 export function createServiceQuoteWhatsAppLink(serviceTitle: string): string {
-  return withWhatsAppMessage(SITE.whatsappLink, buildQuoteMessage(serviceTitle));
+  return withWhatsAppMessage(SITE.whatsappLink, buildSupportMessage(serviceTitle));
 }
