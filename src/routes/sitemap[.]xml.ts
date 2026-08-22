@@ -3,7 +3,7 @@ import type { } from "@tanstack/react-start";
 import { docsRegistry, spaceArticles } from "@/data/content/docs";
 import { supportArticles } from "@/data/content/support";
 
-const RAW_URL = import.meta.env.VITE_DOCS_URL || "https://docs.stafprint.com";
+const RAW_URL = import.meta.env.VITE_DOCS_URL;
 const BASE_URL = RAW_URL.replace(/\/$/, "");
 
 interface SitemapEntry {
