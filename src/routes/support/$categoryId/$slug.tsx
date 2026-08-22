@@ -58,7 +58,11 @@ function SupportArticlePage() {
           <MarkdownRenderer content={article.content} />
         </article>
 
-        <SupportDetailFooterActions articleTitle={article.title} />
+        <SupportDetailFooterActions
+          categoryId={categoryId}
+          categoryTitle={category?.title}
+          articleTitle={article.title}
+        />
       </main>
     </DocsShell>
   );
