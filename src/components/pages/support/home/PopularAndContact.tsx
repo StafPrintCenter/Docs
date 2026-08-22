@@ -1,9 +1,18 @@
 import { useMemo } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, ShieldCheck, Mail } from "lucide-react";
-import { getRecommendedSupportArticles } from "@/data/content/support";
+import { ArrowRight, ShieldCheck, Mail, UserRound, CreditCard, Package, Lock, Wrench, LifeBuoy, HelpCircle } from "lucide-react";
+import { getRecommendedSupportArticles, getSupportCategory } from "@/data/content/support";
 import { createSupportEmailLink } from "@/lib/message/support";
 import { SITE } from "@/data/site";
+
+const ICONS = {
+  account: UserRound,
+  billing: CreditCard,
+  orders: Package,
+  privacy: Lock,
+  technical: Wrench,
+  contact: LifeBuoy,
+} as const;
 
 export function SupportHomePopularAndContact() {
   const supportEmailLink = createSupportEmailLink();
@@ -16,24 +25,36 @@ export function SupportHomePopularAndContact() {
           Meilleure sélection pour vous
         </h2>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
-          {recommendedArticles.map((article) => (
-            <Link
-              key={article.slug}
-              to="/support/$categoryId/$slug"
-              params={{ categoryId: article.category, slug: article.slug }}
-              className="group flex items-center justify-between gap-3 rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:border-brand/50"
-            >
-              <span className="min-w-0">
-                <span className="block truncate text-sm font-medium text-foreground">
-                  {article.title}
-                </span>
-                <span className="block text-xs text-muted-foreground">
-                  Lecture {article.readTime}
-                </span>
-              </span>
-              <ArrowRight className="size-4 shrink-0 text-brand transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          ))}
+          {recommendedArticles.map((article) => {
+            const category = getSupportCategory(article.category);
+            const Icon = category && category.icon in ICONS
+              ? ICONS[category.icon as keyof typeof ICONS]
+              : HelpCircle;
+
+            return (
+              <Link
+                key={article.slug}
+                to="/support/$categoryId/$slug"
+                params={{ categoryId: article.category, slug: article.slug }}
+                className="group flex items-center justify-between gap-3 rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:border-brand/50"
+              >
+                <div className="flex items-center gap-3 min-w-0">
+                  <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-brand/10 text-brand">
+                    <Icon className="size-4" />
+                  </span>
+                  <div className="min-w-0">
+                    <span className="block truncate text-sm font-medium text-foreground">
+                      {article.title}
+                    </span>
+                    <span className="block text-xs text-muted-foreground">
+                      Lecture {article.readTime}
+                    </span>
+                  </div>
+                </div>
+                <ArrowRight className="size-4 shrink-0 text-brand transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            );
+          })}
         </div>
       </section>
 
