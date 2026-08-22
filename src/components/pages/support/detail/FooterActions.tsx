@@ -3,6 +3,8 @@ import { ArrowLeft, FolderInput, LifeBuoy } from "lucide-react";
 import { createSupportEmailLink } from "@/lib/message/support";
 
 interface SupportDetailFooterActionsProps {
+  categoryId: string;
+  categoryTitle?: string;
   articleTitle?: string;
 }
 
