@@ -34,7 +34,7 @@ function SavedPage() {
   const [searchOpen, setSearchOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen bg-background overflow-hidden">
+    <div className="relative min-h-screen bg-background overflow-x-clip">
       <div className="pointer-events-none absolute inset-0 paper-grid opacity-50" />
 
       <div className="relative z-10 flex min-h-screen flex-col">
