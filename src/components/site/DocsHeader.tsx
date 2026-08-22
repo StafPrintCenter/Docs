@@ -58,7 +58,6 @@ export function DocsHeader({
   // Filtrer les liens selon la variante
   const activeNavLinks = navLinks.filter((link) => !(isDocs && link.hideOnDocs));
 
-  // Navigation vers un espace de doc via le select mobile
   const goToSpace = (id: string) => {
     const entry = spaceNav.find((p) => p.id === id);
     if (!entry) return;
@@ -70,16 +69,16 @@ export function DocsHeader({
 
   return (
     <header
-      className={`border-b border-border bg-background/95 backdrop-blur-md z-50 ${sticky ? "sticky top-0" : "relative"
+      className={`border-b border-border bg-background/95 backdrop-blur-md z-30 ${sticky ? "sticky top-0" : "relative"
         }`}
     >
       <div className={`mx-auto flex h-16 items-center gap-3 px-4 sm:px-6 ${maxWidthClass}`}>
-        {/* Bouton Sidebar Mobile (Variant Docs) */}
+        {/* Bouton Sidebar Mobile */}
         {isDocs && onToggleSidebar && (
           <button
             type="button"
             onClick={onToggleSidebar}
-            className="rounded-md p-2 text-muted-foreground hover:bg-muted lg:hidden"
+            className="rounded-md p-2 text-muted-foreground hover:bg-muted lg:hidden cursor-pointer"
             aria-label="Ouvrir la navigation"
           >
             <PanelLeftOpen className="size-5" />
@@ -146,8 +145,7 @@ export function DocsHeader({
                   params={link.params}
                   activeOptions={{ exact: false }}
                   activeProps={{
-                    className:
-                      "border-brand/60 bg-brand/10 text-brand hover:border-brand",
+                    className: "border-brand/60 bg-brand/10 text-brand hover:border-brand",
                   }}
                   className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-border px-3 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground"
                 >
@@ -166,18 +164,13 @@ export function DocsHeader({
               className="flex h-9 items-center gap-2 rounded-lg border border-border bg-card px-3 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground cursor-pointer sm:w-48"
             >
               <Search className="size-4 text-brand" />
-              <span className="hidden flex-1 text-left sm:inline">
-                Rechercher…
-              </span>
-              <kbd className="hidden rounded border border-border bg-muted px-1.5 py-0.5 font-mono text-[10px] sm:inline">
-                ⌘K
-              </kbd>
+              <span className="hidden flex-1 text-left sm:inline">Rechercher…</span>
+              <kbd className="hidden rounded border border-border bg-muted px-1.5 py-0.5 font-mono text-[10px] sm:inline">⌘K</kbd>
             </button>
           )}
 
           <ThemeToggle />
 
-          {/* Bouton Hamburger Mobile */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -191,7 +184,7 @@ export function DocsHeader({
 
       {/* Dropdown Menu Mobile Hamburger */}
       {mobileMenuOpen && (
-        <div className="border-t border-border bg-card p-4 space-y-2 sm:hidden">
+        <div className="absolute left-0 right-0 top-full z-40 border-b border-border bg-background p-4 shadow-xl space-y-2 sm:hidden">
           {activeNavLinks.map((link) => {
             const Icon = link.icon;
             return (
@@ -201,9 +194,7 @@ export function DocsHeader({
                 params={link.params}
                 onClick={() => setMobileMenuOpen(false)}
                 activeOptions={{ exact: false }}
-                activeProps={{
-                  className: "border-brand/60 bg-brand/10 text-brand",
-                }}
+                activeProps={{ className: "border-brand/60 bg-brand/10 text-brand" }}
                 className="flex items-center gap-3 rounded-lg border border-border px-4 py-2.5 text-sm font-medium text-foreground hover:border-brand/50"
               >
                 <Icon className="size-4 text-brand" />
