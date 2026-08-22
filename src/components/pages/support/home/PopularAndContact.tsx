@@ -1,8 +1,12 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, ShieldCheck } from "lucide-react";
+import { ArrowRight, ShieldCheck, Mail } from "lucide-react";
 import { popularSupportArticles } from "@/data/content/support";
+import { createSupportEmailLink } from "@/lib/message/support";
+import { SITE } from "@/data/site";
 
 export function SupportHomePopularAndContact() {
+  const supportEmailLink = createSupportEmailLink();
+
   return (
     <>
       <section className="mt-14">
@@ -37,17 +41,17 @@ export function SupportHomePopularAndContact() {
           Toujours bloqué ?
         </p>
         <p className="mt-2 text-sm text-muted-foreground">
-          Écrivez à <strong>support@stafprint.com</strong> ou passez à l'atelier de Porto-Novo,
+          Écrivez à <strong className="text-foreground">{SITE.email}</strong> ou passez à l'atelier,
           du lundi au samedi de 8 h à 18 h. Réponse sous 24 h ouvrées.
         </p>
-        <Link
-          to="/support/$slug"
-          params={{ slug: "contacter-le-support" }}
-          className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-brand px-4 py-2 text-sm font-medium text-brand-foreground"
+        <a
+          href={supportEmailLink}
+          className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-brand px-4 py-2 text-sm font-medium text-brand-foreground transition-opacity hover:opacity-90"
         >
-          Contacter le support
+          <Mail className="size-4" />
+          Contacter le support par email
           <ArrowRight className="size-4" />
-        </Link>
+        </a>
       </section>
     </>
   );
