@@ -41,7 +41,7 @@ export function SupportDetailBreadcrumb({
         <Link
           to="/support/$categoryId"
           params={{ categoryId }}
-          className="font-medium text-foreground transition-colors hover:text-brand"
+          className="inline-flex items-center gap-1 font-medium text-foreground hover:text-brand transition-colors"
         >
           {categoryTitle ?? "Catégorie"}
         </Link>
