@@ -17,6 +17,16 @@ export function SupportDetailFooterActions({
 
   return (
     <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
+      <div className="flex flex-wrap items-center gap-2">
+        <Link
+          to="/support/$categoryId"
+          params={{ categoryId }}
+          className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-2 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground"
+        >
+          <FolderInput className="size-4 text-brand" />
+          <span>Retour à {categoryTitle ?? "la catégorie"}</span>
+        </Link>
+
       <Link
         to="/support"
         className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
