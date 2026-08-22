@@ -1,6 +1,4 @@
-import type { SupportArticle, SupportCategory } from "@/types/support";
-import { article as a0 } from "./mot-de-passe-oublie";
-import { article as a1 } from "./securiser-son-compte";
+import type { SupportCategory } from "@/types/support";
 
 export const category: SupportCategory = {
   id: "compte",
@@ -9,6 +7,4 @@ export const category: SupportCategory = {
   icon: "account",
 };
 
-export const articles: SupportArticle[] = [a0, a1];
-
-export default { category, articles };
+export default { category };
