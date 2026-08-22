@@ -1,20 +1,22 @@
+import { useMemo } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, ShieldCheck, Mail } from "lucide-react";
-import { popularSupportArticles } from "@/data/content/support";
+import { getRecommendedSupportArticles } from "@/data/content/support";
 import { createSupportEmailLink } from "@/lib/message/support";
 import { SITE } from "@/data/site";
 
 export function SupportHomePopularAndContact() {
   const supportEmailLink = createSupportEmailLink();
+  const recommendedArticles = useMemo(() => getRecommendedSupportArticles(4), []);
 
   return (
     <>
       <section className="mt-14">
         <h2 className="font-display text-xl font-semibold text-foreground">
-          Articles les plus consultés
+          Meilleure sélection pour vous
         </h2>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
-          {popularSupportArticles.map((article) => (
+          {recommendedArticles.map((article) => (
             <Link
               key={article.slug}
               to="/support/$categoryId/$slug"
