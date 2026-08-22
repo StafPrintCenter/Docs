@@ -1,7 +1,6 @@
-// src/routes/support/$categoryId/$slug.tsx
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { MarkdownRenderer } from "@/components/docs/MarkdownRenderer";
-import { DocsHeader } from "@/components/site";
+import { DocsHeader, DocsFooter } from "@/components/site";
 import { resolveSupportArticle, getSupportCategory } from "@/data/content/support";
 import {
   SupportDetailBreadcrumb,
@@ -65,6 +64,8 @@ function SupportArticlePage() {
 
           <SupportDetailFooterActions articleTitle={article.title} />
         </main>
+
+        <DocsFooter />
       </div>
     </div>
   );
