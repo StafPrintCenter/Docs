@@ -1,3 +1,4 @@
+// src/routes/support/$categoryId/index.tsx
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { DocsHeader } from "@/components/site";
@@ -28,6 +29,7 @@ function SupportCategoryPage() {
   if (!category) return null;
 
   const articles = articlesByCategory(categoryId);
+  const articleCount = articles.length;
 
   return (
     <div className="relative min-h-screen bg-background overflow-x-clip">
@@ -46,9 +48,14 @@ function SupportCategoryPage() {
           </Link>
 
           <header className="mt-4 border-b border-border pb-6">
-            <h1 className="font-display text-3xl font-semibold text-foreground sm:text-4xl">
-              {category.title}
-            </h1>
+            <div className="flex flex-wrap items-center gap-3">
+              <h1 className="font-display text-3xl font-semibold text-foreground sm:text-4xl">
+                {category.title}
+              </h1>
+              <span className="rounded-full bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
+                {articleCount} {articleCount > 1 ? "articles" : "article"}
+              </span>
+            </div>
             <p className="mt-2 text-base text-muted-foreground">
               {category.description}
             </p>

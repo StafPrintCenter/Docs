@@ -16,7 +16,7 @@ Pour obtenir une estimation sur-mesure pour vos travaux d'impression, de design 
 
 Votre saisie est sauvegardée automatiquement dans le navigateur (**localStorage**) sous forme de brouillon.
 
-:::warning Conservation du brouillon
+:::warning
 Le brouillon de demande de devis est conservé pendant **6 heures**. Pensez à finaliser votre envoi dans ce délai.
 :::`,
 );
