@@ -4,14 +4,33 @@ import { createEmailLink } from "./email";
 /**
  * Génère le message de demande d'assistance pour le support technique.
  */
-export function buildQuoteMessage(serviceTitle: string): string {
-  return `Bonjour l'équipe ${SITE.name},
+export function buildSupportMessage(articleTitle?: string): string {
+  const contextText = articleTitle
+    ? `concernant l'article de documentation « ${articleTitle} »`
+    : "au sujet de l'un de vos services";
 
-Je souhaite obtenir un devis personnalisé ainsi que les délais d'exécution concernant votre service de « ${serviceTitle} ».
+  return `Bonjour l'équipe Support ${SITE.name},
 
-Voici quelques détails préliminaires concernant mon projet actuel :
-[Décrivez ici votre support, dimensions, quantité ou vos objectifs généraux...]
+Je vous contacte ${contextText} car j'ai besoin d'une assistance complémentaire.
 
-Pourriez-vous me recontacter pour échanger sur les délais, le tarif et les modalités de réalisation ?
-Merci d'avance pour votre retour`;
+Voici des précisions sur mon problème / ma question :
+[Décrivez ici votre situation, l'erreur rencontrée ou votre besoin spécifique...]
+
+Informations techniques utiles (optionnel) :
+- Appareil / OS : 
+- Navigateur : 
+
+Merci d'avance pour votre accompagnement.`;
+}
+
+/**
+ * Génère le lien mailto pré-rempli pour le support.
+ */
+export function createSupportEmailLink(articleTitle?: string): string {
+  const subject = articleTitle
+    ? `[Support] Assistance : ${articleTitle}`
+    : `[Support] Demande d'assistance - ${SITE.name}`;
+
+  const body = buildSupportMessage(articleTitle);
+  return createEmailLink(SITE.email, subject, body);
 }
