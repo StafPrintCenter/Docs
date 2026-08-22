@@ -43,7 +43,8 @@ export function SupportDetailBreadcrumb({
           params={{ categoryId }}
           className="inline-flex items-center gap-1 font-medium text-foreground hover:text-brand transition-colors"
         >
-          {categoryTitle ?? "Catégorie"}
+          <FolderInput className="size-3.5 text-brand" />
+          <span>{categoryTitle ?? "Catégorie"}</span>
         </Link>
       </nav>
 
