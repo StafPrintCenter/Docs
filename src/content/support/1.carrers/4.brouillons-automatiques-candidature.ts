@@ -3,8 +3,6 @@ import { defineSupportArticle } from "@/content/support/define";
 export const article = defineSupportArticle("brouillons-automatiques-candidature",
   "Brouillons automatiques de candidature",
   "Conservation temporaire des saisies en cours dans le navigateur.",
-  "carrers",
-  "2 min",
   `# Brouillons automatiques de candidature
 
 ## Sauvegarde automatique

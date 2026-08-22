@@ -3,8 +3,6 @@ import { defineSupportArticle } from "@/content/support/define";
 export const article = defineSupportArticle("postuler-a-une-offre-d-emploi",
   "Postuler à une offre d'emploi",
   "Procédure de soumission de candidature, documents requis et traitement des données.",
-  "carrers",
-  "3 min",
   `# Postuler à une offre d'emploi
 
 ## Déposer sa candidature
