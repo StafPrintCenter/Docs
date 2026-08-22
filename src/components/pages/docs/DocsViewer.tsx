@@ -44,7 +44,6 @@ export function DocsViewer({ resolved }: { resolved: ResolvedArticle }) {
         <DocsHeader
           variant="docs"
           maxWidthClass="max-w-[1600px]"
-          sticky
           activeSpaceId={space.id}
           onOpenSearch={() => setSearchOpen(true)}
           onToggleSidebar={() => setSidebarOpen((v) => !v)}
