@@ -8,7 +8,11 @@ interface SupportDetailFooterActionsProps {
   articleTitle?: string;
 }
 
-export function SupportDetailFooterActions({ articleTitle }: SupportDetailFooterActionsProps) {
+export function SupportDetailFooterActions({
+  categoryId,
+  categoryTitle,
+  articleTitle,
+}: SupportDetailFooterActionsProps) {
   const emailLink = createSupportEmailLink(articleTitle);
 
   return (
