@@ -36,7 +36,7 @@ export function SupportHomeCategories() {
                     <Link
                       to="/support/$categoryId/$slug"
                       params={{ categoryId: category.id, slug: article.slug }}
-                      className="text-sm text-brand hover:underline"
+                      className="block truncate text-sm text-brand hover:underline"
                     >
                       {article.title}
                     </Link>
