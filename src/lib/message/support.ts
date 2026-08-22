@@ -1,9 +1,8 @@
 import { SITE } from "@/data/site";
+import { createEmailLink } from "./email";
 
 /**
- * Message de demande de devis pré-rempli pour un service donné.
- * Utilisé à la fois pour préremplir le formulaire de contact (via ?quote=slug)
- * et pour construire les liens directs WhatsApp / Email de la fiche service.
+ * Génère le message de demande d'assistance pour le support technique.
  */
 export function buildQuoteMessage(serviceTitle: string): string {
   return `Bonjour l'équipe ${SITE.name},
