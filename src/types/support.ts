@@ -13,5 +13,5 @@ export interface SupportCategory {
   id: string;
   title: string;
   description: string;
-  icon: "account" | "billing" | "orders" | "privacy" | "technical" | "contact";
+  icon: "careers" | "tools" | "projects" | "account" | "training" | "services";
 }
