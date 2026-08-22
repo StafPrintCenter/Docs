@@ -1,9 +1,6 @@
 import { articles, categories } from "@/content/support";
 import type { SupportArticle, SupportCategory } from "@/types/support";
 
-/**
- * Le contenu vit dans `src/content/support/<categorie>/<article>.ts`.
- */
 export type { SupportArticle, SupportCategory };
 
 export const supportCategories: SupportCategory[] = categories;
