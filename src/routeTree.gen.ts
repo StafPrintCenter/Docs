@@ -13,8 +13,9 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as SavesRouteImport } from './routes/saves'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SupportIndexRouteImport } from './routes/support/index'
-import { Route as SupportSlugRouteImport } from './routes/support/$slug'
 import { Route as DocsSpaceSlugRouteImport } from './routes/docs/$space.$slug'
+import { Route as SupportCategoryIdIndexRouteImport } from './routes/support/$categoryId/index'
+import { Route as SupportCategoryIdSlugRouteImport } from './routes/support/$categoryId/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -36,14 +37,19 @@ const SupportIndexRoute = SupportIndexRouteImport.update({
   path: '/support/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SupportSlugRoute = SupportSlugRouteImport.update({
-  id: '/support/$slug',
-  path: '/support/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const DocsSpaceSlugRoute = DocsSpaceSlugRouteImport.update({
   id: '/docs/$space/$slug',
   path: '/docs/$space/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SupportCategoryIdIndexRoute = SupportCategoryIdIndexRouteImport.update({
+  id: '/support/$categoryId/',
+  path: '/support/$categoryId/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SupportCategoryIdSlugRoute = SupportCategoryIdSlugRouteImport.update({
+  id: '/support/$categoryId/$slug',
+  path: '/support/$categoryId/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -51,26 +57,29 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/saves': typeof SavesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/support/$slug': typeof SupportSlugRoute
   '/support/': typeof SupportIndexRoute
   '/docs/$space/$slug': typeof DocsSpaceSlugRoute
+  '/support/$categoryId/$slug': typeof SupportCategoryIdSlugRoute
+  '/support/$categoryId/': typeof SupportCategoryIdIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/saves': typeof SavesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/support/$slug': typeof SupportSlugRoute
   '/support': typeof SupportIndexRoute
   '/docs/$space/$slug': typeof DocsSpaceSlugRoute
+  '/support/$categoryId/$slug': typeof SupportCategoryIdSlugRoute
+  '/support/$categoryId': typeof SupportCategoryIdIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/saves': typeof SavesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/support/$slug': typeof SupportSlugRoute
   '/support/': typeof SupportIndexRoute
   '/docs/$space/$slug': typeof DocsSpaceSlugRoute
+  '/support/$categoryId/$slug': typeof SupportCategoryIdSlugRoute
+  '/support/$categoryId/': typeof SupportCategoryIdIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -78,34 +87,38 @@ export interface FileRouteTypes {
     | '/'
     | '/saves'
     | '/sitemap.xml'
-    | '/support/$slug'
     | '/support/'
     | '/docs/$space/$slug'
+    | '/support/$categoryId/$slug'
+    | '/support/$categoryId/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/saves'
     | '/sitemap.xml'
-    | '/support/$slug'
     | '/support'
     | '/docs/$space/$slug'
+    | '/support/$categoryId/$slug'
+    | '/support/$categoryId'
   id:
     | '__root__'
     | '/'
     | '/saves'
     | '/sitemap.xml'
-    | '/support/$slug'
     | '/support/'
     | '/docs/$space/$slug'
+    | '/support/$categoryId/$slug'
+    | '/support/$categoryId/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SavesRoute: typeof SavesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  SupportSlugRoute: typeof SupportSlugRoute
   SupportIndexRoute: typeof SupportIndexRoute
   DocsSpaceSlugRoute: typeof DocsSpaceSlugRoute
+  SupportCategoryIdSlugRoute: typeof SupportCategoryIdSlugRoute
+  SupportCategoryIdIndexRoute: typeof SupportCategoryIdIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -138,18 +151,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SupportIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/support/$slug': {
-      id: '/support/$slug'
-      path: '/support/$slug'
-      fullPath: '/support/$slug'
-      preLoaderRoute: typeof SupportSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/docs/$space/$slug': {
       id: '/docs/$space/$slug'
       path: '/docs/$space/$slug'
       fullPath: '/docs/$space/$slug'
       preLoaderRoute: typeof DocsSpaceSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/support/$categoryId/': {
+      id: '/support/$categoryId/'
+      path: '/support/$categoryId'
+      fullPath: '/support/$categoryId/'
+      preLoaderRoute: typeof SupportCategoryIdIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/support/$categoryId/$slug': {
+      id: '/support/$categoryId/$slug'
+      path: '/support/$categoryId/$slug'
+      fullPath: '/support/$categoryId/$slug'
+      preLoaderRoute: typeof SupportCategoryIdSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -159,9 +179,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SavesRoute: SavesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
-  SupportSlugRoute: SupportSlugRoute,
   SupportIndexRoute: SupportIndexRoute,
   DocsSpaceSlugRoute: DocsSpaceSlugRoute,
+  SupportCategoryIdSlugRoute: SupportCategoryIdSlugRoute,
+  SupportCategoryIdIndexRoute: SupportCategoryIdIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
