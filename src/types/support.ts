@@ -7,6 +7,8 @@ export interface SupportArticle {
   content: string;
 }
 
+export type SupportArticleSource = Omit<SupportArticle, "category" | "readTime">;
+
 export interface SupportCategory {
   id: string;
   title: string;
