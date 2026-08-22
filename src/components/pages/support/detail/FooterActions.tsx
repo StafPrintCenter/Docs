@@ -41,7 +41,7 @@ export function SupportDetailFooterActions({
         className="inline-flex items-center gap-1.5 rounded-lg bg-brand px-3 py-2 text-sm font-medium text-brand-foreground transition-opacity hover:opacity-90"
       >
         <LifeBuoy className="size-4" />
-        Contacter le support
+        <span>Contacter le support</span>
       </a>
     </div>
   );
