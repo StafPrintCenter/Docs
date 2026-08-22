@@ -94,7 +94,7 @@ export function DocsHeader({
             <>
               {/* Variant DOCS - Mobile */}
               <img src={logos.mc} alt="SPC Docs" className="h-10 w-auto object-contain dark:hidden sm:hidden" />
-              <img src={logos.mw} alt="SPC Docs"className="hidden h-10 w-auto object-contain dark:block dark:sm:hidden"
+              <img src={logos.mw} alt="SPC Docs" className="hidden h-10 w-auto object-contain dark:block dark:sm:hidden"
               />
 
               {/* Variant DOCS - Desktop */}
