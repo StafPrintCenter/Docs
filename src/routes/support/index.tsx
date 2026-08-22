@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { DocsHeader, DocsFooter } from "@/components/site";
+import { DocsShell } from "@/components/site/DocsShell";
 import { supportArticles } from "@/data/content/support";
 import {
   SupportHomePopularAndContact,
@@ -44,25 +44,17 @@ function SupportHome() {
   }, [query]);
 
   return (
-    <div className="relative min-h-screen bg-background overflow-x-clip">
-      <div className="pointer-events-none absolute inset-0 paper-grid opacity-50" />
+    <DocsShell>
+      <SupportHomeSearchHero
+        query={query}
+        onQueryChange={setQuery}
+        results={results}
+      />
 
-      <div className="relative z-10">
-        <DocsHeader />
-
-        <SupportHomeSearchHero
-          query={query}
-          onQueryChange={setQuery}
-          results={results}
-        />
-
-        <main className="mx-auto max-w-5xl px-4 py-14 sm:px-6">
-          <SupportHomeCategories />
-          <SupportHomePopularAndContact />
-        </main>
-      </div>
-
-      <DocsFooter />
-    </div>
+      <main className="mx-auto max-w-5xl px-4 py-14 sm:px-6">
+        <SupportHomeCategories />
+        <SupportHomePopularAndContact />
+      </main>
+    </DocsShell>
   );
 }
