@@ -23,7 +23,7 @@ export const Route = createFileRoute("/support/$slug")({
         ],
       };
     }
-    const title = `${loaderData.title} - Centre d'aide STAF`;
+    const title = `${loaderData.title} | ${SITE.name}`;
     return {
       meta: [
         { title },
