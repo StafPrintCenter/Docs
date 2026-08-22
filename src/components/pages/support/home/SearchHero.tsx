@@ -23,7 +23,10 @@ export function SupportHomeSearchHero({
     onQueryChange(value);
   };
 
-  const isQueryValid = query.trim().length >= 3;
+  const trimmedQuery = query.trim();
+  const isQueryTooShort = trimmedQuery.length > 0 && trimmedQuery.length < 3;
+  const isQueryValid = trimmedQuery.length >= 3;
+
   const visibleResults = results.slice(0, page * ITEMS_PER_PAGE);
   const hasMore = visibleResults.length < results.length;
 
@@ -43,10 +46,16 @@ export function SupportHomeSearchHero({
           />
         </div>
 
+        {isQueryTooShort && (
+          <p className="mt-2 text-xs text-muted-foreground">
+            Veuillez saisir au moins 3 caractères pour lancer la recherche.
+          </p>
+        )}
+
         {isQueryValid && (
           <div className="mt-3 overflow-hidden rounded-xl border border-border bg-card text-left shadow-sm">
             {results.length === 0 ? (
-              <p className="px-4 py-5 text-sm text-muted-foreground text-center">
+              <p className="px-4 py-5 text-center text-sm text-muted-foreground">
                 Aucun résultat. Essayez un autre mot-clé ou contactez le support.
               </p>
             ) : (
@@ -82,7 +91,7 @@ export function SupportHomeSearchHero({
                 })}
 
                 {hasMore && (
-                  <div className="p-2 text-center border-t border-border bg-muted/20">
+                  <div className="border-t border-border bg-muted/20 p-2 text-center">
                     <button
                       type="button"
                       onClick={() => setPage((prev) => prev + 1)}
