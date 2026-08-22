@@ -1,5 +1,5 @@
 import { SITE } from "@/data/site";
-import { buildQuoteMessage } from "./support";
+import { buildSupportMessage } from "./support";
 
 /**
  * Construit un lien mailto avec un sujet et un corps de message pré-remplis.
@@ -16,6 +16,6 @@ export function createEmailLink(to: string, subject: string, body: string): stri
  */
 export function createServiceQuoteEmailLink(serviceTitle: string): string {
   const subject = `Demande de devis - ${serviceTitle}`;
-  const body = buildQuoteMessage(serviceTitle);
+  const body = buildSupportMessage(serviceTitle);
   return createEmailLink(SITE.email, subject, body);
 }
