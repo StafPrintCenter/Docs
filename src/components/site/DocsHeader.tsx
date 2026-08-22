@@ -56,9 +56,7 @@ export function DocsHeader({
   ];
 
   // Filtrer les liens selon la variante
-  const activeNavLinks = navLinks.filter(
-    (link) => !(isDocs && link.hideOnDocs)
-  );
+  const activeNavLinks = navLinks.filter((link) => !(isDocs && link.hideOnDocs));
 
   // Navigation vers un espace de doc via le select mobile
   const goToSpace = (id: string) => {
