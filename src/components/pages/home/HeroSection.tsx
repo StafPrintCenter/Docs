@@ -25,9 +25,8 @@ export function HeroSection({ totalArticles }: HeroSectionProps) {
         </a>
 
         <h1 className="mt-7 text-balance text-4xl font-extralight leading-[1.08] tracking-tight sm:text-6xl">
-          La <span className="text-primary">documentation</span>
-          <br />
-          de l'écosystème <span className="font-black">{SITE.name}.</span>
+          Maîtrisez <span className="font-black">{SITE.name}</span><br />
+          en un <span className="text-primary">guide complet.</span>
         </h1>
 
         <p className="mt-6 max-w-xl text-balance text-base leading-relaxed text-muted-foreground sm:text-lg">
