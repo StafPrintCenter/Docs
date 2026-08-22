@@ -1,7 +1,7 @@
 import type { SupportCategory } from "@/types/support";
 
 export const category: SupportCategory = {
-  id: "opinion",
+  id: "project",
   title: "Projets, Devis & Avis clients",
   description: "Liste des outils.",
   icon: "account",
