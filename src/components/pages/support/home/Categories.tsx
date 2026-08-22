@@ -1,15 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { CreditCard, LifeBuoy, Lock, Package, UserRound, Wrench, ArrowRight } from "lucide-react";
-import { articlesByCategory, supportCategories } from "@/data/content/support";
-
-const ICONS = {
-  account: UserRound,
-  billing: CreditCard,
-  orders: Package,
-  privacy: Lock,
-  technical: Wrench,
-  contact: LifeBuoy,
-} as const;
+import { ArrowRight } from "lucide-react";
+import { articlesByCategory, supportCategories, SUPPORT_CATEGORY_ICONS } from "@/data/content/support";
 
 export function SupportHomeCategories() {
   return (
@@ -19,7 +10,7 @@ export function SupportHomeCategories() {
       </h2>
       <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {supportCategories.map((category) => {
-          const Icon = ICONS[category.icon];
+          const Icon = SUPPORT_CATEGORY_ICONS[category.icon];
           const allArticles = articlesByCategory(category.id);
           const displayedArticles = allArticles.slice(0, 2);
           const hasMore = allArticles.length > 2;
