@@ -29,7 +29,7 @@ export function articlesByCategory(categoryId: string): SupportArticle[] {
 }
 
 export function getRecommendedSupportArticles(limit = 4): SupportArticle[] {
-  // 1. Mélanger les catégories pour ne pas toujours privilégier les mêmes
+  // Mélanger les catégories
   const shuffledCategories = [...supportCategories].sort(() => 0.5 - Math.random());
 
   const recommended: SupportArticle[] = [];
