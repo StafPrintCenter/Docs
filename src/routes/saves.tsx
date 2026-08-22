@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { DocsHeader } from "@/components/site";
+import { DocsHeader, DocsFooter } from "@/components/site";
 import { SearchModal } from "@/components/docs/SearchModal";
 import { useSavedArticles } from "@/hooks/useSavedArticles";
 import {
@@ -64,6 +64,8 @@ function SavedPage() {
             )}
           </div>
         </main>
+
+        <DocsFooter />
       </div>
 
       <SearchModal open={searchOpen} onOpenChange={setSearchOpen} />
