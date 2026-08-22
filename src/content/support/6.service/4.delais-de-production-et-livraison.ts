@@ -1,23 +1,23 @@
 import { defineSupportArticle } from "@/content/support/define";
 
-export const article = defineSupportArticle("accompagnement-post-formation",
-  "Suivi et accompagnement post-formation",
-  "Modalités du suivi de 3 mois et accès aux groupes d'échange.",
-  `# Suivi et accompagnement post-formation
+export const article = defineSupportArticle("delais-de-production-et-livraison",
+  "Délais de production et options de livraison",
+  "Délais d'exécution, retrait à l'atelier de Porto-Novo et expéditions.",
+  `# Délais de production et options de livraison
 
-## Groupe d'échange dédié
+## Délais moyens de fabrication
 
-À la fin de votre session de formation, vous intégrez un groupe d'échange privé réunissant vos formateurs et les apprenants de votre promotion.
+* **Impressions standard (cartes, flyers) :** **24h à 48h ouvrées** après validation du BAT.
+* **Signalétique & Grand format :** **48h à 72h ouvrées**.
+* **Projets complexes / Tirages importants :** Délais spécifiés sur votre devis.
 
-## Durée du suivi
+## Modes de récupération
 
-Bénéficiez d'un accompagnement personnalisé d'une durée de **3 mois** après la fin des cours :
+* **Retrait gratuit :** À notre atelier de Porto-Novo, du lundi au samedi de 8 h à 18 h.
+* **Livraison :** Expédition possible à l'adresse de votre choix (frais calculés selon la zone).
 
-* Posez vos questions relatives à vos projets professionnels ou personnels.
-* Obtenez des retours d'expérience et des conseils techniques sur vos créations.
-
-:::note
-Ce suivi garantit la bonne mise en pratique des compétences acquises lors de votre parcours.
+:::tip
+Toute commande validée après 16 h démarre en chaîne de production le jour ouvré suivant.
 :::`,
 );
 
