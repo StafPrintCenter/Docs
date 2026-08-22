@@ -1,16 +1,16 @@
-import { CreditCard, LifeBuoy, Lock, Package, UserRound, Wrench } from "lucide-react";
+import { Briefcase, Wrench, FileSpreadsheet, ShieldCheck, GraduationCap, Printer } from "lucide-react";
 import { articles, categories } from "@/content/support";
 import type { SupportArticle, SupportCategory } from "@/types/support";
 
 export type { SupportArticle, SupportCategory };
 
 export const SUPPORT_CATEGORY_ICONS = {
-  account: UserRound,
-  billing: CreditCard,
-  orders: Package,
-  privacy: Lock,
-  technical: Wrench,
-  contact: LifeBuoy,
+  careers: Briefcase,
+  tools: Wrench,
+  projects: FileSpreadsheet,
+  account: ShieldCheck,
+  training: GraduationCap,
+  services: Printer,
 } as const;
 
 export const supportCategories: SupportCategory[] = categories;
