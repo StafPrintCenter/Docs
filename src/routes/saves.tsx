@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { DocsHeader, DocsFooter } from "@/components/site";
-import { SearchModal } from "@/components/docs/SearchModal";
+import { DocsShell } from "@/components/site/DocsShell";
 import { useSavedArticles } from "@/hooks/useSavedArticles";
 import {
   SavedArticlesList,
@@ -31,44 +29,31 @@ export const Route = createFileRoute("/saves")({
 
 function SavedPage() {
   const { items, remove, clear } = useSavedArticles();
-  const [searchOpen, setSearchOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen bg-background overflow-x-clip">
-      <div className="pointer-events-none absolute inset-0 paper-grid opacity-50" />
+    <DocsShell variant="docs" maxWidthClass="max-w-[1600px]">
+      <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-10 sm:px-6">
+        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+          <h1 className="font-display text-3xl font-semibold tracking-tight text-foreground">
+            Pages enregistrées
+          </h1>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Vos articles favoris, disponibles pour une consultation rapide.
+          </p>
 
-      <div className="relative z-10 flex min-h-screen flex-col">
-        <DocsHeader variant="docs" maxWidthClass="max-w-[1600px]"
-          onOpenSearch={() => setSearchOpen(true)}
-        />
+          <SavedPrivacyBanner />
 
-        <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-10 sm:px-6">
-          <div className="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
-            <h1 className="font-display text-3xl font-semibold tracking-tight text-foreground">
-              Pages enregistrées
-            </h1>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Vos articles favoris, disponibles pour une consultation rapide.
-            </p>
-
-            <SavedPrivacyBanner />
-
-            {items.length === 0 ? (
-              <SavedEmptyState />
-            ) : (
-              <SavedArticlesList
-                items={items}
-                onRemove={remove}
-                onClear={clear}
-              />
-            )}
-          </div>
-        </main>
-
-        <DocsFooter />
-      </div>
-
-      <SearchModal open={searchOpen} onOpenChange={setSearchOpen} />
-    </div>
+          {items.length === 0 ? (
+            <SavedEmptyState />
+          ) : (
+            <SavedArticlesList
+              items={items}
+              onRemove={remove}
+              onClear={clear}
+            />
+          )}
+        </div>
+      </main>
+    </DocsShell>
   );
 }
