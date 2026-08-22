@@ -1,9 +1,9 @@
 import type { SupportCategory } from "@/types/support";
 
 export const category: SupportCategory = {
-  id: "carrers",
-  title: "Recrutement & Candidatures",
-  description: "Postuler et suivre sa candidature.",
+  id: "tools",
+  title: "Outils Web & SPC Shortener",
+  description: "Liste des outils.",
   icon: "account",
 };
 
