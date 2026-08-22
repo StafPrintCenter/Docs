@@ -14,7 +14,7 @@ Pendant que vous remplissez un formulaire de candidature ou de stage, vos répon
 * **Offre d'emploi :** Brouillon conservé pendant **24 heures**.
 * **Demande de stage :** Brouillon conservé pendant **2 jours**.
 
-:::warning Sécurité et fichiers
+:::warning
 Les fichiers joints (CV, lettres) et les cases de consentement ne sont jamais enregistrés dans le brouillon local pour des raisons de sécurité.
 :::`,
 );
