@@ -1,7 +1,17 @@
+import { CreditCard, LifeBuoy, Lock, Package, UserRound, Wrench } from "lucide-react";
 import { articles, categories } from "@/content/support";
 import type { SupportArticle, SupportCategory } from "@/types/support";
 
 export type { SupportArticle, SupportCategory };
+
+export const SUPPORT_CATEGORY_ICONS = {
+  account: UserRound,
+  billing: CreditCard,
+  orders: Package,
+  privacy: Lock,
+  technical: Wrench,
+  contact: LifeBuoy,
+} as const;
 
 export const supportCategories: SupportCategory[] = categories;
 export const supportArticles: SupportArticle[] = articles;
