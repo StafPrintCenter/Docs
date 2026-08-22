@@ -8,6 +8,7 @@ interface SupportDetailBreadcrumbProps {
 }
 
 export function SupportDetailBreadcrumb({
+  categoryId,
   categoryTitle,
   readTime,
 }: SupportDetailBreadcrumbProps) {
