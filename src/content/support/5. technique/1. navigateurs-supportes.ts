@@ -3,8 +3,6 @@ import { defineSupportArticle } from "@/content/support/define";
 export const article = defineSupportArticle("navigateurs-supportes",
 "Navigateurs et prérequis techniques",
 "Versions supportées et réglages nécessaires.",
-"technique",
-"2 min",
 `# Navigateurs et prérequis techniques
 
 | Navigateur | Version minimale |

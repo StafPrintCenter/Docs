@@ -3,8 +3,6 @@ import { defineSupportArticle } from "@/content/support/define";
 export const article = defineSupportArticle("demander-un-remboursement",
 "Demander un remboursement",
 "Conditions, pièces à fournir et délais de traitement.",
-"paiement",
-"3 min",
 `# Demander un remboursement
 
 ## Cas éligibles

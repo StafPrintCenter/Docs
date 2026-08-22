@@ -3,8 +3,6 @@ import { defineSupportArticle } from "@/content/support/define";
 export const article = defineSupportArticle("contacter-le-support",
 "Contacter le support STAF",
 "Canaux disponibles, horaires et délais de réponse.",
-"contact",
-"1 min",
 `# Contacter le support STAF
 
 ## Canaux

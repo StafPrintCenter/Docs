@@ -3,8 +3,6 @@ import { defineSupportArticle } from "@/content/support/define";
 export const article = defineSupportArticle("securiser-son-compte",
 "Sécuriser son compte",
 "Bonnes pratiques et double authentification.",
-"compte",
-"3 min",
 `# Sécuriser son compte
 
 ## Double authentification

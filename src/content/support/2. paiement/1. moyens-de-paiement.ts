@@ -3,8 +3,6 @@ import { defineSupportArticle } from "@/content/support/define";
 export const article = defineSupportArticle("moyens-de-paiement",
 "Moyens de paiement acceptés",
 "Mobile Money, carte bancaire, virement et paiement à l'atelier.",
-"paiement",
-"2 min",
 `# Moyens de paiement acceptés
 
 | Moyen | Disponible | Délai d'encaissement |

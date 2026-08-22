@@ -3,8 +3,6 @@ import { defineSupportArticle } from "@/content/support/define";
 export const article = defineSupportArticle("mot-de-passe-oublie",
 "Mot de passe oublié ou compte bloqué",
 "Réinitialiser votre mot de passe et débloquer un compte après plusieurs tentatives.",
-"compte",
-"2 min",
 `# Mot de passe oublié ou compte bloqué
 
 ## Réinitialiser votre mot de passe

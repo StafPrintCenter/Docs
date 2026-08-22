@@ -3,8 +3,6 @@ import { defineSupportArticle } from "@/content/support/define";
 export const article = defineSupportArticle("envoyer-fichiers-volumineux",
 "Envoyer des fichiers volumineux",
 "Dépasser la limite de 200 Mo sans perdre en qualité.",
-"technique",
-"2 min",
 `# Envoyer des fichiers volumineux
 
 ## Limite

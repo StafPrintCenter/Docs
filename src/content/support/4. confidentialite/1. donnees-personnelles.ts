@@ -3,8 +3,6 @@ import { defineSupportArticle } from "@/content/support/define";
 export const article = defineSupportArticle("donnees-personnelles",
 "Vos données personnelles",
 "Ce que nous collectons, la durée de conservation et vos droits.",
-"confidentialite",
-"4 min",
 `# Vos données personnelles
 
 ## Ce que nous collectons

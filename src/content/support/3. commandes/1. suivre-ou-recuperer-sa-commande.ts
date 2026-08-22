@@ -3,8 +3,6 @@ import { defineSupportArticle } from "@/content/support/define";
 export const article = defineSupportArticle("suivre-ou-recuperer-sa-commande",
 "Suivre ou récupérer sa commande",
 "Suivi en ligne, retrait à Porto-Novo et livraison.",
-"commandes",
-"2 min",
 `# Suivre ou récupérer sa commande
 
 ## Suivi
