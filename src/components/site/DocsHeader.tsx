@@ -75,7 +75,7 @@ export function DocsHeader({
       className={`border-b border-border bg-background/95 backdrop-blur-md z-50 ${sticky ? "sticky top-0" : "relative"
         }`}
     >
-      <div className={`mx-auto flex h-16 items-center gap-3 px-4 sm:px-6 ${maxWidthClass}`} >
+      <div className={`mx-auto flex h-16 items-center gap-3 px-4 sm:px-6 ${maxWidthClass}`}>
         {/* Bouton Sidebar Mobile (Variant Docs) */}
         {isDocs && onToggleSidebar && (
           <button
@@ -94,12 +94,10 @@ export function DocsHeader({
             <>
               {/* Variant DOCS - Mobile */}
               <img src={logos.mc} alt="SPC Docs" className="h-10 w-auto object-contain dark:hidden sm:hidden" />
-              <img src={logos.mw} alt="SPC Docs" className="hidden h-10 w-auto object-contain dark:block dark:sm:hidden"
-              />
+              <img src={logos.mw} alt="SPC Docs" className="hidden h-10 w-auto object-contain dark:block dark:sm:hidden" />
 
               {/* Variant DOCS - Desktop */}
-              <img
-                src={logos.dc} alt="SPC Docs" className="hidden h-12 w-auto object-contain dark:hidden sm:block" />
+              <img src={logos.dc} alt="SPC Docs" className="hidden h-12 w-auto object-contain dark:hidden sm:block" />
               <img src={logos.dw} alt="SPC Docs" className="hidden h-12 w-auto object-contain dark:sm:block" />
             </>
           ) : (
@@ -107,8 +105,7 @@ export function DocsHeader({
               {/* Variant DEFAULT - Clair */}
               <img src={logos.dc} alt="SPC Docs" className="h-12 w-auto object-contain dark:hidden" />
               {/* Variant DEFAULT - Sombre */}
-              <img
-                src={logos.dw} alt="SPC Docs" className="hidden h-12 w-auto object-contain dark:block" />
+              <img src={logos.dw} alt="SPC Docs" className="hidden h-12 w-auto object-contain dark:block" />
             </>
           )}
         </Link>
@@ -182,7 +179,7 @@ export function DocsHeader({
 
           <ThemeToggle />
 
-          {/* Bouton Hamburger Mobile (Visible sous sm:) */}
+          {/* Bouton Hamburger Mobile */}
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -196,7 +193,7 @@ export function DocsHeader({
 
       {/* Dropdown Menu Mobile Hamburger */}
       {mobileMenuOpen && (
-        <div className="border-t border-border bg-card/80 p-4 space-y-2 sm:hidden">
+        <div className="border-t border-border bg-card p-4 space-y-2 sm:hidden">
           {activeNavLinks.map((link) => {
             const Icon = link.icon;
             return (
