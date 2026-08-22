@@ -3,20 +3,18 @@ import { ListTree } from "lucide-react";
 import { DocsHeader } from "@/components/site";
 import { SearchModal } from "@/components/docs/SearchModal";
 import { TableOfContents } from "@/components/docs/TableOfContents";
-import { MarkdownRenderer, extractToc } from "@/components/docs/MarkdownRenderer";
-import { ArticleFeedback } from "@/components/docs/ArticleFeedback";
+import { extractToc } from "@/components/docs/MarkdownRenderer";
 import { CarbonAds } from "@/components/docs/CarbonAds";
 import type { ResolvedArticle } from "@/data/content/docs";
 import {
   DocsBreadcrumb,
   DesktopSidebar,
   MobileSidebar,
-  ArticlePaginationNav,
-  ArticleMeta
+  ArticleContent,
 } from "@/components/pages/docs";
 
 export function DocsViewer({ resolved }: { resolved: ResolvedArticle }) {
-  const { space, article, prev, next } = resolved;
+  const { space, article } = resolved;
   const [searchOpen, setSearchOpen] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
@@ -80,21 +78,7 @@ export function DocsViewer({ resolved }: { resolved: ResolvedArticle }) {
                 </details>
               )}
 
-              <article className="max-w-3xl">
-                <header className="mb-8 border-b border-border pb-6">
-                  <h1 className="font-display text-3xl font-semibold text-foreground sm:text-4xl">
-                    {article.title}
-                  </h1>
-                  <p className="mt-3 text-base leading-7 text-muted-foreground">
-                    {article.description}
-                  </p>
-                </header>
-                <MarkdownRenderer content={article.content.replace(/^#\s+.*(?:\r?\n)+/, "")} />
-
-                <ArticleMeta updatedAt={article.updatedAt} tags={article.tags} />
-                <ArticlePaginationNav prev={prev} next={next} />
-                <ArticleFeedback articleKey={`${space.id}/${article.slug}`} />
-              </article>
+              <ArticleContent resolved={resolved} />
             </div>
 
             <div className="mt-6 xl:hidden">
