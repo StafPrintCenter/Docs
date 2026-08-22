@@ -39,8 +39,8 @@ export function SupportHomeSearchHero({
               results.map((article) => (
                 <Link
                   key={article.slug}
-                  to="/support/$slug"
-                  params={{ slug: article.slug }}
+                  to="/support/$categoryId/$slug"
+                  params={{ categoryId: article.category, slug: article.slug }}
                   className="flex items-start gap-3 border-b border-border px-4 py-3 last:border-0 hover:bg-muted"
                 >
                   <FileQuestion className="mt-0.5 size-4 shrink-0 text-brand" />
