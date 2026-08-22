@@ -79,7 +79,13 @@ export function SupportHomeSearchHero({
                         </span>
                       )}
                       <span className="min-w-0 flex-1">
-                        <span className="block truncate text-sm font-medium text-foreground">
+                        {/* Catégorie */}
+                        {category && (
+                          <span className="block text-[11px] font-semibold uppercase tracking-wider">
+                            {category.title}
+                          </span>
+                        )}
+                        <span className="block truncate text-sm font-medium text-brand">
                           {article.title}
                         </span>
                         <span className="block text-xs text-muted-foreground line-clamp-1">
