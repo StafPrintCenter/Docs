@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, LifeBuoy } from "lucide-react";
 import logos from "@/assets/logos.json";
 import { docsRegistry, articleCount, firstArticleParams } from "@/data/content/docs";
+import { totalSupportArticlesCount } from "@/data/content/support";
 
 type LogoKeys = keyof typeof logos;
 
@@ -17,12 +18,15 @@ function getSpaceLogos(spaceId: string) {
 }
 
 export function SpacesSection() {
+  const supportCount = totalSupportArticlesCount();
+
   return (
     <section className="pb-12">
       <h2 className="font-display text-2xl font-semibold text-foreground">Espaces</h2>
       <div className="mt-5 grid gap-5 md:grid-cols-3">
         {docsRegistry.map((space) => {
           const { lightLogo, darkLogo } = getSpaceLogos(space.id);
+          const count = articleCount(space);
 
           return (
             <Link
@@ -59,7 +63,7 @@ export function SpacesSection() {
                 {space.description}
               </p>
               <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
-                {articleCount(space)} articles
+                {count} {count > 1 ? "articles" : "article"}
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
               </span>
             </Link>
@@ -81,7 +85,7 @@ export function SpacesSection() {
             l'équipe support.
           </p>
           <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
-            Obtenir de l'aide
+            {supportCount} {supportCount > 1 ? "articles" : "article"} d'aide
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
           </span>
         </Link>

@@ -25,6 +25,10 @@ export function articlesByCategory(categoryId: string): SupportArticle[] {
   return supportArticles.filter((a) => a.category === categoryId);
 }
 
+export function totalSupportArticlesCount(): number {
+  return supportArticles.length;
+}
+
 export function getRecommendedSupportArticles(limit = 4): SupportArticle[] {
   // Mélanger les catégories
   const shuffledCategories = [...supportCategories].sort(() => 0.5 - Math.random());
