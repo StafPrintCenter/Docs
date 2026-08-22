@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
-import { Clock, CornerDownLeft, FileText, Search, X } from "lucide-react";
+import { ChevronDown, Clock, CornerDownLeft, FileText, Search, X } from "lucide-react";
 import { useDocsSearch, useSearchHistory } from "@/hooks/useDocsSearch";
 
 interface SearchModalProps {
@@ -8,31 +8,43 @@ interface SearchModalProps {
   onOpenChange: (open: boolean) => void;
 }
 
+const ITEMS_PER_PAGE = 5;
+
 export function SearchModal({ open, onOpenChange }: SearchModalProps) {
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
+  const [page, setPage] = useState(1);
 
   const trimmedQuery = query.trim();
   const isQueryTooShort = trimmedQuery.length > 0 && trimmedQuery.length < 3;
   const isQueryValid = trimmedQuery.length >= 3;
+
   const results = useDocsSearch(isQueryValid ? query : "");
   const { history, push, clear } = useSearchHistory();
   const navigate = useNavigate();
+
+  const visibleResults = results.slice(0, page * ITEMS_PER_PAGE);
+  const hasMore = visibleResults.length < results.length;
 
   useEffect(() => {
     if (!open) {
       setQuery("");
       setActive(0);
+      setPage(1);
     }
   }, [open]);
 
-  useEffect(() => setActive(0), [query]);
+  // Réinitialisation de l'élément actif et de la page à chaque changement de saisie
+  useEffect(() => {
+    setActive(0);
+    setPage(1);
+  }, [query]);
 
   if (!open) return null;
 
   const go = (index: number) => {
     if (!isQueryValid) return;
-    const hit = results[index];
+    const hit = visibleResults[index];
     if (!hit) return;
     push(query);
     onOpenChange(false);
@@ -63,7 +75,7 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
               if (!isQueryValid && e.key === "Enter") return;
               if (e.key === "ArrowDown") {
                 e.preventDefault();
-                setActive((i) => Math.min(i + 1, results.length - 1));
+                setActive((i) => Math.min(i + 1, visibleResults.length - 1));
               } else if (e.key === "ArrowUp") {
                 e.preventDefault();
                 setActive((i) => Math.max(i - 1, 0));
@@ -139,9 +151,9 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
             </p>
           )}
 
-          {/* Affichage des résultats */}
+          {/* Affichage des résultats paginés */}
           {isQueryValid &&
-            results.map((hit, index) => (
+            visibleResults.map((hit, index) => (
               <button
                 key={`${hit.spaceId}-${hit.article.slug}`}
                 type="button"
@@ -169,6 +181,20 @@ export function SearchModal({ open, onOpenChange }: SearchModalProps) {
                 {index === active && <CornerDownLeft className="mt-1 size-3.5 text-brand" />}
               </button>
             ))}
+
+          {/* Bouton Voir plus de résultats */}
+          {isQueryValid && hasMore && (
+            <div className="mt-2 border-t border-border pt-2 text-center">
+              <button
+                type="button"
+                onClick={() => setPage((prev) => prev + 1)}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-brand hover:underline"
+              >
+                Voir plus de résultats ({results.length - visibleResults.length} restants)
+                <ChevronDown className="size-3.5" />
+              </button>
+            </div>
+          )}
         </div>
 
         <div className="flex items-center gap-4 border-t border-border bg-muted/40 px-4 py-2 text-[11px] text-muted-foreground">
