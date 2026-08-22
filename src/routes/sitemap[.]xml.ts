@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type { } from "@tanstack/react-start";
 import { docsRegistry, spaceArticles } from "@/data/content/docs";
-import { supportArticles } from "@/data/content/support";
+import { supportArticles, supportCategories } from "@/data/content/support";
 
 const RAW_URL = import.meta.env.VITE_DOCS_URL;
 const BASE_URL = RAW_URL.replace(/\/$/, "");
