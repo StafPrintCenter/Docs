@@ -17,8 +17,8 @@ export function SupportHomePopularAndContact() {
           {popularSupportArticles.map((article) => (
             <Link
               key={article.slug}
-              to="/support/$slug"
-              params={{ slug: article.slug }}
+              to="/support/$categoryId/$slug"
+              params={{ categoryId: article.category, slug: article.slug }}
               className="group flex items-center justify-between gap-3 rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:border-brand/50"
             >
               <span className="min-w-0">
