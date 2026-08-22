@@ -36,24 +36,35 @@ export function SupportHomeSearchHero({
                 Aucun résultat. Essayez un autre mot-clé ou contactez le support.
               </p>
             ) : (
-              results.map((article) => (
-                <Link
-                  key={article.slug}
-                  to="/support/$categoryId/$slug"
-                  params={{ categoryId: article.category, slug: article.slug }}
-                  className="flex items-start gap-3 border-b border-border px-4 py-3 last:border-0 hover:bg-muted"
-                >
-                  <FileQuestion className="mt-0.5 size-4 shrink-0 text-brand" />
-                  <span>
-                    <span className="block text-sm font-medium text-foreground">
-                      {article.title}
+              results.map((article) => {
+                const category = getSupportCategory(article.category);
+                const CategoryIcon = category
+                  ? SUPPORT_CATEGORY_ICONS[category.icon]
+                  : null;
+
+                return (
+                  <Link
+                    key={article.slug}
+                    to="/support/$categoryId/$slug"
+                    params={{ categoryId: article.category, slug: article.slug }}
+                    className="flex items-start gap-3 border-b border-border px-4 py-3 last:border-0 hover:bg-muted"
+                  >
+                    {CategoryIcon && (
+                      <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-md bg-brand/10 text-brand">
+                        <CategoryIcon className="size-3.5" />
+                      </span>
+                    )}
+                    <span>
+                      <span className="block text-sm font-medium text-foreground">
+                        {article.title}
+                      </span>
+                      <span className="block text-xs text-muted-foreground line-clamp-1">
+                        {article.description}
+                      </span>
                     </span>
-                    <span className="block text-xs text-muted-foreground">
-                      {article.description}
-                    </span>
-                  </span>
-                </Link>
-              ))
+                  </Link>
+                );
+              })
             )}
           </div>
         )}
