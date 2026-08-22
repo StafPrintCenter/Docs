@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { docsRegistry, articleCount } from "@/data/content/docs";
-import { SearchModal } from "@/components/docs/SearchModal";
-import { DocsHeader, DocsFooter } from "@/components/site";
+import { DocsShell } from "@/components/site/DocsShell";
 import { HeroSection, SpacesSection } from "@/components/pages/home";
 import { SITE } from "@/data/site";
 
@@ -21,38 +19,14 @@ export const Route = createFileRoute("/")({
 });
 
 function DocsHome() {
-  const [searchOpen, setSearchOpen] = useState(false);
-
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
-        e.preventDefault();
-        setSearchOpen(true);
-      }
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
-
   const totalArticles = docsRegistry.reduce((acc, space) => acc + articleCount(space), 0);
 
   return (
-    <div className="relative min-h-screen bg-background overflow-x-clip">
-      {/* Background papier */}
-      <div className="pointer-events-none absolute inset-0 paper-grid opacity-50" />
-
-      <div className="relative z-10 flex min-h-screen flex-col">
-        <DocsHeader onOpenSearch={() => setSearchOpen(true)} />
-
-        <main className="mx-auto flex-1 max-w-6xl px-4 sm:px-6 w-full">
-          <HeroSection totalArticles={totalArticles} />
-          <SpacesSection />
-        </main>
-
-        <DocsFooter />
-      </div>
-
-      <SearchModal open={searchOpen} onOpenChange={setSearchOpen} />
-    </div>
+    <DocsShell>
+      <main className="mx-auto flex-1 max-w-6xl px-4 sm:px-6 w-full">
+        <HeroSection totalArticles={totalArticles} />
+        <SpacesSection />
+      </main>
+    </DocsShell>
   );
 }
