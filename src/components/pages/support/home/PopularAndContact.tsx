@@ -1,18 +1,13 @@
 import { useMemo } from "react";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, ShieldCheck, Mail, UserRound, CreditCard, Package, Lock, Wrench, LifeBuoy, HelpCircle } from "lucide-react";
-import { getRecommendedSupportArticles, getSupportCategory } from "@/data/content/support";
+import { ArrowRight, ShieldCheck, Mail } from "lucide-react";
+import {
+  getRecommendedSupportArticles,
+  getSupportCategory,
+  SUPPORT_CATEGORY_ICONS,
+} from "@/data/content/support";
 import { createSupportEmailLink } from "@/lib/message/support";
 import { SITE } from "@/data/site";
-
-const ICONS = {
-  account: UserRound,
-  billing: CreditCard,
-  orders: Package,
-  privacy: Lock,
-  technical: Wrench,
-  contact: LifeBuoy,
-} as const;
 
 export function SupportHomePopularAndContact() {
   const supportEmailLink = createSupportEmailLink();
@@ -26,10 +21,8 @@ export function SupportHomePopularAndContact() {
         </h2>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           {recommendedArticles.map((article) => {
-            const category = getSupportCategory(article.category);
-            const Icon = category && category.icon in ICONS
-              ? ICONS[category.icon as keyof typeof ICONS]
-              : HelpCircle;
+            const category = getSupportCategory(article.category)!;
+            const Icon = SUPPORT_CATEGORY_ICONS[category.icon];
 
             return (
               <Link
