@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { DocsHeader } from "@/components/site";
+import { DocsHeader, DocsFooter } from "@/components/site";
 import { supportArticles } from "@/data/content/support";
 import {
   SupportHomePopularAndContact,
@@ -61,6 +61,8 @@ function SupportHome() {
           <SupportHomePopularAndContact />
         </main>
       </div>
+
+      <DocsFooter />
     </div>
   );
 }
