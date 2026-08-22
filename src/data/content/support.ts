@@ -28,11 +28,22 @@ export function articlesByCategory(categoryId: string): SupportArticle[] {
   return supportArticles.filter((a) => a.category === categoryId);
 }
 
-export const popularSupportArticles = [
-  "suivre-ou-recuperer-sa-commande",
-  "mot-de-passe-oublie",
-  "moyens-de-paiement",
-  "donnees-personnelles",
-]
-  .map((slug) => getSupportArticle(slug))
-  .filter((a): a is SupportArticle => Boolean(a));
+export function getRecommendedSupportArticles(limit = 4): SupportArticle[] {
+  // 1. Mélanger les catégories pour ne pas toujours privilégier les mêmes
+  const shuffledCategories = [...supportCategories].sort(() => 0.5 - Math.random());
+
+  const recommended: SupportArticle[] = [];
+
+  for (const category of shuffledCategories) {
+    if (recommended.length >= limit) break;
+
+    const categoryArticles = articlesByCategory(category.id);
+    if (categoryArticles.length > 0) {
+      // Choisir un article au hasard dans cette catégorie
+      const randomArticle = categoryArticles[Math.floor(Math.random() * categoryArticles.length)];
+      recommended.push(randomArticle);
+    }
+  }
+
+  return recommended;
+}
