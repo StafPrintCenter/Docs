@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { ListTree } from "lucide-react";
-import { DocsHeader } from "@/components/site";
+import { DocsHeader, DocsFooter } from "@/components/site";
 import { SearchModal } from "@/components/docs/SearchModal";
 import { TableOfContents } from "@/components/docs/TableOfContents";
 import { extractToc } from "@/components/docs/MarkdownRenderer";
@@ -91,6 +91,8 @@ export function DocsViewer({ resolved }: { resolved: ResolvedArticle }) {
             <CarbonAds />
           </aside>
         </div>
+
+        <DocsFooter />
       </div>
 
       <SearchModal open={searchOpen} onOpenChange={setSearchOpen} />
