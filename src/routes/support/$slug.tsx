@@ -6,6 +6,7 @@ import {
   SupportDetailBreadcrumb,
   SupportDetailFooterActions
 } from "@/components/pages/support/detail";
+import { SITE } from "@/data/site";
 
 export const Route = createFileRoute("/support/$slug")({
   loader: ({ params }) => {
