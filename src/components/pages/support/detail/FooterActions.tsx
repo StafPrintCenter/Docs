@@ -24,7 +24,7 @@ export function SupportDetailFooterActions({
           className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-2 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground"
         >
           <FolderInput className="size-4 text-brand" />
-          <span>Retour à {categoryTitle ?? "la catégorie"}</span>
+          <span>{categoryTitle ?? "la catégorie"}</span>
         </Link>
 
       <Link
