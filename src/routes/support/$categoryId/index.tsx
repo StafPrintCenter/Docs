@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { DocsHeader } from "@/components/site";
+import { DocsHeader, DocsFooter } from "@/components/site";
 import { articlesByCategory, getSupportCategory, SUPPORT_CATEGORY_ICONS } from "@/data/content/support";
 import { SITE } from "@/data/site";
 
@@ -87,6 +87,8 @@ function SupportCategoryPage() {
             ))}
           </div>
         </main>
+
+        <DocsFooter />
       </div>
     </div>
   );
