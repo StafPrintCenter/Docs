@@ -27,13 +27,14 @@ export function SupportDetailFooterActions({
           <span>{categoryTitle ?? "la catégorie"}</span>
         </Link>
 
-      <Link
-        to="/support"
-        className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-      >
-        <ArrowLeft className="size-4" />
-        Retour au centre d'aide
-      </Link>
+        <Link
+          to="/support"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card/60 px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <ArrowLeft className="size-4" />
+          <span>Centre d'aide</span>
+        </Link>
+      </div>
 
       <a
         href={emailLink}
