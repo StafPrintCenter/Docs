@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 import { MarkdownRenderer } from "@/components/docs/MarkdownRenderer";
-import { DocsHeader, DocsFooter } from "@/components/site";
+import { DocsShell } from "@/components/site/DocsShell";
 import { resolveSupportArticle, getSupportCategory } from "@/data/content/support";
 import {
   SupportDetailBreadcrumb,
@@ -46,27 +46,19 @@ function SupportArticlePage() {
   const category = getSupportCategory(categoryId);
 
   return (
-    <div className="relative min-h-screen bg-background overflow-x-clip">
-      <div className="pointer-events-none absolute inset-0 paper-grid opacity-50" />
+    <DocsShell>
+      <main className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
+        <SupportDetailBreadcrumb
+          categoryTitle={category?.title}
+          readTime={article.readTime}
+        />
 
-      <div className="relative z-10">
-        <DocsHeader />
+        <article className="mt-4 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
+          <MarkdownRenderer content={article.content} />
+        </article>
 
-        <main className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
-          <SupportDetailBreadcrumb
-            categoryTitle={category?.title}
-            readTime={article.readTime}
-          />
-
-          <article className="mt-4 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
-            <MarkdownRenderer content={article.content} />
-          </article>
-
-          <SupportDetailFooterActions articleTitle={article.title} />
-        </main>
-
-        <DocsFooter />
-      </div>
-    </div>
+        <SupportDetailFooterActions articleTitle={article.title} />
+      </main>
+    </DocsShell>
   );
 }
