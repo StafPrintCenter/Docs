@@ -61,7 +61,7 @@ function SupportArticlePage() {
             <MarkdownRenderer content={article.content} />
           </article>
 
-          <SupportDetailFooterActions />
+          <SupportDetailFooterActions articleTitle={article.title} />
         </main>
       </div>
     </div>
