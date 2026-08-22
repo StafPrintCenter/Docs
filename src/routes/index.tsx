@@ -37,7 +37,7 @@ function DocsHome() {
   const totalArticles = docsRegistry.reduce((acc, space) => acc + articleCount(space), 0);
 
   return (
-    <div className="relative min-h-screen bg-background overflow-hidden">
+    <div className="relative min-h-screen bg-background overflow-x-clip">
       {/* Background papier */}
       <div className="pointer-events-none absolute inset-0 paper-grid opacity-50" />
 
