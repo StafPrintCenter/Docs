@@ -108,7 +108,7 @@ export function DocsHeader({
               <img src={logos.dc} alt="SPC Docs" className="h-12 w-auto object-contain dark:hidden" />
               {/* Variant DEFAULT - Sombre */}
               <img
-                src={logos.dw}  alt="SPC Docs" className="hidden h-12 w-auto object-contain dark:block" />
+                src={logos.dw} alt="SPC Docs" className="hidden h-12 w-auto object-contain dark:block" />
             </>
           )}
         </Link>
