@@ -72,8 +72,8 @@ export function DocsHeader({
 
   return (
     <header
-      className={`border-b border-border bg-background backdrop-blur-md
-         ${sticky ? "sticky top-0 z-40" : ""}`}
+      className={`border-b border-border bg-background/95 backdrop-blur-md z-50 ${sticky ? "sticky top-0" : "relative"
+        }`}
     >
       <div className={`mx-auto flex h-16 items-center gap-3 px-4 sm:px-6 ${maxWidthClass}`} >
         {/* Bouton Sidebar Mobile (Variant Docs) */}
