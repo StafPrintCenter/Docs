@@ -1,8 +1,7 @@
-// src/routes/support/$categoryId/index.tsx
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { DocsHeader } from "@/components/site";
-import { articlesByCategory, getSupportCategory } from "@/data/content/support";
+import { articlesByCategory, getSupportCategory, SUPPORT_CATEGORY_ICONS } from "@/data/content/support";
 import { SITE } from "@/data/site";
 
 export const Route = createFileRoute("/support/$categoryId/")({
@@ -28,6 +27,7 @@ function SupportCategoryPage() {
   const category = getSupportCategory(categoryId);
   if (!category) return null;
 
+  const Icon = SUPPORT_CATEGORY_ICONS[category.icon];
   const articles = articlesByCategory(categoryId);
   const articleCount = articles.length;
 
@@ -48,13 +48,18 @@ function SupportCategoryPage() {
           </Link>
 
           <header className="mt-4 border-b border-border pb-6">
-            <div className="flex flex-wrap items-center gap-3">
-              <h1 className="font-display text-3xl font-semibold text-foreground sm:text-4xl">
-                {category.title}
-              </h1>
-              <span className="rounded-full bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
-                {articleCount} {articleCount > 1 ? "articles" : "article"}
+            <div className="flex items-center gap-3">
+              <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-brand/10 text-brand">
+                <Icon className="size-5" />
               </span>
+              <div className="flex flex-wrap items-center gap-3">
+                <h1 className="font-display text-3xl font-semibold text-foreground sm:text-4xl">
+                  {category.title}
+                </h1>
+                <span className="rounded-full bg-brand/10 px-3 py-1 text-xs font-medium text-brand">
+                  {articleCount} {articleCount > 1 ? "articles" : "article"}
+                </span>
+              </div>
             </div>
             <p className="mt-2 text-base text-muted-foreground">
               {category.description}
