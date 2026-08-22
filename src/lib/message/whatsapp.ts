@@ -1,5 +1,5 @@
 import { SITE } from "@/data/site";
-import { buildQuoteMessage } from "./quote";
+import { buildQuoteMessage } from "./support";
 
 /**
  * Ajoute un message pré-rempli à un lien WhatsApp existant

@@ -1,5 +1,5 @@
 import { SITE } from "@/data/site";
-import { buildQuoteMessage } from "./quote";
+import { buildQuoteMessage } from "./support";
 
 /**
  * Construit un lien mailto avec un sujet et un corps de message pré-remplis.
