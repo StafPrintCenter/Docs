@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowLeft, LifeBuoy } from "lucide-react";
+import { ArrowLeft, FolderInput, LifeBuoy } from "lucide-react";
 import { createSupportEmailLink } from "@/lib/message/support";
 
 interface SupportDetailFooterActionsProps {
