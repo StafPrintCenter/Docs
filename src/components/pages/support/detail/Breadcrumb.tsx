@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ChevronRight, Clock, Home, LifeBuoy } from "lucide-react";
 
 interface SupportDetailBreadcrumbProps {
+  categoryId: string;
   categoryTitle?: string;
   readTime: string;
 }
