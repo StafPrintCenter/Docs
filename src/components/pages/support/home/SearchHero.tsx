@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Search } from "lucide-react";
+import { ChevronDown, Search } from "lucide-react";
 import { getSupportCategory, SUPPORT_CATEGORY_ICONS, type SupportArticle } from "@/data/content/support";
 
 interface SupportHomeSearchHeroProps {
@@ -8,11 +9,24 @@ interface SupportHomeSearchHeroProps {
   results: SupportArticle[];
 }
 
+const ITEMS_PER_PAGE = 5;
+
 export function SupportHomeSearchHero({
   query,
   onQueryChange,
   results,
 }: SupportHomeSearchHeroProps) {
+  const [page, setPage] = useState(1);
+
+  const handleInputChange = (value: string) => {
+    setPage(1);
+    onQueryChange(value);
+  };
+
+  const isQueryValid = query.trim().length >= 3;
+  const visibleResults = results.slice(0, page * ITEMS_PER_PAGE);
+  const hasMore = visibleResults.length < results.length;
+
   return (
     <section className="border-b border-border bg-muted/40 py-14">
       <div className="mx-auto max-w-2xl px-4 text-center sm:px-6">
@@ -23,48 +37,63 @@ export function SupportHomeSearchHero({
           <Search className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-brand" />
           <input
             value={query}
-            onChange={(e) => onQueryChange(e.target.value)}
+            onChange={(e) => handleInputChange(e.target.value)}
             placeholder="Décrivez votre problème (ex : facture, retard, mot de passe)"
             className="h-12 w-full rounded-full border border-border bg-card pl-11 pr-4 text-sm text-foreground shadow-sm outline-none focus:border-brand/60"
           />
         </div>
 
-        {query.trim() !== "" && (
+        {isQueryValid && (
           <div className="mt-3 overflow-hidden rounded-xl border border-border bg-card text-left shadow-sm">
             {results.length === 0 ? (
-              <p className="px-4 py-5 text-sm text-muted-foreground">
+              <p className="px-4 py-5 text-sm text-muted-foreground text-center">
                 Aucun résultat. Essayez un autre mot-clé ou contactez le support.
               </p>
             ) : (
-              results.map((article) => {
-                const category = getSupportCategory(article.category);
-                const CategoryIcon = category
-                  ? SUPPORT_CATEGORY_ICONS[category.icon]
-                  : null;
+              <>
+                {visibleResults.map((article) => {
+                  const category = getSupportCategory(article.category);
+                  const CategoryIcon = category
+                    ? SUPPORT_CATEGORY_ICONS[category.icon]
+                    : null;
 
-                return (
-                  <Link
-                    key={article.slug}
-                    to="/support/$categoryId/$slug"
-                    params={{ categoryId: article.category, slug: article.slug }}
-                    className="flex items-start gap-3 border-b border-border px-4 py-3 last:border-0 hover:bg-muted"
-                  >
-                    {CategoryIcon && (
-                      <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-md bg-brand/10 text-brand">
-                        <CategoryIcon className="size-3.5" />
+                  return (
+                    <Link
+                      key={article.slug}
+                      to="/support/$categoryId/$slug"
+                      params={{ categoryId: article.category, slug: article.slug }}
+                      className="flex items-start gap-3 border-b border-border px-4 py-3 last:border-0 hover:bg-muted"
+                    >
+                      {CategoryIcon && (
+                        <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-md bg-brand/10 text-brand">
+                          <CategoryIcon className="size-3.5" />
+                        </span>
+                      )}
+                      <span className="min-w-0 flex-1">
+                        <span className="block truncate text-sm font-medium text-foreground">
+                          {article.title}
+                        </span>
+                        <span className="block text-xs text-muted-foreground line-clamp-1">
+                          {article.description}
+                        </span>
                       </span>
-                    )}
-                    <span>
-                      <span className="block text-sm font-medium text-foreground">
-                        {article.title}
-                      </span>
-                      <span className="block text-xs text-muted-foreground line-clamp-1">
-                        {article.description}
-                      </span>
-                    </span>
-                  </Link>
-                );
-              })
+                    </Link>
+                  );
+                })}
+
+                {hasMore && (
+                  <div className="p-2 text-center border-t border-border bg-muted/20">
+                    <button
+                      type="button"
+                      onClick={() => setPage((prev) => prev + 1)}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-brand hover:underline"
+                    >
+                      Voir plus de résultats ({results.length - visibleResults.length} restants)
+                      <ChevronDown className="size-3.5" />
+                    </button>
+                  </div>
+                )}
+              </>
             )}
           </div>
         )}
