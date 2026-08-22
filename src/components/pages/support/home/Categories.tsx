@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { CreditCard, LifeBuoy, Lock, Package, UserRound, Wrench } from "lucide-react";
+import { CreditCard, LifeBuoy, Lock, Package, UserRound, Wrench, ArrowRight } from "lucide-react";
 import { articlesByCategory, supportCategories } from "@/data/content/support";
 
 const ICONS = {
@@ -20,8 +20,10 @@ export function SupportHomeCategories() {
       <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {supportCategories.map((category) => {
           const Icon = ICONS[category.icon];
-          const count = articlesByCategory(category.id).length;
-          const first = articlesByCategory(category.id)[0];
+          const allArticles = articlesByCategory(category.id);
+          const displayedArticles = allArticles.slice(0, 2);
+          const hasMore = allArticles.length > 2;
+
           return (
             <div
               key={category.id}
@@ -36,12 +38,13 @@ export function SupportHomeCategories() {
               <p className="mt-1 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {category.description}
               </p>
+
               <ul className="mt-3 space-y-1">
-                {articlesByCategory(category.id).map((article) => (
+                {displayedArticles.map((article) => (
                   <li key={article.slug}>
                     <Link
-                      to="/support/$slug"
-                      params={{ slug: article.slug }}
+                      to="/support/$categoryId/$slug"
+                      params={{ categoryId: category.id, slug: article.slug }}
                       className="text-sm text-brand hover:underline"
                     >
                       {article.title}
@@ -49,7 +52,21 @@ export function SupportHomeCategories() {
                   </li>
                 ))}
               </ul>
-              {count === 0 && first === undefined && (
+
+              {hasMore && (
+                <div className="mt-3 pt-2 border-t border-border">
+                  <Link
+                    to="/support/$categoryId"
+                    params={{ categoryId: category.id }}
+                    className="inline-flex items-center gap-1 text-xs font-medium text-foreground hover:text-brand"
+                  >
+                    Voir tous les articles ({allArticles.length})
+                    <ArrowRight className="size-3" />
+                  </Link>
+                </div>
+              )}
+
+              {allArticles.length === 0 && (
                 <p className="mt-3 text-xs text-muted-foreground">Bientôt disponible.</p>
               )}
             </div>
