@@ -39,7 +39,6 @@ function SavedPage() {
 
       <div className="relative z-10 flex min-h-screen flex-col">
         <DocsHeader variant="docs" maxWidthClass="max-w-[1600px]"
-          sticky
           onOpenSearch={() => setSearchOpen(true)}
         />
 
