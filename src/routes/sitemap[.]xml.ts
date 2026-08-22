@@ -32,6 +32,14 @@ export const Route = createFileRoute("/sitemap.xml")({
           }
         }
 
+        for (const category of supportCategories) {
+          entries.push({
+            path: `/support/${category.id}`,
+            changefreq: "monthly",
+            priority: "0.8",
+          });
+        }
+
         for (const article of supportArticles) {
           entries.push({
             path: `/support/${article.category}/${article.slug}`,
