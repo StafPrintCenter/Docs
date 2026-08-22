@@ -21,7 +21,7 @@ export function DocsHeader({
   variant = "default",
   maxWidthClass = "max-w-6xl",
   activeSpaceId,
-  sticky = false,
+  sticky = true,
   onOpenSearch,
   onToggleSidebar,
 }: HeaderProps) {
