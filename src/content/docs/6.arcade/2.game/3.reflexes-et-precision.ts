@@ -1,7 +1,7 @@
 import { defineArticle } from "@/content/docs/define";
 
-export const article = defineArticle("jeux-reflexes-et-precision",
-  "Jeux de précision et de réflexes : Chasse aux Erreurs et Pixel Reproduction",
+export const article = defineArticle("reflexes-et-precision",
+  "Précision et de réflexes : Chasse aux Erreurs et Pixel Reproduction",
   "Développer son œil graphique et travailler sa précision sur la grille pixel.",
   ["arcade", "precision", "reflexes", "pixelart"],
   "new",

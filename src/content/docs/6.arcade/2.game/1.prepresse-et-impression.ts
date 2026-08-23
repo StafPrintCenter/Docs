@@ -1,7 +1,7 @@
 import { defineArticle } from "@/content/docs/define";
 
-export const article = defineArticle("jeux-prepresse-et-impression",
-  "Jeux de prépresse et d'impression : Printing Master et Studio Manager",
+export const article = defineArticle("prepresse-et-impression",
+  "Prépresse et d'impression : Printing Master et Studio Manager",
   "Règles et objectifs des jeux d'inspection de fichiers et de gestion d'agence.",
   ["arcade", "prepresse", "impression", "simulation"],
   "new",

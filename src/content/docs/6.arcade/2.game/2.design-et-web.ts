@@ -1,7 +1,7 @@
 import { defineArticle } from "@/content/docs/define";
 
-export const article = defineArticle("jeux-design-et-web",
-  "Jeux de création graphique et web sur SPC Arcade",
+export const article = defineArticle("design-et-web",
+  "Création graphique et web sur SPC Arcade",
   "Guides pour Web Builder Simulator, Visuel Express, Logo Rebuild et Back Eraser.",
   ["arcade", "design", "web", "retouche"],
   "new",
