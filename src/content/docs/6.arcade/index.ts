@@ -4,8 +4,8 @@ export const space: DocSpaceMeta = {
   id: "arcade",
   name: "SPC Arcade",
   shortName: "Arcade",
-  tagline: "Espace gaming & réservations",
-  description: "Réserver une session, comprendre les tarifs, respecter le règlement intérieur et organiser un tournoi à SPC Arcade, Porto-Novo.",
+  tagline: "La créativité passe en mode Arcade.",
+  description: "Un hub de défis ludiques autour du design, du web, du print et de la créativité. Jouez, relevez des défis, gagnez de l’XP, débloquez des badges et montez de niveau.",
   url: "https://arcade.stafprint.com",
 };
 

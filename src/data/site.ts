@@ -12,6 +12,7 @@ export const SITE = {
   shortUrl: import.meta.env.VITE_SHORTSITE_URL,
   frontUrl: import.meta.env.VITE_FRONTEND_URL,
   docsUrl: import.meta.env.VITE_DOCS_URL,
+  arcadeUrl: import.meta.env.VITE_ARCADE_URL,
   maps: "https://maps.app.goo.gl/4mbhWctm6LnTgYsAA",
   notice: "https://search.google.com/local/reviews?placeid=ChIJPb8nmaNbOxARzgX2S_y9o_M",
   socials: {
