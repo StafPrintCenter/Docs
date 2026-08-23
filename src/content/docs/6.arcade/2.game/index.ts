@@ -1,8 +1,8 @@
 import type { DocGroupMeta } from "@/types/docs";
 
 export const group: DocGroupMeta = {
-  id: "Type",
-  title: "Type de jeu",
+  id: "game",
+  title: "Jeux",
 };
 
 export default group;

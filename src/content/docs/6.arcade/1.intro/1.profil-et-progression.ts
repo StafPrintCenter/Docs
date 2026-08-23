@@ -14,7 +14,7 @@ La plateforme [SPC Arcade](https://arcade.stafprint.com/) intègre un système d
 
 ## Gestion du profil local
 
-* **Pseudonyme & Ville :** Personnalisables à tout moment depuis l'en-tête de la plateforme (ex: *Steve / Porto-Novo*).
+* **Pseudonyme & Ville :** Personnalisables à tout moment depuis l'en-tête de la plateforme.
 * **Confidentialité des données :** Aucune donnée personnelle n'est envoyée vers nos serveurs. L'ensemble des scores, badges et niveaux est conservé en local dans le navigateur (**localStorage**).
 * **Réinitialisation :** Un bouton **Réinitialiser** permet de remettre à zéro le compteur d'XP, les badges débloqués et l'historique des sessions.
 
