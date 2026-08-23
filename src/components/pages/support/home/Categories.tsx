@@ -3,10 +3,15 @@ import { ArrowRight } from "lucide-react";
 import { articlesByCategory, supportCategories, SUPPORT_CATEGORY_ICONS } from "@/data/content/support";
 
 export function SupportHomeCategories() {
+  const totalCategories = supportCategories.length;
+
   return (
     <section>
       <h2 className="font-display text-lg font-semibold text-foreground sm:text-xl">
-        Parcourir par sujet
+        Parcourir par sujet{" "}
+        <span className="text-sm font-normal text-muted-foreground">
+          ({totalCategories})
+        </span>
       </h2>
       <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {supportCategories.map((category) => {
