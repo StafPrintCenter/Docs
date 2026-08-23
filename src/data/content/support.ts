@@ -1,4 +1,4 @@
-import { Briefcase, Wrench, FileSpreadsheet, ShieldCheck, GraduationCap, Printer } from "lucide-react";
+import { Briefcase, Wrench, FileSpreadsheet, ShieldCheck, GraduationCap, Printer, Gamepad } from "lucide-react";
 import { articles, categories } from "@/content/support";
 import type { SupportArticle, SupportCategory } from "@/types/support";
 
@@ -11,6 +11,7 @@ export const SUPPORT_CATEGORY_ICONS = {
   account: ShieldCheck,
   training: GraduationCap,
   services: Printer,
+  gamepad: Gamepad,
 } as const;
 
 export const supportCategories: SupportCategory[] = categories;
