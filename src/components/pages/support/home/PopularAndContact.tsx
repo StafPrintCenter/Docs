@@ -15,8 +15,8 @@ export function SupportHomePopularAndContact() {
 
   return (
     <>
-      <section className="mt-14">
-        <h2 className="font-display text-xl font-semibold text-foreground">
+      <section className="mt-8 sm:mt-14">
+        <h2 className="font-display text-lg font-semibold text-foreground sm:text-xl">
           Meilleure sélection pour vous
         </h2>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
@@ -29,7 +29,7 @@ export function SupportHomePopularAndContact() {
                 key={article.slug}
                 to="/support/$categoryId/$slug"
                 params={{ categoryId: article.category, slug: article.slug }}
-                className="group flex items-center justify-between gap-3 rounded-xl border border-border bg-card px-4 py-3 transition-colors hover:border-brand/50"
+                className="group flex items-center justify-between gap-3 rounded-xl border border-border bg-card px-3.5 py-3 transition-colors hover:border-brand/50 min-w-0"
               >
                 <div className="flex items-center gap-3 min-w-0">
                   <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-brand/10 text-brand">
@@ -51,22 +51,22 @@ export function SupportHomePopularAndContact() {
         </div>
       </section>
 
-      <section className="mt-14 rounded-2xl border border-brand/25 bg-brand/8 p-6">
-        <p className="flex items-center gap-2 font-display text-lg font-semibold text-foreground">
-          <ShieldCheck className="size-5 text-brand" />
+      <section className="mt-8 sm:mt-14 rounded-2xl border border-brand/25 bg-brand/8 p-4 sm:p-6">
+        <p className="flex items-center gap-2 font-display text-base sm:text-lg font-semibold text-foreground">
+          <ShieldCheck className="size-5 shrink-0 text-brand" />
           Toujours bloqué ?
         </p>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Écrivez à <strong className="text-foreground">{SITE.email}</strong> ou passez à l'atelier,
+        <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+          Écrivez à <strong className="text-foreground break-all">{SITE.email}</strong> ou passez à l'atelier,
           du lundi au samedi de 8 h à 18 h. Réponse sous 24 h ouvrées.
         </p>
         <a
           href={supportEmailLink}
-          className="mt-4 inline-flex items-center gap-1.5 rounded-lg bg-brand px-4 py-2 text-sm font-medium text-brand-foreground transition-opacity hover:opacity-90"
+          className="mt-4 inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-lg bg-brand px-4 py-2.5 text-sm font-medium text-brand-foreground transition-opacity hover:opacity-90"
         >
-          <Mail className="size-4" />
-          Contacter le support par email
-          <ArrowRight className="size-4" />
+          <Mail className="size-4 shrink-0" />
+          Contacter le support
+          <ArrowRight className="size-4 shrink-0" />
         </a>
       </section>
     </>
