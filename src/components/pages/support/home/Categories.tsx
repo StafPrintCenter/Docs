@@ -5,10 +5,10 @@ import { articlesByCategory, supportCategories, SUPPORT_CATEGORY_ICONS } from "@
 export function SupportHomeCategories() {
   return (
     <section>
-      <h2 className="font-display text-xl font-semibold text-foreground">
+      <h2 className="font-display text-lg font-semibold text-foreground sm:text-xl">
         Parcourir par sujet
       </h2>
-      <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {supportCategories.map((category) => {
           const Icon = SUPPORT_CATEGORY_ICONS[category.icon];
           const allArticles = articlesByCategory(category.id);
@@ -18,21 +18,21 @@ export function SupportHomeCategories() {
           return (
             <div
               key={category.id}
-              className="flex flex-col rounded-2xl border border-border bg-card p-5 shadow-sm"
+              className="flex flex-col rounded-2xl border border-border bg-card p-4 sm:p-5 shadow-sm min-w-0"
             >
-              <span className="grid size-9 place-items-center rounded-xl bg-brand/10 text-brand">
+              <span className="grid size-9 place-items-center rounded-xl bg-brand/10 text-brand shrink-0">
                 <Icon className="size-4.5" />
               </span>
-              <h3 className="mt-3 font-display text-base font-semibold text-foreground">
+              <h3 className="mt-3 font-display text-base font-semibold text-foreground truncate">
                 {category.title}
               </h3>
-              <p className="mt-1 flex-1 text-sm leading-relaxed text-muted-foreground">
+              <p className="mt-1 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-2">
                 {category.description}
               </p>
 
-              <ul className="mt-3 space-y-1">
+              <ul className="mt-3 space-y-1.5 min-w-0">
                 {displayedArticles.map((article) => (
-                  <li key={article.slug}>
+                  <li key={article.slug} className="min-w-0">
                     <Link
                       to="/support/$categoryId/$slug"
                       params={{ categoryId: category.id, slug: article.slug }}
@@ -52,7 +52,7 @@ export function SupportHomeCategories() {
                     className="inline-flex items-center gap-1 text-xs font-medium text-foreground hover:text-brand"
                   >
                     Voir tous les articles ({allArticles.length})
-                    <ArrowRight className="size-3" />
+                    <ArrowRight className="size-3 shrink-0" />
                   </Link>
                 </div>
               )}
