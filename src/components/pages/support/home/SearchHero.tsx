@@ -31,18 +31,19 @@ export function SupportHomeSearchHero({
   const hasMore = visibleResults.length < results.length;
 
   return (
-    <section className="border-b border-border bg-muted/40 py-14">
+    <section className="border-b border-border bg-muted/40 py-8 sm:py-14">
       <div className="mx-auto max-w-2xl px-4 text-center sm:px-6">
-        <h1 className="font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+        <h1 className="font-display text-2xl font-semibold tracking-tight text-foreground sm:text-4xl">
           Comment pouvons-nous vous aider ?
         </h1>
-        <div className="relative mt-6">
-          <Search className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-brand" />
+
+        <div className="relative mt-4 sm:mt-6">
+          <Search className="pointer-events-none absolute left-3.5 top-3.5 size-5 text-brand" />
           <input
             value={query}
             onChange={(e) => handleInputChange(e.target.value)}
-            placeholder="Décrivez votre problème (ex : facture, retard, mot de passe)"
-            className="h-12 w-full rounded-full border border-border bg-card pl-11 pr-4 text-sm text-foreground shadow-sm outline-none focus:border-brand/60"
+            placeholder="Décrivez votre problème..."
+            className="h-12 w-full rounded-full border border-border bg-card pl-11 pr-4 text-sm text-foreground shadow-sm outline-none transition-colors focus:border-brand/60"
           />
         </div>
 
@@ -71,7 +72,7 @@ export function SupportHomeSearchHero({
                       key={article.slug}
                       to="/support/$categoryId/$slug"
                       params={{ categoryId: article.category, slug: article.slug }}
-                      className="flex items-start gap-3 border-b border-border px-4 py-3 last:border-0 hover:bg-muted"
+                      className="flex items-start gap-3 border-b border-border px-3.5 py-3 last:border-0 hover:bg-muted"
                     >
                       {CategoryIcon && (
                         <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-md bg-brand/10 text-brand">
@@ -79,9 +80,8 @@ export function SupportHomeSearchHero({
                         </span>
                       )}
                       <span className="min-w-0 flex-1">
-                        {/* Catégorie */}
                         {category && (
-                          <span className="block text-[11px] font-semibold uppercase tracking-wider">
+                          <span className="block text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
                             {category.title}
                           </span>
                         )}
