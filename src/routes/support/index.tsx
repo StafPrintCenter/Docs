@@ -51,7 +51,7 @@ function SupportHome() {
         results={results}
       />
 
-      <main className="mx-auto max-w-5xl px-4 py-14 sm:px-6">
+      <main className="mx-auto max-w-5xl px-4 py-6 sm:py-14 sm:px-6">
         <SupportHomeCategories />
         <SupportHomePopularAndContact />
       </main>
