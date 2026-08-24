@@ -1,4 +1,4 @@
-import { SITE } from "@/data/site";
+import { SITE, SITE_LINK } from "@/data/site";
 
 export function DocsFooter() {
   return (
@@ -6,7 +6,7 @@ export function DocsFooter() {
       <p className="mx-auto max-w-6xl px-4 text-xs text-muted-foreground sm:px-6">
         © {new Date().getFullYear()} SPC Docs · Documentation de {" "}
         <a
-          href={SITE.frontUrl}
+          href={SITE_LINK.landingUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="font-medium underline underline-offset-4 hover:text-foreground transition-colors cursor-pointer"
