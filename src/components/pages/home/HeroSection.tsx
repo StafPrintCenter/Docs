@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { BookOpen, LifeBuoy } from "lucide-react";
-import { SITE } from "@/data/site";
+import { SITE, SITE_LINK } from "@/data/site";
 import { firstArticleParams } from "@/data/content/docs";
 import { DocPreviewIllustration } from "./DocPreviewIllustration";
 
@@ -9,13 +9,13 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({ totalArticles }: HeroSectionProps) {
-  const docUrl = `${SITE.docsUrl}/docs/landing/demander-un-devis`;
+  const docUrl = `${SITE_LINK.docsUrl}/docs/landing/demander-un-devis`;
 
   return (
     <section className="relative mx-auto grid max-w-6xl grid-cols-1 gap-14 px-6 py-20 lg:grid-cols-2 lg:items-center lg:gap-10">
       <div className="flex flex-col items-start text-left">
         <a
-          href={SITE.frontUrl}
+          href={SITE_LINK.landingUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
