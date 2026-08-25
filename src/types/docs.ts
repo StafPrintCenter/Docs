@@ -30,6 +30,7 @@ export interface DocSpaceMeta {
   tagline: string;
   description: string;
   url?: string;
+  status?: "available" | "building";
 }
 
 export interface DocSpace extends DocSpaceMeta {
