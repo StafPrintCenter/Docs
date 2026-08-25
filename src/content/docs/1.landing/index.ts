@@ -8,6 +8,7 @@ export const space: DocSpaceMeta = {
   tagline: "Site public, devis et commandes d'impression",
   description: `Le site principal de ${SITE.name} : services, réalisations, formations, blog et contact.`,
   url: SITE_LINK.landingUrl,
+  status: "available",
 };
 
 export default space;
