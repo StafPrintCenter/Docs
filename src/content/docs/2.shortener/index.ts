@@ -8,6 +8,7 @@ export const space: DocSpaceMeta = {
   tagline: "Plateforme de raccourciement de lien SPC",
   description: `Raccourcisseur de liens officiel, réservé exclusivement aux contenus de ${SITE.name}.`,
   url: SITE_LINK.shortUrl,
+  status: "available",
 };
 
 export default space;
