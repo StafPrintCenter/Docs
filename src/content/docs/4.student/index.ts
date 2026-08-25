@@ -8,6 +8,7 @@ export const space: DocSpaceMeta = {
   tagline: "Espace des apprenants SPC",
   description: `S'inscrire à une formation, suivre ses cours, rendre ses devoirs et récupérer ses attestations depuis le Student Hub de ${SITE.name}.`,
   url: SITE_LINK.studentUrl,
+  status: "building",
 };
 
 export default space;
