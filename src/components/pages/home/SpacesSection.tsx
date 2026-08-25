@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, LifeBuoy } from "lucide-react";
+import { ArrowRight, Construction, LifeBuoy } from "lucide-react";
 import logos from "@/assets/logos.json";
 import { docsRegistry, articleCount, firstArticleParams } from "@/data/content/docs";
 import { totalSupportArticlesCount } from "@/data/content/support";
@@ -27,6 +27,7 @@ export function SpacesSection() {
         {docsRegistry.map((space) => {
           const { lightLogo, darkLogo } = getSpaceLogos(space.id);
           const count = articleCount(space);
+          const isBuilding = space.status === "building";
 
           return (
             <Link
@@ -35,26 +36,34 @@ export function SpacesSection() {
               params={firstArticleParams(space.id)}
               className="group flex flex-col rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-brand/50 hover:shadow-lg"
             >
-              <span className="grid size-10 place-items-center overflow-hidden rounded-xl bg-brand/10 p-1.5">
-                {/* Logo Thème Clair */}
-                <img
-                  src={lightLogo}
-                  alt={space.name}
-                  className="size-full object-contain dark:hidden"
-                  onError={(e) => {
-                    e.currentTarget.src = logos.base;
-                  }}
-                />
-                {/* Logo Thème Sombre */}
-                <img
-                  src={darkLogo}
-                  alt={space.name}
-                  className="hidden size-full object-contain dark:block"
-                  onError={(e) => {
-                    e.currentTarget.src = logos.baseW;
-                  }}
-                />
-              </span>
+              <div className="flex items-center justify-between gap-3">
+                <span className="grid size-10 place-items-center overflow-hidden rounded-xl bg-brand/10 p-1.5">
+                  {/* Logo Thème Clair */}
+                  <img
+                    src={lightLogo}
+                    alt={space.name}
+                    className="size-full object-contain dark:hidden"
+                    onError={(e) => {
+                      e.currentTarget.src = logos.base;
+                    }}
+                  />
+                  {/* Logo Thème Sombre */}
+                  <img
+                    src={darkLogo}
+                    alt={space.name}
+                    className="hidden size-full object-contain dark:block"
+                    onError={(e) => {
+                      e.currentTarget.src = logos.baseW;
+                    }}
+                  />
+                </span>
+
+                {isBuilding && (
+                  <span className="inline-flex items-center gap-1 rounded-full border border-amber-500/20 bg-amber-500/10 px-2.5 py-1 text-[11px] font-semibold text-amber-600 dark:text-amber-400">
+                    <Construction size={12} /> En construction
+                  </span>
+                )}
+              </div>
 
               <h3 className="mt-4 font-display text-xl font-semibold text-foreground">
                 {space.name}
