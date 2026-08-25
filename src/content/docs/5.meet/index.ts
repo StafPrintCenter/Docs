@@ -8,6 +8,7 @@ export const space: DocSpaceMeta = {
   tagline: "Visioconférence & salles de réunion",
   description: `Plateforme de visioconférence pour les réunions et sessions à distance de ${SITE.name}.`,
   url: SITE_LINK.meetUrl,
+  status: "building",
 };
 
 export default space;
