@@ -14,6 +14,12 @@ function read(): Store {
   }
 }
 
+/**
+ * Sert uniquement de cache local pour l'UI (savoir si l'utilisateur a déjà
+ * voté sur cet article, pour ne plus lui montrer les boutons) — la vraie
+ * source de vérité du feedback est désormais l'API, ce hook ne fait plus
+ * qu'enregistrer le résultat final d'un envoi réussi.
+ */
 export function useArticleFeedback(articleKey: string) {
   const [feedback, setFeedback] = useState<ArticleFeedback | null>(null);
 
@@ -35,16 +41,5 @@ export function useArticleFeedback(articleKey: string) {
     [articleKey],
   );
 
-  const vote = useCallback(
-    (value: "up" | "down") => save({ vote: value, at: new Date().toISOString() }),
-    [save],
-  );
-
-  const addComment = useCallback(
-    (comment: string) =>
-      save({ vote: feedback?.vote ?? "down", comment, at: new Date().toISOString() }),
-    [feedback?.vote, save],
-  );
-
-  return { feedback, vote, addComment };
+  return { feedback, save };
 }
