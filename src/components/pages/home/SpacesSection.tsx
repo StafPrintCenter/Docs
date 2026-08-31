@@ -108,8 +108,8 @@ export function SpacesSection() {
         {isLoading ? (
           // Afficher les espaces de docs locaux pendant le chargement
           [...filteredSites].map((site) => {
-            const spaceId = LOGO_KEY_TO_SPACE_ID[site.logoKey];
-            const isLocalSpace = LOCAL_DOC_SPACE_IDS.has(spaceId ?? "");
+            const spaceId = resolveLocalDocSpaceId(site.logoKey);
+            const isLocalSpace = Boolean(spaceId && LOCAL_DOC_SPACE_IDS.includes(spaceId));
             return isLocalSpace ? renderSiteCard(site) : null;
           })
         ) : (
