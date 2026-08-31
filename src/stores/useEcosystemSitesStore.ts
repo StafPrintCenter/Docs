@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import { createResourceStore } from "./createResourceStore";
-import type { APIEcosystemSite } from "@/data/ecosystem";
+import { hydrateDocSpaceMetaOverrides, type APIEcosystemSite } from "@/data/ecosystem";
+import { applyDocSpaceApiData } from "@/data/content/docs";
 
 const { fetchList, fetchById, useResourceStore } = createResourceStore<APIEcosystemSite>({
   resourceKey: "ecosystem-sites",
@@ -12,5 +14,11 @@ export const fetchEcosystemSiteById = fetchById;
 
 export function useEcosystemSitesStore(params: Parameters<typeof useResourceStore>[0] = {}) {
   const { data, ...rest } = useResourceStore(params);
+
+  useEffect(() => {
+    hydrateDocSpaceMetaOverrides(data);
+    applyDocSpaceApiData(data);
+  }, [data]);
+
   return { sites: data, ...rest };
 }
