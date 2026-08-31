@@ -1,4 +1,9 @@
 import { spaces } from "@/content/docs";
+import {
+  getDocSpaceMeta,
+  resolveLocalDocSpaceId,
+  type APIEcosystemSite,
+} from "@/data/ecosystem";
 import type { DocArticle, DocSpace, DocSpaceId, SearchHit } from "@/types/docs";
 
 /**
@@ -6,8 +11,32 @@ import type { DocArticle, DocSpace, DocSpaceId, SearchHit } from "@/types/docs";
  */
 export const docsRegistry: DocSpace[] = spaces;
 
+export function applyDocSpaceApiData(sites: APIEcosystemSite[] = []): void {
+  const overrides = new Map<string, Partial<DocSpace>>();
+
+  for (const site of sites) {
+    const spaceId = resolveLocalDocSpaceId(site.logoKey);
+    if (!spaceId) continue;
+
+    overrides.set(spaceId, {
+      id: spaceId,
+      name: site.name,
+      description: site.description,
+      url: site.url,
+      status: site.status,
+    });
+  }
+
+  for (const space of docsRegistry) {
+    const override = overrides.get(space.id);
+    if (!override) continue;
+    Object.assign(space, override);
+  }
+}
+
 export function getSpace(id: string): DocSpace | undefined {
-  return docsRegistry.find((s) => s.id === id);
+  const space = docsRegistry.find((s) => s.id === id);
+  return space ? getDocSpaceMeta(space.id, space) : undefined;
 }
 
 export interface ResolvedArticle {
