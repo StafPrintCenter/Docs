@@ -1,7 +1,8 @@
 import type { DocSpaceMeta } from "@/types/docs";
 import { SITE, SITE_LINK } from "@/data/site";
+import { getDocSpaceMeta } from "@/data/ecosystem";
 
-export const space: DocSpaceMeta = {
+const fallback: DocSpaceMeta = {
   id: "landing",
   name: "Site Vitrine",
   shortName: "Vitrine",
@@ -10,5 +11,7 @@ export const space: DocSpaceMeta = {
   url: SITE_LINK.landingUrl,
   status: "available",
 };
+
+export const space: DocSpaceMeta = getDocSpaceMeta("landing", fallback);
 
 export default space;
