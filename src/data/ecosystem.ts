@@ -1,3 +1,5 @@
+import type { DocSpaceMeta } from "@/types/docs";
+
 export type EcosystemSiteCategory = "principal" | "outil" | "formation" | "communication" | "divertissement";
 export type EcosystemSiteStatus = "available" | "building";
 
@@ -70,4 +72,29 @@ export function filterPublicEcosystemSites(sites: APIEcosystemSite[]): APIEcosys
 
 export function isLocalDocSpace(site: Pick<APIEcosystemSite, "logoKey">): boolean {
   return Boolean(resolveLocalDocSpaceId(site.logoKey));
+}
+
+const docSpaceMetaOverrides = new Map<string, Partial<DocSpaceMeta>>();
+
+export function hydrateDocSpaceMetaOverrides(sites: APIEcosystemSite[]): void {
+  docSpaceMetaOverrides.clear();
+
+  for (const site of sites) {
+    const localSpaceId = resolveLocalDocSpaceId(site.logoKey);
+    if (!localSpaceId) continue;
+
+    docSpaceMetaOverrides.set(localSpaceId, {
+      id: localSpaceId,
+      name: site.name,
+      description: site.description,
+      url: site.url,
+      status: site.status,
+    });
+  }
+}
+
+export function getDocSpaceMeta(spaceId: string, fallback: DocSpaceMeta): DocSpaceMeta {
+  const override = docSpaceMetaOverrides.get(spaceId);
+  if (!override) return fallback;
+  return { ...fallback, ...override };
 }
