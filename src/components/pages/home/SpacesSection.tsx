@@ -10,6 +10,7 @@ import {
   type APIEcosystemSite,
   LOCAL_DOC_SPACE_IDS,
 } from "@/data/ecosystem";
+import { SpacesSectionSkeleton } from "./Skeleton";
 
 export function SpacesSection() {
   const { sites = [], isLoading } = useEcosystemSitesStore();
@@ -105,16 +106,7 @@ export function SpacesSection() {
     <section className="pb-12">
       <h2 className="font-display text-2xl font-semibold text-foreground">Espaces</h2>
       <div className="mt-5 grid gap-5 md:grid-cols-3">
-        {isLoading ? (
-          // Afficher les espaces de docs locaux pendant le chargement
-          [...filteredSites].map((site) => {
-            const spaceId = resolveLocalDocSpaceId(site.logoKey);
-            const isLocalSpace = Boolean(spaceId && LOCAL_DOC_SPACE_IDS.includes(spaceId));
-            return isLocalSpace ? renderSiteCard(site) : null;
-          })
-        ) : (
-          sortedSites.map(renderSiteCard)
-        )}
+        {isLoading ? <SpacesSectionSkeleton /> : sortedSites.map(renderSiteCard)}
 
         <Link
           to="/support"
