@@ -42,3 +42,32 @@ export const ECOSYSTEM_STATUS_LABELS: Record<EcosystemSiteStatus | "Tout", strin
   available: "Disponible",
   building: "Bientôt",
 };
+
+export const LOCAL_DOC_SPACE_IDS = ["landing", "shortener", "instructor", "student", "meet", "arcade"] as const;
+export type LocalDocSpaceId = (typeof LOCAL_DOC_SPACE_IDS)[number];
+
+export const LOGO_KEY_TO_SPACE_ID: Record<string, LocalDocSpaceId | undefined> = {
+  mc: "landing",
+  shortener: "shortener",
+  instructor: "instructor",
+  student: "student",
+  meet: "meet",
+  arcade: "arcade",
+};
+
+export function resolveLocalDocSpaceId(logoKey: string | undefined): LocalDocSpaceId | undefined {
+  if (!logoKey) return undefined;
+  return LOGO_KEY_TO_SPACE_ID[logoKey];
+}
+
+export function isOfficialDocsSite(site: Pick<APIEcosystemSite, "logoKey">): boolean {
+  return site.logoKey === "docs";
+}
+
+export function filterPublicEcosystemSites(sites: APIEcosystemSite[]): APIEcosystemSite[] {
+  return sites.filter((site) => !isOfficialDocsSite(site));
+}
+
+export function isLocalDocSpace(site: Pick<APIEcosystemSite, "logoKey">): boolean {
+  return Boolean(resolveLocalDocSpaceId(site.logoKey));
+}
