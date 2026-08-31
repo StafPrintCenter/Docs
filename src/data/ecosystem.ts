@@ -93,8 +93,8 @@ export function hydrateDocSpaceMetaOverrides(sites: APIEcosystemSite[]): void {
   }
 }
 
-export function getDocSpaceMeta(spaceId: string, fallback: DocSpaceMeta): DocSpaceMeta {
+export function getDocSpaceMeta<T extends DocSpaceMeta>(spaceId: string, fallback: T): T {
   const override = docSpaceMetaOverrides.get(spaceId);
   if (!override) return fallback;
-  return { ...fallback, ...override };
+  return { ...fallback, ...override } as T;
 }
