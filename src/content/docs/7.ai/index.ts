@@ -5,11 +5,11 @@ import { getDocSpaceMeta } from "@/data/ecosystem";
 const fallback: DocSpaceMeta = {
   id: "ai",
   name: "SPC Intelligence",
-  shortName: "Meet",
-  tagline: "Visioconférence & salles de réunion",
-  description: `Plateforme de visioconférence pour les réunions et sessions à distance de ${SITE.name}.`,
+  shortName: "Intelligence",
+  tagline: "***Visioconférence & salles de réunion",
+  description: `***Plateforme de visioconférence pour les réunions et sessions à distance de ${SITE.name}.`,
   url: SITE_LINK.meetUrl,
-  status: "building",
+  status: "available",
 };
 
 export const space: DocSpaceMeta = getDocSpaceMeta("meet", fallback);
