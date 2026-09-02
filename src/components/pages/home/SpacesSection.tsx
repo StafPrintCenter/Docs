@@ -77,22 +77,24 @@ export function SpacesSection() {
           {site.description}
         </p>
 
-        {isLocalSpace && articleCountValue > 0 ? (
+        {hasLocalDocs ? (
+          /* Option 1: Espace local + présence d'articles */
           <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
             {articleCountValue} {articleCountValue > 1 ? "articles" : "article"}
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
           </span>
-        ) : !isLocalSpace ? (
+        ) : (
+          /* Option 2: Site externe OU espace local sans article -> "Visiter" */
           <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-brand">
             Visiter
             <ExternalLink className="size-4 transition-transform group-hover:translate-x-0.5" />
           </span>
-        ) : null}
+        )}
       </>
     );
 
-    // Les espaces de docs locaux ont un lien vers la documentation
-    if (isLocalSpace && localSpace) {
+    // Redirection vers la doc interne uniquement si des articles sont présents
+    if (hasLocalDocs) {
       return (
         <Link
           key={site.id}
@@ -105,7 +107,7 @@ export function SpacesSection() {
       );
     }
 
-    // Les autres sites pointent directement vers leur URL
+    // Redirection vers le site externe (site non local ou espace local à 0 article)
     return (
       <a
         key={site.id}
