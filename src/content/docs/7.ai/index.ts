@@ -3,8 +3,8 @@ import { SITE, SITE_LINK } from "@/data/site";
 import { getDocSpaceMeta } from "@/data/ecosystem";
 
 const fallback: DocSpaceMeta = {
-  id: "meet",
-  name: "SPC Meet",
+  id: "ai",
+  name: "SPC Intelligence",
   shortName: "Meet",
   tagline: "Visioconférence & salles de réunion",
   description: `Plateforme de visioconférence pour les réunions et sessions à distance de ${SITE.name}.`,
