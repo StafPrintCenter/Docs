@@ -32,16 +32,30 @@ export function SpacesSection() {
     const localSpace = isLocalSpace ? getSpace(spaceId!) : null;
     const articleCountValue = localSpace ? articleCount(localSpace) : 0;
 
+    // Définition des URLs des variants avec fallback
+    const logoMc = site.logoVariants?.mc || site.logoUrl;
+    const logoMw = site.logoVariants?.mw || logoMc;
+
     const cardContent = (
       <>
         <div className="flex items-center justify-between gap-3">
           <span className="grid size-10 place-items-center overflow-hidden rounded-xl bg-brand/10 p-1.5">
+            {/* Logo pour Thème Clair (MC) */}
             <img
-              src={site.logoUrl}
+              src={logoMc}
               alt={site.name}
-              className="size-full object-contain"
+              className="size-full object-contain dark:hidden"
               onError={(e) => {
-                e.currentTarget.src = site.logoVariants.mc || site.logoUrl;
+                e.currentTarget.src = site.logoUrl;
+              }}
+            />
+            {/* Logo pour Thème Sombre (MW) */}
+            <img
+              src={logoMw}
+              alt={site.name}
+              className="hidden size-full object-contain dark:block"
+              onError={(e) => {
+                e.currentTarget.src = site.logoUrl;
               }}
             />
           </span>
