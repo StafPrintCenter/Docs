@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 
 export type Theme = "light" | "dark";
-const KEY = "staf-docs:theme";
+const KEY = "spc-theme";
 
 function apply(theme: Theme) {
   document.documentElement.classList.toggle("dark", theme === "dark");
