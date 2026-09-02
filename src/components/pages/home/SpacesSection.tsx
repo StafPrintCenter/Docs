@@ -32,6 +32,9 @@ export function SpacesSection() {
     const localSpace = isLocalSpace ? getSpace(spaceId!) : null;
     const articleCountValue = localSpace ? articleCount(localSpace) : 0;
 
+    // Condition pour déterminer si on pointe vers la doc interne
+    const hasLocalDocs = isLocalSpace && localSpace && articleCountValue > 0;
+
     // Définition des URLs des variants avec fallback
     const logoMc = site.logoVariants?.mc || site.logoUrl;
     const logoMw = site.logoVariants?.mw || logoMc;
