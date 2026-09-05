@@ -32,15 +32,17 @@ export function SupportDetailFooterActions({
             params={{ categoryId }}
             className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-2 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground"
           >
-            <FolderInput className="size-4 text-brand" />
-            <span className="truncate">{categoryTitle ?? "La catégorie"}</span>
+            <FolderInput className="size-4 shrink-0 text-brand" />
+            <span className="max-w-32.5 truncate whitespace-nowrap min-[380px]:max-w-45 sm:max-w-xs">
+              {categoryTitle ?? "La catégorie"}
+            </span>
           </Link>
 
           <Link
             to="/support"
-            className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card/60 px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg border border-border bg-card/60 px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
-            <ArrowLeft className="size-4" />
+            <ArrowLeft className="size-4 shrink-0" />
             <span>Centre d'aide</span>
           </Link>
         </div>
@@ -50,17 +52,17 @@ export function SupportDetailFooterActions({
           <button
             type="button"
             onClick={() => setShareOpen(true)}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-2 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground cursor-pointer"
+            className="inline-flex flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-lg border border-border bg-card px-3 py-2 text-sm text-muted-foreground transition-colors hover:border-brand/50 hover:text-foreground cursor-pointer sm:flex-none"
           >
-            <Share2 className="size-4 text-brand" />
+            <Share2 className="size-4 shrink-0 text-brand" />
             <span>Partager</span>
           </button>
 
           <a
             href={emailLink}
-            className="inline-flex items-center gap-1.5 rounded-lg bg-brand px-3 py-2 text-sm font-medium text-brand-foreground transition-opacity hover:opacity-90"
+            className="inline-flex flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-lg bg-brand px-3 py-2 text-sm font-medium text-brand-foreground transition-opacity hover:opacity-90 sm:flex-none"
           >
-            <LifeBuoy className="size-4" />
+            <LifeBuoy className="size-4 shrink-0" />
             <span>Contacter le support</span>
           </a>
         </div>
