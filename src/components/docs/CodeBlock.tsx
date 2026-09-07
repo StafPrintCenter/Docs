@@ -20,9 +20,9 @@ function escapeHtml(input: string) {
 function highlight(code: string, language?: string) {
   const escaped = escapeHtml(code);
   const kw = new Set([
-    "import","from","export","const","let","var","function","return","if","else","for","while",
-    "interface","type","extends","implements","new","await","async","class","public","private",
-    "as","of","in","try","catch","throw","default","null","undefined","true","false",
+    "import", "from", "export", "const", "let", "var", "function", "return", "if", "else", "for", "while",
+    "interface", "type", "extends", "implements", "new", "await", "async", "class", "public", "private",
+    "as", "of", "in", "try", "catch", "throw", "default", "null", "undefined", "true", "false",
   ]);
   const token =
     /(&quot;[^&]*?&quot;|&#39;[^&]*?&#39;|`[^`]*?`|"[^"]*?"|'[^']*?')|(\/\/[^\n]*|\/\*[\s\S]*?\*\/|#[^\n]*)|\b(\d+(?:\.\d+)?)\b|\b([A-Za-z_$][\w$]*)\b/g;
