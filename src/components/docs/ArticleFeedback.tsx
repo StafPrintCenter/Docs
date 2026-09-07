@@ -87,7 +87,7 @@ export function ArticleFeedback({ articleKey: articleKeyProp }: ArticleFeedbackP
             <button
               type="button"
               onClick={handleDownClick}
-              className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-coral/50 hover:bg-coral/8 hover:text-coral"
+              className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-coral/50 hover:bg-coral/8 hover:text-coral cursor-pointer"
             >
               <ThumbsDown className="size-4" /> Non
             </button>
