@@ -80,7 +80,7 @@ export function ArticleFeedback({ articleKey: articleKeyProp }: ArticleFeedbackP
             <button
               type="button"
               onClick={handleUp}
-              className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-emerald/50 hover:bg-emerald/8 hover:text-emerald"
+              className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-emerald/50 hover:bg-emerald/8 hover:text-emerald cursor-pointer"
             >
               <ThumbsUp className="size-4" /> Oui
             </button>
