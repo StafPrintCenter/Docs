@@ -22,6 +22,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
       { property: "og:title", content: DOCS_TITLE },
       { property: "og:description", content: DOCS_DESC },
+      { property: "og:type", content: "website" },
+      { property: "og:site_name", content: `${SITE.name}` },
+      { property: "og:image", content: `${logo.meta}` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: `${SITE.name} - ${SITE.activity}` },
+      { property: "og:url", content: `${SITE_LINK.docsUrl}` },
+      { property: "og:locale", content: "fr_BJ" },
+
+      /* Twitter / X */
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
