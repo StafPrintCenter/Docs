@@ -7,8 +7,8 @@ import { SITE, SITE_LINK } from "@/data/site";
 import logo from "@/assets/logos.json";
 import { NotFoundComponent, ErrorComponent } from "@/components/errors";
 
-const DOCS_TITLE = `SPC Docs ${SITE.name}`;
-const DOCS_DESC = `Documentation officielle de l'écosystème ${SITE.name} : utilisateurs, développeurs et équipe support.`;
+const DOCS_TITLE = `SPC Docs | Centre d'Aide & Documentation Official - ${SITE.name}`;
+const DOCS_DESC = `Guides d'utilisation, documentation technique et ressources pour l'écosystème ${SITE.name} : services d'impression, suivi de commande et outils de création.`;
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
