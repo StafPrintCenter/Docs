@@ -19,6 +19,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: DOCS_TITLE },
       { name: "description", content: DOCS_DESC },
       { name: "author", content: `${SITE.manager}` },
+
       { property: "og:title", content: DOCS_TITLE },
       { property: "og:description", content: DOCS_DESC },
       { name: "twitter:card", content: "summary_large_image" },
