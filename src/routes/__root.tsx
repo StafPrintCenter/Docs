@@ -37,7 +37,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:description", content: DOCS_DESC },
       { name: "twitter:site", content: "@StafPrintCenter" },
 
-      /* Google Verification */
       { name: "google-site-verification", content: "OdKxHpVkBSxk0mj4vD4OTmZPdVi5pWzyCu4QPIMHy9A" },
     ],
     links: [
