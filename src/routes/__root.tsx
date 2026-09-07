@@ -20,23 +20,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: DOCS_DESC },
       { name: "author", content: `${SITE.manager}` },
 
+      /* Open Graph / Facebook / WhatsApp */
       { property: "og:title", content: DOCS_TITLE },
       { property: "og:description", content: DOCS_DESC },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: `${SITE.name}` },
+      { property: "og:site_name", content: `SPC Docs - ${SITE.name}` },
       { property: "og:image", content: `${logo.meta}` },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: `${SITE.name} - ${SITE.activity}` },
+      { property: "og:image:alt", content: `Documentation Officielle ${SITE.name}` },
       { property: "og:url", content: `${SITE_LINK.docsUrl}` },
       { property: "og:locale", content: "fr_BJ" },
 
+      /* Twitter / X */
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: `${logo.meta}` },
       { name: "twitter:title", content: DOCS_TITLE },
       { name: "twitter:description", content: DOCS_DESC },
       { name: "twitter:site", content: "@StafPrintCenter" },
 
+      /* Google Verification */
       { name: "google-site-verification", content: "OdKxHpVkBSxk0mj4vD4OTmZPdVi5pWzyCu4QPIMHy9A" },
     ],
     links: [
@@ -45,8 +48,33 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.ico", sizes: "any" },
       { rel: "sitemap", type: "application/xml", href: "/sitemap.xml" },
+    ],
+    scripts: [
+      /* 1. Schéma WebPage / TechArticle pour le hub de documentation */
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "@id": `${SITE_LINK.docsUrl}/#webpage`,
+          url: SITE_LINK.docsUrl,
+          name: DOCS_TITLE,
+          description: DOCS_DESC,
+          inLanguage: "fr-BJ",
+          publisher: {
+            "@type": "Organization",
+            name: SITE.name,
+            logo: { "@type": "ImageObject", url: `${logo.meta}` }
+          },
+          mainEntity: {
+            "@type": "ItemList",
+            name: "Rubriques de documentation",
+            description: "Guides utilisateurs, procédures de suivi de commande, formations et support technique."
+          }
+        }),
+      }
     ],
   }),
   shellComponent: RootShell,
