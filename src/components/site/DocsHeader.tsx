@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { Bookmark, BookOpen, LifeBuoy, SquareMenu, PanelLeftOpen, Search, X } from "lucide-react";
+import { Bookmark, BookOpen, ChevronDown, LifeBuoy, SquareMenu, PanelLeftOpen, Search, X } from "lucide-react";
 import logos from "@/assets/logos.json";
 import { spaceNav, firstArticleParams } from "@/data/content/docs";
 import { ThemeToggle } from "@/components/docs/ThemeToggle";
