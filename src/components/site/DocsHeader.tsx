@@ -68,7 +68,7 @@ export function DocsHeader({
     });
   };
 
-  const activeSpaceLabel = spaceNav.find((e) => e.id === activeSpaceId)?.label ?? "Espaces";
+  const activeSpaceLabel = spaceNav.find((e) => e.id === activeSpaceId)?.label ?? "- Choisir un espace -";
 
   return (
     <header
