@@ -14,7 +14,7 @@ La newsletter STAF PRINT CENTER est envoyée **une fois par mois** et regroupe d
 
 ## Formulaire d'inscription
 
-Pour vous abonner, rendez-vous sur la page dédiée (**stafprint.com/tools/newsletter**) :
+Pour vous abonner, rendez-vous sur la page dédiée [stafprint.com/tools/newsletter](https://stafprint.com/tools/newsletter) :
 
 1. **Informations personnelles :** Saisissez votre **Prénom** et votre **Nom** (optionnels), puis votre **Adresse email** (obligatoire).
 2. **Choix des thématiques :** Sélectionnez les sujets qui vous intéressent pour personnaliser vos envois :
