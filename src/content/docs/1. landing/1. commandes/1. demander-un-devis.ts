@@ -10,7 +10,7 @@ export const article = defineArticle("demander-un-devis",
 
 ## Étapes
 
-1. Rendez-vous sur **stafprint.com → Demander un devis** (ou directement au bloc Contact).
+1. Rendez-vous sur **stafprint.com → Demander un devis** (ou directement au [bloc Contact](https://stafprint.com/#contact)).
 2. Renseignez vos informations de contact (**Prénoms & Nom**, **Email**).
 3. Sélectionnez le **Service souhaité** dans le menu déroulant (ex: *Impression de bâches*, *Cartes de visite*, *Sites internet*…).
 4. Décrivez précisément votre besoin dans le champ **Message** (format, quantité, finitions, etc.).
