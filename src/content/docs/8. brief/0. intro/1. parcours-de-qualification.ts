@@ -1,39 +1,56 @@
 import { defineArticle } from "@/content/docs/define";
 
-export const article = defineArticle("raccourcir-un-lien",
-  "Raccourcir un lien avec SPC Shortener",
-  "Générer des liens courts sécurisés vers nos contenus officiels, générer un QR code et suivre leurs statistiques.",
-  ["outil", "lien", "raccourcisseur", "qrcode", "partage"],
-  "stable",
-  "20 août 2026",
-  `# Raccourcir un lien avec SPC Shortener
+export const article = defineArticle("parcours-de-qualification",
+  "Parcours de qualification de projet en 6 étapes",
+  "Explication détaillée des 6 étapes du formulaire SPC Interactive Brief.",
+  ["brief", "qualification", "etapes", "projet"],
+  "new",
+  "10 septembre 2026",
+  `# Parcours de qualification de projet en 6 étapes
 
-L'outil **SPC Shortener** ([go.stafprint.com](https://go.stafprint.com/)) vous permet de simplifier et de raccourcir les liens vers nos services, formations, articles et réalisations pour faciliter vos partages.
-
----
-
-## Fonctionnement et règles du service
-
-* **Domaine restreint :** Le service accepte **exclusivement** les liens pointant vers le domaine officiel \`stafprint.com\`. Aucune URL externe à notre écosystème n'est acceptée.
-* **Génération automatique de QR Code :** Dès la création du lien court, un **QR code** associé est automatiquement généré.
-* **Transparence et sécurité :** Chaque lien court généré intègre une page d'aperçu affichant le titre, l'image et la description du contenu de destination avant la redirection finale.
-* **Anonymat total :** La génération de liens s'effectue librement, sans aucune création de compte ou inscription préalable.
-* **Suivi des clics :** Un compteur de clics est automatiquement associé à chaque lien pour mesurer l'impact de vos partages.
+L'outil [SPC Interactive Brief](https://brief.stafprint.com/) permet de structurer les besoins d'un projet créatif ou technique en 6 phases sans jargon.
 
 ---
 
-## Étapes pour générer un lien court
+## Détail des 6 étapes
 
-1. Rendez-vous sur la plateforme dédiée : **go.stafprint.com**.
-2. Cliquez sur le bouton **Raccourcir un lien**.
-3. Collez l'URL de la page \`stafprint.com\` que vous souhaitez partager.
-4. Validez : le système génère instantanément un lien court unique au format **go.stafprint.com/r/XXXXXX**.
-5. **Copie et QR Code :**
-   * Cliquez sur **Copier** pour partager directement votre lien court.
-   * Téléchargez le **QR Code** généré.
+### Étape 1 : Choix du type de projet
+Sélectionnez la catégorie principale :
+* **Imprimerie & Signalétique :** Flyers, affiches, bâches, enseignes, cartes de visite.
+* **Identité Visuelle & Branding :** Logo, charte graphique, refonte de marque.
+* **Packaging & Objets Publicitaires :** Étiquettes, boîtes, vêtements, gadgets.
+* **Web & Solution Digitale :** Site vitrine, e-commerce, application.
 
-:::warning
-Le QR code est disponible au téléchargement uniquement pendant les **20 secondes** suivant la création du lien. Passé ce délai, l'image du QR code disparaît de l'écran.
-:::`,);
+---
+
+### Étape 2 : Identité de marque
+* **Raison sociale (Obligatoire) :** Nom de l'entreprise ou du projet.
+* **Slogan & Domaine d'activité (Optionnels) :** Phrase d'accroche et secteur d'activité.
+* **Objectifs prioritaires (Optionnels) :** Notoriété, vente, modernisation ou lancement.
+
+---
+
+### Étape 3 : Style et Logo
+* **Ambiance visuelle :** Univers graphique (*Corporate*, *Audacieux*, *Épuré*, *Naturel*, *Créatif/Pop*).
+* **Statut du logo :** Indiquez si vous disposez déjà d'un logo ou s'il est à concevoir.
+* **Fichier logo :** Seul le nom du fichier est enregistré en local ; aucun fichier lourd n'est envoyé sur les serveurs.
+
+---
+
+### Étape 4 : Précisions techniques
+Propose un questionnaire dynamique selon la catégorie choisie à l'étape 1. Tous les champs sont facultatifs.
+
+---
+
+### Étape 5 : Logistique & Contact
+* **Délais :** *Ultra Express* (-48h), *Standard* (3-5 jours), ou *Planifié* (+2 semaines).
+* **Mode de réception :** Retrait à l'atelier de Porto-Novo ou livraison à domicile.
+* **Budget & Contact :** Fourchette budgétaire estimative, nom et numéro WhatsApp.
+
+---
+
+### Étape 6 : Validation & CGU
+Visualisation complète de la fiche de synthèse. La validation finale génère la référence unique du brief après acceptation des CGU.
+`,);
 
 export default article;
