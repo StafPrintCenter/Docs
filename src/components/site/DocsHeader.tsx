@@ -110,27 +110,31 @@ export function DocsHeader({
 
         {/* Navigation des Espaces Docs (Variant Docs - Desktop) */}
         {isDocs && (
-          <nav
-            aria-label="Espaces de documentation"
-            className="ml-2 hidden items-center gap-1 rounded-xl border border-border bg-muted/60 p-1 xl:flex"
-          >
-            {spaceNav.map((entry) => {
-              const isActive = entry.id === activeSpaceId;
-              return (
-                <Link
-                  key={entry.id}
-                  to="/docs/$space/$slug"
-                  params={{ space: entry.id, slug: entry.slug }}
-                  className={`rounded-lg px-3 py-1.5 text-sm font-medium transition-colors ${isActive
-                    ? "bg-brand text-brand-foreground shadow-sm"
-                    : "text-muted-foreground hover:text-foreground"
-                    }`}
-                >
-                  {entry.label}
-                </Link>
-              );
-            })}
-          </nav>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button
+                type="button"
+                className="ml-2 hidden shrink-0 cursor-pointer items-center gap-1.5 rounded-xl border border-border bg-muted/60 px-3 py-1.5 text-sm font-medium text-foreground transition-colors hover:border-brand/50 xl:flex"
+              >
+                <span className="max-w-48 truncate">{activeSpaceLabel}</span>
+                <ChevronDown className="size-4 text-muted-foreground" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start" className="min-w-48">
+              {spaceNav.map((entry) => {
+                const isActive = entry.id === activeSpaceId;
+                return (
+                  <DropdownMenuItem
+                    key={entry.id}
+                    onSelect={() => goToSpace(entry.id)}
+                    className={`cursor-pointer ${isActive ? "bg-brand/10 text-brand" : ""}`}
+                  >
+                    {entry.label}
+                  </DropdownMenuItem>
+                );
+              })}
+            </DropdownMenuContent>
+          </DropdownMenu>
         )}
 
         {/* Zone d'actions Droite */}
