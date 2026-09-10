@@ -68,6 +68,8 @@ export function DocsHeader({
     });
   };
 
+  const activeSpaceLabel = spaceNav.find((e) => e.id === activeSpaceId)?.label ?? "Espaces";
+
   return (
     <header
       className={`border-b border-border bg-background/95 backdrop-blur-md z-30 ${sticky ? "sticky top-0" : "relative"
