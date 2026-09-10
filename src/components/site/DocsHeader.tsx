@@ -4,6 +4,7 @@ import { Bookmark, BookOpen, ChevronDown, LifeBuoy, SquareMenu, PanelLeftOpen, S
 import logos from "@/assets/logos.json";
 import { spaceNav, firstArticleParams } from "@/data/content/docs";
 import { ThemeToggle } from "@/components/docs/ThemeToggle";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 interface HeaderProps {
   variant?: "default" | "docs";
