@@ -10,7 +10,7 @@ export const article = defineArticle("suivre-une-commande",
 
 ## Procédure de suivi
 
-1. Rendez-vous sur la page dédiée : **stafprint.com/tools/lookup**.
+1. Rendez-vous sur la page dédiée : [stafprint.com/tools/lookup](https://stafprint.com/tools/lookup).
 2. Renseignez l'**adresse email** utilisée lors de la soumission de votre formulaire.
 3. Saisissez votre **numéro de ticket** au format **SPC-AAAMMJJ_HHMMSS-XXXX** (reçu après l'envoi de votre message).
 4. Validez pour accéder aux détails de votre demande.
