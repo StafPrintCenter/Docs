@@ -1,23 +1,23 @@
 import { defineSupportArticle } from "@/content/support/define";
 
-export const article = defineSupportArticle("decouvrir-spc-arcade",
-  "Découvrir et jouer sur SPC Arcade",
-  "Présentation du hub de jeux ludiques de STAF PRINT CENTER et accès aux simulateurs.",
-  `# Découvrir et jouer sur SPC Arcade
+export const article = defineSupportArticle("cadrer-un-projet-en-6-etapes",
+  "Cadrer un projet en 6 étapes sur SPC Brief",
+  "Guide pas à pas pour exprimer son besoin sans jargon technique.",
+  `# Cadrer un projet en 6 étapes sur SPC Brief
 
-## Présentation de la plateforme
+## Déroulement du formulaire
 
-[SPC Arcade](https://arcade.stafprint.com/) est un hub de mini-jeux et simulateurs interactifs conçus par STAF PRINT CENTER pour tester et développer ses compétences en impression, prépresse, design graphique et développement web.
+[SPC Interactive Brief](https://brief.stafprint.com/) vous guide à travers 6 étapes simples pour définir votre projet :
 
-## Jeux disponibles
-
-La plateforme propose 10 défis adaptés à tous les niveaux :
-* **Prépresse & Gestion :** *Printing & Prepress Master*, *STAF Studio Manager*.
-* **Aventure & Réflexes :** *Print & Web Quest*, *Skill Badges & Arcade*.
-* **Design & Retouche :** *Web Builder Simulator*, *Visuel Express*, *Chasse aux Erreurs*, *Pixel Reproduction*, *Logo Rebuild* et *Back Eraser*.
+1. **Type de projet :** Choisissez parmi *Imprimerie*, *Branding*, *Packaging* ou *Web*.
+2. **Informations de marque :** Indiquez votre raison sociale, secteur, slogan et objectifs.
+3. **Style et Logo :** Précisez l'ambiance visuelle et le statut de votre logo.
+4. **Précisions techniques :** Renseignez les critères spécifiques (dimensions, pages, finitions).
+5. **Logistique :** Choisissez les délais, le budget indicatif et le mode de livraison.
+6. **Validation :** Relisez le résumé et acceptez les CGU pour générer votre fiche.
 
 :::tip
-L'accès à [SPC Arcade](https://arcade.stafprint.com/) est totalement gratuit et ne nécessite aucune création de compte préalable.
+Toutes les questions techniques sont optionnelles et s'adaptent dynamiquement au projet sélectionné.
 :::`,
 );
 
