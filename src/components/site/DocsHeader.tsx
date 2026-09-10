@@ -71,7 +71,7 @@ export function DocsHeader({
     setSpacePickerOpen(false);
   };
 
-  const activeSpaceLabel = spaceNav.find((e) => e.id === activeSpaceId)?.label ?? "- Choisir un espace -";
+  const activeSpaceLabel = spaceNav.find((e) => e.id === activeSpaceId)?.label ?? "Choisir un espace";
 
   return (
     <header
