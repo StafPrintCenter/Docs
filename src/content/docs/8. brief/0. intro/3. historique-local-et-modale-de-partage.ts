@@ -1,9 +1,9 @@
 import { defineArticle } from "@/content/docs/define";
 
-export const article = defineArticle("partage-et-gestion-des-briefs",
-  "Gestion, exportation et partage de la fiche projet",
-  "Fonctionnalités de partage WhatsApp, e-mail, PDF et gestion des brouillons.",
-  ["brief", "partage", "pdf", "whatsapp", "brouillon"],
+export const article = defineArticle("historique-local-et-modale-de-partage",
+  "Historique local et modale de partage du brief",
+  "Consultation des fiches enregistrées, reprise des brouillons et options d'envoi.",
+  ["brief", "historique", "partage", "pdf", "whatsapp"],
   "new",
   "10 septembre 2026",
   `# Gestion, exportation et partage de la fiche projet
