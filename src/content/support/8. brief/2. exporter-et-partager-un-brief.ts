@@ -1,28 +1,21 @@
 import { defineSupportArticle } from "@/content/support/define";
 
-export const article = defineSupportArticle("progression-et-confidentialite-arcade",
-  "Grades, XP et confidentialité des données sur SPC Arcade",
-  "Calcul des points d'expérience, passage de niveaux et sauvegarde locale.",
-  `# Grades, XP et confidentialité des données sur SPC Arcade
+export const article = defineSupportArticle("exporter-et-partager-un-brief",
+  "Exporter et partager sa fiche projet",
+  "Options d'export PDF, envoi par WhatsApp, e-mail et formulaire automatique.",
+  `# Exporter et partager sa fiche projet
 
-## Progression et Grades
+## Options de partage disponibles
 
-En jouant aux différents mini-jeux de [SPC Arcade](https://arcade.stafprint.com/), vous cumulez des points d'expérience (**XP**) pour gravir les 7 échelons de la hiérarchie du studio :
+Une fois la fiche projet validée sur [SPC Interactive Brief](https://brief.stafprint.com/), vous disposez de 4 modes de transmission :
 
-1. **Niveau 1 :** Stagiaire Studio (0 XP)
-2. **Niveau 2 :** Assistant PAO (150 XP)
-3. **Niveau 3 :** Technicien PAO (400 XP)
-4. **Niveau 4 :** Infographiste Senior (800 XP)
-5. **Niveau 5 :** Chef de Fabrication (1 400 XP)
-6. **Niveau 6 :** Directeur Artistique (2 200 XP)
-7. **Niveau 7 :** Légende STAF (3 200 XP)
-
-## Sauvegarde et Confidentialité
-
-Vos scores, niveaux et badges sont conservés exclusivement dans la mémoire locale de votre navigateur (**localStorage**). Aucune donnée personnelle n'est envoyée ou stockée sur nos serveurs.
+* **Téléchargement PDF :** Obtenez votre fiche récapitulative au format PDF.
+* **Envoi WhatsApp :** Transmettez le résumé directement à notre support client via un message pré-rempli.
+* **Envoi par E-mail :** Expédiez votre demande par courriel à l'équipe technique.
+* **Soumission automatique :** Transférez vos données directement dans notre système pour recevoir un devis gratuit.
 
 :::note
-Si vous changez de navigateur ou effacez les données de navigation, votre progression sur la plateforme sera réinitialisée.
+Vous pouvez modifier votre brief à tout moment depuis la page de synthèse ou votre espace **Mes briefs**.
 :::`,
 );
 
