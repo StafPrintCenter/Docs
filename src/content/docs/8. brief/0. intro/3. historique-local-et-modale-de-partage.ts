@@ -6,25 +6,31 @@ export const article = defineArticle("historique-local-et-modale-de-partage",
   ["brief", "historique", "partage", "pdf", "whatsapp"],
   "new",
   "10 septembre 2026",
-  `# Gestion, exportation et partage de la fiche projet
+  `# Historique local et modale de partage du brief
 
-Une fois la fiche générée sur [SPC Interactive Brief](https://brief.stafprint.com/), le projet reçoit un identifiant unique (ex: \`SPC-2026-3206\`).
-
----
-
-## Modes de diffusion et d'exportation
-
-* **a) Téléchargement PDF :** Génère un document PDF complet prêt pour l'archivage ou l'impression.
-* **b) Transmettre par WhatsApp :** Envoie directement le résumé textuel pré-formaté au service client STAF PRINT CENTER.
-* **c) Expédition par e-mail :** Adresse une copie de la fiche au support technique.
-* **d) Soumission par formulaire :** Transmet automatiquement tous les champs pré-remplis pour l'établissement d'un devis officiel sans engagement.
+Toutes vos saisies réalisées sur [SPC Interactive Brief](https://brief.stafprint.com/) sont centralisées dans l'espace [Mes briefs](https://brief.stafprint.com/history).
 
 ---
 
-## Édition et stockage local
+## Gestion de l'historique local
 
-* **Modification :** Il est possible de rééditer n'importe quelle étape depuis la synthèse.
-* **Mes briefs :** Les briefs enregistrés et les brouillons en cours sont conservés localement sur le navigateur de l'utilisateur.
+Les fiches sont conservées localement dans la mémoire de votre navigateur (**localStorage**) :
+
+* **Fiches en *Brouillon* :** Projets interrompus en cours de saisie. Le bouton **Reprendre** vous réoriente vers la dernière étape complétée pour poursuivre le formulaire.
+* **Fiches *Validées* :** Projets finalisés. Le bouton **Consulter** affiche le document récapitulatif structuré.
+* **Suppression :** Permet de supprimer définitivement la fiche de l'appareil via le bouton corbeille.
+
+---
+
+## Options de la modale de partage
+
+Le bouton **Partager** déclenche une modale d'exportation avec 5 canaux de diffusion :
+
+* **Envoyer sur WhatsApp :** Ouvre l'application avec un message pré-rédigé contenant la référence du brief et la synthèse de vos besoins.
+* **Envoyer par e-mail :** Prépare un courriel destiné à \`contact@stafprint.com\` avec les informations du projet.
+* **Envoyer via le formulaire du site :** Bascule vers le formulaire de contact officiel du site \`stafprint.com\` avec l'ensemble des données pré-remplies.
+* **Télécharger en PDF :** Exporte un document PDF propre et structuré, prêt pour l'impression ou l'archivage.
+* **Copier le lien du brief :** Place le lien de consultation directe de la fiche dans votre presse-papier.
 `,);
 
 export default article;
