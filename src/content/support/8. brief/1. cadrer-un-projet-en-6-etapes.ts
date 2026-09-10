@@ -16,7 +16,7 @@ export const article = defineSupportArticle("cadrer-un-projet-en-6-etapes",
 5. **Logistique :** Choisissez les délais, le budget indicatif et le mode de livraison.
 6. **Validation :** Relisez le résumé et acceptez les CGU pour générer votre fiche.
 
-:::tip
+:::note
 Toutes les questions techniques sont optionnelles et s'adaptent dynamiquement au projet sélectionné.
 :::`,
 );
