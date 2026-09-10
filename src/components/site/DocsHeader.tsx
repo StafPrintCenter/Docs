@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { Bookmark, BookOpen, ChevronDown, LifeBuoy, SquareMenu, PanelLeftOpen, Search, X } from "lucide-react";
+import { Bookmark, BookOpen, Check, ChevronsUpDown, LifeBuoy, SquareMenu, PanelLeftOpen, Search, X } from "lucide-react";
 import logos from "@/assets/logos.json";
 import { spaceNav, firstArticleParams } from "@/data/content/docs";
 import { ThemeToggle } from "@/components/docs/ThemeToggle";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 interface HeaderProps {
   variant?: "default" | "docs";
@@ -29,6 +30,7 @@ export function DocsHeader({
   const navigate = useNavigate();
   const isDocs = variant === "docs";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [spacePickerOpen, setSpacePickerOpen] = useState(false);
 
   // Liens de navigation
   const navLinks = [
@@ -66,6 +68,7 @@ export function DocsHeader({
       to: "/docs/$space/$slug",
       params: { space: entry.id, slug: entry.slug },
     });
+    setSpacePickerOpen(false);
   };
 
   const activeSpaceLabel = spaceNav.find((e) => e.id === activeSpaceId)?.label ?? "- Choisir un espace -";
@@ -81,7 +84,7 @@ export function DocsHeader({
           <button
             type="button"
             onClick={onToggleSidebar}
-            className="rounded-md p-2 text-muted-foreground hover:bg-muted lg:hidden cursor-pointer"
+            className="shrink-0 rounded-md p-2 text-muted-foreground hover:bg-muted lg:hidden cursor-pointer"
             aria-label="Ouvrir la navigation"
           >
             <PanelLeftOpen className="size-5" />
@@ -110,33 +113,43 @@ export function DocsHeader({
           )}
         </Link>
 
-        {/* Navigation des Espaces Docs (Variant Docs - Desktop) */}
+        {/* Sélecteur d'Espace Docs (Variant Docs - Desktop) — combobox recherchable */}
         {isDocs && (
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
+          <Popover open={spacePickerOpen} onOpenChange={setSpacePickerOpen}>
+            <PopoverTrigger asChild>
               <button
                 type="button"
                 className="ml-2 hidden shrink-0 cursor-pointer items-center gap-1.5 rounded-xl border border-border bg-muted/60 px-3 py-1.5 text-sm font-medium text-foreground transition-colors hover:border-brand/50 xl:flex"
               >
-                <span className="max-w-48 truncate">{activeSpaceLabel}</span>
-                <ChevronDown className="size-4 text-muted-foreground" />
+                <span className="max-w-44 truncate">{activeSpaceLabel}</span>
+                <ChevronsUpDown className="size-3.5 text-muted-foreground" />
               </button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="start" className="min-w-48">
-              {spaceNav.map((entry) => {
-                const isActive = entry.id === activeSpaceId;
-                return (
-                  <DropdownMenuItem
-                    key={entry.id}
-                    onSelect={() => goToSpace(entry.id)}
-                    className={`cursor-pointer ${isActive ? "bg-brand/10 text-brand" : ""}`}
-                  >
-                    {entry.label}
-                  </DropdownMenuItem>
-                );
-              })}
-            </DropdownMenuContent>
-          </DropdownMenu>
+            </PopoverTrigger>
+            <PopoverContent align="start" className="w-64 p-0">
+              <Command>
+                <CommandInput placeholder="Rechercher un espace…" />
+                <CommandList>
+                  <CommandEmpty>Aucun espace trouvé.</CommandEmpty>
+                  <CommandGroup>
+                    {spaceNav.map((entry) => {
+                      const isActive = entry.id === activeSpaceId;
+                      return (
+                        <CommandItem
+                          key={entry.id}
+                          value={entry.label}
+                          onSelect={() => goToSpace(entry.id)}
+                          className="cursor-pointer"
+                        >
+                          <Check className={`mr-2 size-4 ${isActive ? "opacity-100" : "opacity-0"}`} />
+                          {entry.label}
+                        </CommandItem>
+                      );
+                    })}
+                  </CommandGroup>
+                </CommandList>
+              </Command>
+            </PopoverContent>
+          </Popover>
         )}
 
         {/* Zone d'actions Droite */}
