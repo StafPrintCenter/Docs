@@ -3,12 +3,12 @@ import { SITE, SITE_LINK } from "@/data/site";
 import { getDocSpaceMeta } from "@/data/ecosystem";
 
 const fallback: DocSpaceMeta = {
-  id: "ai",
-  name: "SPC Intelligence",
+  id: "brief",
+  name: "SPC Interactive Brief",
   shortName: "Intelligence",
   tagline: "***Visioconférence & salles de réunion",
-  description: `***Plateforme de visioconférence pour les réunions et sessions à distance de ${SITE.name}.`,
-  url: SITE_LINK.meetUrl,
+  description: `Cadrage de projet en 6 étapes, estimation des besoins, exportation PDF et envoi de fiches.`,
+  url: SITE_LINK.briefUrl,
   status: "available",
 };
 
