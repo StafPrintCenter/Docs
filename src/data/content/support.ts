@@ -12,7 +12,6 @@ export const SUPPORT_CATEGORY_ICONS = {
   training: GraduationCap,
   services: Printer,
   gamepad: Gamepad,
-  filepen: FilePenLine,
 } as const;
 
 export const supportCategories: SupportCategory[] = categories;
