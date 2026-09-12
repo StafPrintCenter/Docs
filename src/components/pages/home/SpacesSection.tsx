@@ -163,7 +163,7 @@ export function SpacesSection() {
             <select
               value={statusFilter}
               onChange={(event) => setStatusFilter(event.target.value as typeof statusFilter)}
-              className="h-10 w-full rounded-md border border-input bg-background px-3 text-sm text-foreground"
+              className="h-10 w-full rounded-md border border-input bg-card px-3 text-sm text-foreground"
             >
               <option value="all">Tous les statuts</option>
               <option value="available">Disponible</option>
@@ -177,7 +177,7 @@ export function SpacesSection() {
               <select
                 value={sortOrder}
                 onChange={(event) => setSortOrder(event.target.value as typeof sortOrder)}
-                className="h-10 w-full rounded-md border border-input bg-background pl-9 pr-3 text-sm text-foreground"
+                className="h-10 w-full rounded-md border border-input bg-card pl-9 pr-3 text-sm text-foreground"
               >
                 <option value="articles-desc">Plus d'articles</option>
                 <option value="articles-asc">Moins d'articles</option>
