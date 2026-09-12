@@ -11,14 +11,10 @@ Lors de votre première visite sur [SPC Intelligence](https://ai.stafprint.com/)
 
 ## Champ d'application strictement encadré
 
-SPC Intelligence est configuré pour répondre exclusivement aux sujets liés à l'écosystème STAF PRINT CENTER :
-* Services d'impression, préparation de fichiers PAO (CMJN, résolution, fonds perdus) et devis.
-* Programmes de formation et fonctionnement de l'espace apprenant ou formateur.
-* Navigation et fonctionnalités des outils web de l'écosystème.
+SPC Intelligence est configuré pour répondre exclusivement aux sujets liés à l'écosystème STAF PRINT CENTER.
 
-:::warning Questions hors périmètre
 Toute question ne concernant pas l'écosystème (ex: actualités politiques, culture générale) est automatiquement déclinée par l'assistant.
-:::
+
 
 ## Interface et commandes rapides
 
