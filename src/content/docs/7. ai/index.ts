@@ -6,7 +6,7 @@ const fallback: DocSpaceMeta = {
   id: "ai",
   name: "SPC Intelligence",
   shortName: "Intelligence",
-  tagline: `Assistant virtuel intelligent de ${SITE.name}`,
+  tagline: "Assistant virtuel intelligent",
   description: `Assistant virtuel intelligent de ${SITE.name} : assistance instantanée, analyse de documents et génération de contenu pour vos projets d\'impression et web.`,
   url: SITE_LINK.aiUrl,
   status: "available",
