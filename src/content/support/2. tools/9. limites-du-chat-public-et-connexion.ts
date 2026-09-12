@@ -1,30 +1,23 @@
 import { defineSupportArticle } from "@/content/support/define";
 
-export const article = defineSupportArticle("gestion-historique-et-partage-brief",
-  "Consulter l'historique local et partager son brief",
-  "Accès aux briefs enregistrés en local, reprise de brouillon et options de partage.",
-  `# Consulter l'historique local et partager son brief
+export const article = defineSupportArticle("limites-du-chat-public-et-connexion",
+  "Quotas du chat public et état des accès membres",
+  "Limitation quotidienne à 3 messages en mode visiteur et statut de la bêta fermée.",
+  `# Quotas du chat public et état des accès membres
 
-## Espace Mes briefs (Historique local)
+## Limite de messages en mode public
 
-La page [Mes briefs](https://brief.stafprint.com/history) répertorie tous les projets créés sur votre appareil. Chaque fiche indique sa référence unique (ex: \`SPC-2026-3902\`), son titre, le type de projet, la date de création et son statut (*Brouillon* ou *Validé*) :
+En accès anonyme (sans connexion), l'utilisation de [SPC Intelligence](https://ai.stafprint.com/) est soumise aux règles suivantes :
+* **Quota :** Un compteur autorise **3 messages gratuits par jour**.
+* **Fichiers :** L'envoi et l'analyse de fichiers joints ne sont pas disponibles en mode visiteur.
+* **Historique :** Vos discussions sont enregistrées localement dans votre navigateur (**localStorage**).
 
-* **Brouillon :** Permet d'utiliser le bouton **Reprendre** pour finaliser les étapes restantes.
-* **Validé :** Permet d'utiliser le bouton **Consulter** pour afficher la fiche de synthèse complète.
-* **Suppression :** Icône de corbeille pour retirer définitivement le brief de votre appareil.
+## Accès aux Espaces et Bêta Fermée
 
-## Modale d'envoi et de partage
+La page de connexion ([ai.stafprint.com/login](https://ai.stafprint.com/login)) permet de basculer vers les espaces *Client*, *Apprenant* ou *Formateur*.
 
-Le bouton **Partager** présent sur chaque fiche ouvre une fenêtre modale proposant 5 actions :
-
-1. **Envoyer sur WhatsApp :** Génère un message texte pré-rempli vers l'équipe commerciale STAF PRINT CENTER.
-2. **Envoyer par e-mail :** Ouvre un courrier électronique pré-rempli adressé à \`contact@stafprint.com\`.
-3. **Envoyer via le formulaire du site :** Redirige vers le site officiel \`stafprint.com\` avec les données pré-injectées.
-4. **Télécharger en PDF :** Génère une fiche récapitulative au format PDF prête à être transmise.
-5. **Copier le lien du brief :** Copie l'URL d'accès direct pour une consultation sur votre appareil.
-
-:::note
-Vos briefs sont enregistrés exclusivement dans le navigateur de votre appareil (**localStorage**). Aucune donnée n'est stockée à distance sans votre action d'envoi.
+:::note Bêta fermée
+Les connexions aux espaces membres sont temporairement désactivées pendant la phase de test. Le chat public reste 100 % accessible dans la limite des 3 messages quotidiens.
 :::`,
 );
 
