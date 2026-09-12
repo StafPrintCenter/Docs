@@ -16,7 +16,7 @@ En accès anonyme (sans connexion), l'utilisation de [SPC Intelligence](https://
 
 La page de connexion ([ai.stafprint.com/login](https://ai.stafprint.com/login)) permet de basculer vers les espaces *Client*, *Apprenant* ou *Formateur*.
 
-:::note Bêta fermée
+:::note
 Les connexions aux espaces membres sont temporairement désactivées pendant la phase de test. Le chat public reste 100 % accessible dans la limite des 3 messages quotidiens.
 :::`,
 );
