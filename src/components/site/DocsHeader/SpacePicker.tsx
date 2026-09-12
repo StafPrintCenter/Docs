@@ -1,23 +1,17 @@
-import { spaceNav } from "@/data/content/docs";
+import { useState } from "react";
 import { Check, ChevronsUpDown } from "lucide-react";
+import { spaceNav } from "@/data/content/docs";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 interface SpacePickerProps {
   activeSpaceId?: string;
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
   onSelectSpace: (id: string) => void;
   mobile?: boolean;
 }
 
-export function SpacePicker({
-  activeSpaceId,
-  open,
-  onOpenChange,
-  onSelectSpace,
-  mobile = false,
-}: SpacePickerProps) {
+export function SpacePicker({ activeSpaceId, onSelectSpace, mobile = false }: SpacePickerProps) {
+  const [open, setOpen] = useState(false);
   const activeSpaceLabel = spaceNav.find((e) => e.id === activeSpaceId)?.label ?? "Choisir un espace";
 
   if (mobile) {
@@ -43,7 +37,7 @@ export function SpacePicker({
   }
 
   return (
-    <Popover open={open} onOpenChange={onOpenChange}>
+    <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <button
           type="button"
@@ -65,7 +59,10 @@ export function SpacePicker({
                   <CommandItem
                     key={entry.id}
                     value={entry.label}
-                    onSelect={() => onSelectSpace(entry.id)}
+                    onSelect={() => {
+                      onSelectSpace(entry.id);
+                      setOpen(false);
+                    }}
                     className="cursor-pointer"
                   >
                     <Check className={`mr-2 size-4 ${isActive ? "opacity-100" : "opacity-0"}`} />
