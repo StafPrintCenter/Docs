@@ -6,12 +6,11 @@ const fallback: DocSpaceMeta = {
   id: "ai",
   name: "SPC Intelligence",
   shortName: "Intelligence",
-  tagline: "***Visioconférence & salles de réunion",
-  description: `***Plateforme de visioconférence pour les réunions et sessions à distance de ${SITE.name}.`,
-  url: SITE_LINK.meetUrl,
+  tagline: `Assistant virtuel intelligent de ${SITE.name} : assistance instantanée, analyse de documents et génération de contenu pour vos projets d\'impression et web.`,
+  url: SITE_LINK.aiUrl,
   status: "available",
 };
 
-export const space: DocSpaceMeta = getDocSpaceMeta("meet", fallback);
+export const space: DocSpaceMeta = getDocSpaceMeta("ai", fallback);
 
 export default space;
