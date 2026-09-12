@@ -1,31 +1,31 @@
 import { defineSupportArticle } from "@/content/support/define";
 
-export const article = defineSupportArticle("gestion-historique-et-partage-brief",
-  "Consulter l'historique local et partager son brief",
-  "Accès aux briefs enregistrés en local, reprise de brouillon et options de partage.",
-  `# Consulter l'historique local et partager son brief
+export const article = defineSupportArticle("decouvrir-et-utiliser-spc-intelligence",
+  "Découvrir et utiliser SPC Intelligence",
+  "Règles d'utilisation, commandes spéciales / et @, et champ d'application de l'assistant IA.",
+  `# Découvrir et utiliser SPC Intelligence
 
-## Espace Mes briefs (Historique local)
+## Présentation et acceptation des conditions
 
-La page [Mes briefs](https://brief.stafprint.com/history) répertorie tous les projets créés sur votre appareil. Chaque fiche indique sa référence unique (ex: \`SPC-2026-3902\`), son titre, le type de projet, la date de création et son statut (*Brouillon* ou *Validé*) :
+Lors de votre première visite sur [SPC Intelligence](https://ai.stafprint.com/), une fenêtre modale vous demande de valider les conditions d'utilisation. L'assistant signale que ses réponses sont générées automatiquement et doivent être vérifiées avant tout usage professionnel.
 
-* **Brouillon :** Permet d'utiliser le bouton **Reprendre** pour finaliser les étapes restantes.
-* **Validé :** Permet d'utiliser le bouton **Consulter** pour afficher la fiche de synthèse complète.
-* **Suppression :** Icône de corbeille pour retirer définitivement le brief de votre appareil.
+## Champ d'application strictement encadré
 
-## Modale d'envoi et de partage
+SPC Intelligence est configuré pour répondre exclusivement aux sujets liés à l'écosystème STAF PRINT CENTER :
+* Services d'impression, préparation de fichiers PAO (CMJN, résolution, fonds perdus) et devis.
+* Programmes de formation et fonctionnement de l'espace apprenant ou formateur.
+* Navigation et fonctionnalités des outils web de l'écosystème.
 
-Le bouton **Partager** présent sur chaque fiche ouvre une fenêtre modale proposant 5 actions :
+:::warning Questions hors périmètre
+Toute question ne concernant pas l'écosystème (ex: actualités politiques, culture générale) est automatiquement déclinée par l'assistant.
+:::
 
-1. **Envoyer sur WhatsApp :** Génère un message texte pré-rempli vers l'équipe commerciale STAF PRINT CENTER.
-2. **Envoyer par e-mail :** Ouvre un courrier électronique pré-rempli adressé à \`contact@stafprint.com\`.
-3. **Envoyer via le formulaire du site :** Redirige vers le site officiel \`stafprint.com\` avec les données pré-injectées.
-4. **Télécharger en PDF :** Génère une fiche récapitulative au format PDF prête à être transmise.
-5. **Copier le lien du brief :** Copie l'URL d'accès direct pour une consultation sur votre appareil.
+## Interface et commandes rapides
 
-:::note
-Vos briefs sont enregistrés exclusivement dans le navigateur de votre appareil (**localStorage**). Aucune donnée n'est stockée à distance sans votre action d'envoi.
-:::`,
+* **Suggestions de questions :** Des cartes d'exemples s'affichent sur la page d'accueil pour lancer une conversation en un clic.
+* **Commandes d'action \`/\` :** Tapez \`/\` dans la zone de saisie pour déclencher une action rapide (\`/code\`, \`/image\`, \`/devis\`, \`/resume\`, \`/analyse\`).
+* **Injections de contexte \`@\` :** Tapez \`@\` pour cibler un contexte précis (\`@ecosysteme\`, \`@impression\`, \`@formation\`, \`@client\`, \`@formateur\`).
+`,
 );
 
 export default article;
