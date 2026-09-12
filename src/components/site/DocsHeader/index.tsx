@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { PanelLeftOpen, Search, SquareMenu, X } from "lucide-react";
+import { Bookmark, BookOpen, LifeBuoy, PanelLeftOpen, Search, SquareMenu, X } from "lucide-react";
 import logos from "@/assets/logos.json";
-import { spaceNav } from "@/data/content/docs";
+import { spaceNav, firstArticleParams } from "@/data/content/docs";
 import { ThemeToggle } from "@/components/docs/ThemeToggle";
 import { SpacePicker } from "./SpacePicker";
-import { NavLinks } from "./NavLinks";
+import { DocsNav, NavLinkItem } from "./DocsNav";
 
 export interface HeaderProps {
   variant?: "default" | "docs";
@@ -30,16 +30,41 @@ export function DocsHeader({
   const navigate = useNavigate();
   const isDocs = variant === "docs";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [spacePickerOpen, setSpacePickerOpen] = useState(false);
 
-  const goToSpace = (id: string) => {
+  const navLinks: (NavLinkItem & { hideOnDocs?: boolean })[] = [
+    {
+      key: "docs",
+      to: "/docs/$space/$slug",
+      params: firstArticleParams("landing"),
+      icon: BookOpen,
+      label: "Documentation",
+      hideOnDocs: true,
+    },
+    {
+      key: "support",
+      to: "/support",
+      icon: LifeBuoy,
+      label: "Centre d'aide",
+      hideOnDocs: false,
+    },
+    {
+      key: "saves",
+      to: "/saves",
+      icon: Bookmark,
+      label: "Enregistrés",
+      hideOnDocs: false,
+    },
+  ];
+
+  const activeNavLinks = navLinks.filter((link) => !(isDocs && link.hideOnDocs));
+
+  const handleSelectSpace = (id: string) => {
     const entry = spaceNav.find((p) => p.id === id);
     if (!entry) return;
     void navigate({
       to: "/docs/$space/$slug",
       params: { space: entry.id, slug: entry.slug },
     });
-    setSpacePickerOpen(false);
   };
 
   return (
@@ -78,18 +103,11 @@ export function DocsHeader({
         </Link>
 
         {/* Sélecteur d'Espace Desktop */}
-        {isDocs && (
-          <SpacePicker
-            activeSpaceId={activeSpaceId}
-            open={spacePickerOpen}
-            onOpenChange={setSpacePickerOpen}
-            onSelectSpace={goToSpace}
-          />
-        )}
+        {isDocs && <SpacePicker activeSpaceId={activeSpaceId} onSelectSpace={handleSelectSpace} />}
 
-        {/* Zone d'actions Droite */}
+        {/* Actions Droite */}
         <div className="flex flex-1 items-center justify-end gap-2">
-          <NavLinks isDocs={isDocs} />
+          <DocsNav links={activeNavLinks} />
 
           {/* Recherche */}
           {onOpenSearch && (
@@ -117,21 +135,13 @@ export function DocsHeader({
         </div>
       </div>
 
-      {/* Dropdown Menu Mobile Hamburger */}
+      {/* Navigation Mobile */}
       {mobileMenuOpen && (
-        <NavLinks isDocs={isDocs} mobile onItemClick={() => setMobileMenuOpen(false)} />
+        <DocsNav links={activeNavLinks} mobile onItemClick={() => setMobileMenuOpen(false)} />
       )}
 
-      {/* Select Espaces Mobile */}
-      {isDocs && (
-        <SpacePicker
-          activeSpaceId={activeSpaceId}
-          open={false}
-          onOpenChange={() => { }}
-          onSelectSpace={goToSpace}
-          mobile
-        />
-      )}
+      {/* Sélecteur d'Espace Mobile */}
+      {isDocs && <SpacePicker activeSpaceId={activeSpaceId} onSelectSpace={handleSelectSpace} mobile />}
     </header>
   );
 }
