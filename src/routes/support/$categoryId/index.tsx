@@ -1,8 +1,12 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { useMemo, useState } from "react";
 import { DocsShell } from "@/components/site/DocsShell";
+import { Button } from "@/components/ui/button";
 import { articlesByCategory, getSupportCategory, SUPPORT_CATEGORY_ICONS } from "@/data/content/support";
 import { SITE } from "@/data/site";
+
+const ITEMS_PER_PAGE = 5;
 
 export const Route = createFileRoute("/support/$categoryId/")({
   loader: ({ params }) => {
@@ -24,12 +28,26 @@ export const Route = createFileRoute("/support/$categoryId/")({
 
 function SupportCategoryPage() {
   const { categoryId } = Route.useParams();
+  const [currentPage, setCurrentPage] = useState(1);
+
   const category = getSupportCategory(categoryId);
   if (!category) return null;
 
   const Icon = SUPPORT_CATEGORY_ICONS[category.icon];
   const articles = articlesByCategory(categoryId);
   const articleCount = articles.length;
+
+  const totalPages = Math.ceil(articleCount / ITEMS_PER_PAGE);
+
+  const paginatedArticles = useMemo(() => {
+    const start = (currentPage - 1) * ITEMS_PER_PAGE;
+    return articles.slice(start, start + ITEMS_PER_PAGE);
+  }, [articles, currentPage]);
+
+  const handlePageChange = (newPage: number) => {
+    setCurrentPage(newPage);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
     <DocsShell>
@@ -62,7 +80,7 @@ function SupportCategoryPage() {
         </header>
 
         <div className="mt-8 grid gap-3">
-          {articles.map((article) => (
+          {paginatedArticles.map((article) => (
             <Link
               key={article.slug}
               to="/support/$categoryId/$slug"
@@ -81,6 +99,35 @@ function SupportCategoryPage() {
             </Link>
           ))}
         </div>
+
+        {/* Bloc de Pagination */}
+        {totalPages > 1 && (
+          <div className="mt-8 flex items-center justify-between border-t border-border pt-4">
+            <p className="text-sm text-muted-foreground">
+              Page {currentPage} sur {totalPages}
+            </p>
+            <div className="flex items-center gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+              >
+                <ChevronLeft className="size-4 mr-1" />
+                Précédent
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+              >
+                Suivant
+                <ChevronRight className="size-4 ml-1" />
+              </Button>
+            </div>
+          </div>
+        )}
       </main>
     </DocsShell>
   );
