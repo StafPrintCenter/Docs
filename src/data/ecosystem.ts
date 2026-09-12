@@ -64,6 +64,8 @@ export const LOGO_KEY_TO_SPACE_ID: Record<string, LocalDocSpaceId | undefined> =
   student: "student",
   meet: "meet",
   arcade: "arcade",
+  ai: "ai",
+  brief: "brief",
 };
 
 export function resolveLocalDocSpaceId(logoKey: string | undefined): LocalDocSpaceId | undefined {
