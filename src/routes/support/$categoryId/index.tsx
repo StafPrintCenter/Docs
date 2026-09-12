@@ -44,6 +44,9 @@ function SupportCategoryPage() {
     return articles.slice(start, start + ITEMS_PER_PAGE);
   }, [articles, currentPage]);
 
+  const startItem = articleCount > 0 ? (currentPage - 1) * ITEMS_PER_PAGE + 1 : 0;
+  const endItem = Math.min(currentPage * ITEMS_PER_PAGE, articleCount);
+
   const handlePageChange = (newPage: number) => {
     setCurrentPage(newPage);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -102,9 +105,12 @@ function SupportCategoryPage() {
 
         {/* Bloc de Pagination */}
         {totalPages > 1 && (
-          <div className="mt-8 flex items-center justify-between border-t border-border pt-4">
+          <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-border pt-4 sm:flex-row">
             <p className="text-sm text-muted-foreground">
-              Page {currentPage} sur {totalPages}
+              Affichage de <span className="font-medium text-foreground">{startItem}</span> à{" "}
+              <span className="font-medium text-foreground">{endItem}</span> sur{" "}
+              <span className="font-medium text-foreground">{articleCount}</span>{" "}
+              {articleCount > 1 ? "articles" : "article"}
             </p>
             <div className="flex items-center gap-2">
               <Button
@@ -113,7 +119,7 @@ function SupportCategoryPage() {
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
               >
-                <ChevronLeft className="size-4 mr-1" />
+                <ChevronLeft className="mr-1 size-4" />
                 Précédent
               </Button>
               <Button
@@ -123,7 +129,7 @@ function SupportCategoryPage() {
                 disabled={currentPage === totalPages}
               >
                 Suivant
-                <ChevronRight className="size-4 ml-1" />
+                <ChevronRight className="ml-1 size-4" />
               </Button>
             </div>
           </div>
