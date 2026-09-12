@@ -3,15 +3,15 @@ import { SITE_LINK } from "@/data/site";
 import { getDocSpaceMeta } from "@/data/ecosystem";
 
 const fallback: DocSpaceMeta = {
-  id: "brief",
-  name: "SPC Interactive Brief",
-  shortName: "Brief",
-  tagline: "Cadrage interactif & qualification de projet",
-  description: "Cadrage de projet en 6 étapes, estimation des besoins, exportation PDF et envoi de fiches.",
-  url: SITE_LINK.briefUrl,
+  id: "toolkit",
+  name: "SPC Creative Toolkit",
+  shortName: "Toolkit",
+  tagline: "Boîte à outils prépresse, impression & façonnage",
+  description: "10 utilitaires prépresse zéro-serveur s'exécutant à 100 % dans votre navigateur.",
+  url: SITE_LINK.toolkitUrl,
   status: "available",
 };
 
-export const space: DocSpaceMeta = getDocSpaceMeta("brief", fallback);
+export const space: DocSpaceMeta = getDocSpaceMeta("toolkit", fallback);
 
 export default space;
