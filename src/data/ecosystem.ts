@@ -52,6 +52,8 @@ export const LOCAL_DOC_SPACE_IDS = [
   "student",
   "meet",
   "arcade",
+  "ai",
+  "brief",
 ] as const;
 export type LocalDocSpaceId = (typeof LOCAL_DOC_SPACE_IDS)[number];
 
