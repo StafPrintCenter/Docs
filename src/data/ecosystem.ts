@@ -1,7 +1,14 @@
 import type { DocSpaceMeta } from "@/types/docs";
 
-export type EcosystemSiteCategory = "principal" | "outil" | "formation" | "communication" | "divertissement";
-export type EcosystemSiteStatus = "available" | "building";
+type EcosystemSiteCategory = "principal" | "outil" | "formation" | "communication" | "divertissement";
+type EcosystemSiteStatus = "available" | "building";
+
+const LOCAL_DOC_SPACE_IDS = [
+  "landing", "shortener", "instructor", "student",
+  "meet", "arcade", "ai", "brief", "toolkit",
+] as const;
+
+type LocalDocSpaceId = (typeof LOCAL_DOC_SPACE_IDS)[number];
 
 export interface APIEcosystemSite {
   id: string;
@@ -24,12 +31,9 @@ export interface APIEcosystemSite {
   updatedAt: string;
 }
 
-export const LOCAL_DOC_SPACE_IDS = [
-  "landing", "shortener", "instructor", "student",
-  "meet", "arcade", "ai", "brief", "toolkit",
-] as const;
 
-export type LocalDocSpaceId = (typeof LOCAL_DOC_SPACE_IDS)[number];
+
+
 
 export const LOGO_KEY_TO_SPACE_ID: Record<string, LocalDocSpaceId | undefined> = {
   mc: "landing",
@@ -48,7 +52,7 @@ export function resolveLocalDocSpaceId(logoKey: string | undefined): LocalDocSpa
   return LOGO_KEY_TO_SPACE_ID[logoKey];
 }
 
-export function isOfficialDocsSite(site: Pick<APIEcosystemSite, "logoKey">): boolean {
+function isOfficialDocsSite(site: Pick<APIEcosystemSite, "logoKey">): boolean {
   return site.logoKey === "docs";
 }
 
