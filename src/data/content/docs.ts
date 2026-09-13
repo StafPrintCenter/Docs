@@ -1,9 +1,5 @@
 import { spaces } from "@/content/docs";
-import {
-  getDocSpaceMeta,
-  resolveLocalDocSpaceId,
-  type APIEcosystemSite,
-} from "@/data/ecosystem";
+import { getDocSpaceMeta, resolveLocalDocSpaceId, type APIEcosystemSite } from "@/data/ecosystem";
 import type { DocArticle, DocSpace, DocSpaceId, SearchHit } from "@/types/docs";
 
 /**
