@@ -3,14 +3,9 @@ import { useState } from "react";
 import { ArrowRight, ArrowUpDown, Construction, ExternalLink, LifeBuoy, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { useEcosystemSitesStore } from "@/stores/useEcosystemSitesStore";
-import { getSpace, articleCount, firstArticleParams } from "@/data/content/docs";
+import { getSpace, articleCount, firstArticleParams, resolveDocSpaceIdForSite } from "@/data/content/docs";
 import { totalSupportArticlesCount } from "@/data/content/support";
-import {
-  filterPublicEcosystemSites,
-  resolveLocalDocSpaceId,
-  type APIEcosystemSite,
-  LOCAL_DOC_SPACE_IDS,
-} from "@/data/ecosystem";
+import { filterPublicEcosystemSites, type APIEcosystemSite } from "@/data/ecosystem";
 import { SpacesSectionSkeleton } from "./Skeleton";
 
 export function SpacesSection() {
@@ -41,15 +36,14 @@ export function SpacesSection() {
   });
 
   const renderSiteCard = (site: APIEcosystemSite) => {
-    const spaceId = resolveLocalDocSpaceId(site.logoKey);
-    const isLocalSpace = Boolean(spaceId && LOCAL_DOC_SPACE_IDS.includes(spaceId));
+    const spaceId = resolveDocSpaceIdForSite(site);
 
     // Récupérer l'espace local pour compter les articles
-    const localSpace = isLocalSpace ? getSpace(spaceId!) : null;
+    const localSpace = spaceId ? getSpace(spaceId) : null;
     const articleCountValue = localSpace ? articleCount(localSpace) : 0;
 
     // Condition pour déterminer si on pointe vers la doc interne
-    const hasLocalDocs = isLocalSpace && localSpace && articleCountValue > 0;
+    const hasLocalDocs = Boolean(localSpace && articleCountValue > 0);
 
     // Définition des URLs des variants avec fallback
     const logoMc = site.logoVariants?.mc || site.logoUrl;
@@ -136,9 +130,8 @@ export function SpacesSection() {
   };
 
   function getSiteArticleCount(site: APIEcosystemSite): number {
-    const spaceId = resolveLocalDocSpaceId(site.logoKey);
-    if (!spaceId || !LOCAL_DOC_SPACE_IDS.includes(spaceId)) return 0;
-    const localSpace = getSpace(spaceId);
+    const spaceId = resolveDocSpaceIdForSite(site);
+    const localSpace = spaceId ? getSpace(spaceId) : undefined;
     return localSpace ? articleCount(localSpace) : 0;
   }
 
