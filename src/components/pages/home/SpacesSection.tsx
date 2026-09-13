@@ -171,7 +171,7 @@ export function SpacesSection() {
               <select
                 value={sortOrder}
                 onChange={(event) => setSortOrder(event.target.value as typeof sortOrder)}
-                className="h-10 w-full rounded-md border border-input bg-card pl-9 pr-3 text-sm text-foreground"
+                className="h-10 w-full rounded-md border border-input bg-card pl-9 pr-3 text-sm text-foreground cursor-pointer"
               >
                 <option value="name">Nom</option>
                 <option value="articles-desc">Plus d'articles</option>
