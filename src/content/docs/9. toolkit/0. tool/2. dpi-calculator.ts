@@ -2,24 +2,26 @@ import { defineArticle } from "@/content/docs/define";
 
 export const article = defineArticle("dpi-calculator",
   "Calculateur de DPI & diagnostic de résolution",
-  "Vérification de la qualité des images en fonction du format et de la distance de lecture.",
-  ["toolkit", "dpi", "resolution", "pixel", "prepresse"],
-  "new",
-  "12 septembre 2026",
+  "Analyse de la résolution d'image pour l'impression petit et grand format.",
+  ["toolkit", "dpi", "resolution", "pixel", "diagnostic"],
+  "updated",
+  "13 septembre 2026",
   `# Calculateur de DPI & diagnostic de résolution
 
-Le [Diagnostic Résolution DPI](https://toolkit.stafprint.com/dpi-calculator) évalue si la définition de vos images est suffisante pour garantir un tirage net sans pixellisation.
+Le [Calculateur de DPI](https://toolkit.stafprint.com/dpi-calculator) évalue la qualité de vos images par rapport aux dimensions d'impression visées.
 
 ---
 
-## Règles d'analyse et diagnostics
+## Fonctionnalités principales
 
-* **Saisie des dimensions :** Renseignez la largeur/hauteur en cm et la résolution en pixels.
-* **Diagnostic instantané :**
-  * **300 DPI et plus :** Qualité optimale pour petit format (cartes de visite, flyers, dépliants).
-  * **150 à 250 DPI :** Qualité adaptée au grand format et à la signalétique (bâches, kakémonos).
-  * **Moins de 150 DPI :** Risque de flou ou de pixellisation visible.
-* **Distance de vue :** Prenez en compte le recul de lecture (un affichage urbain 4x3 m requiert moins de DPI qu'une brochure).
+* **Importation d'image :** Déposez un fichier pour extraire automatiquement sa largeur et sa hauteur en pixels.
+* **Calcul sur-mesure :** Définissez les dimensions souhaitées en centimètres (ou mm) pour obtenir le nombre exact de DPI (points par pouce).
+* **Presets de formats :** Sélectionnez des dimensions courantes en un clic (*Carte de visite 85x55 mm*, *Flyer A5*, *Affiche A3*, *Kakemono 85x200 cm*, *Bâche 3x1 m*).
+* **Diagnostic visuel :**
+  * **Excellente (300+ DPI) :** Qualité impression offset et numérique haute définition.
+  * **Correcte / Acceptable (150-300 DPI) :** Adapté selon la distance de visionnage.
+  * **Faible (< 150 DPI) :** Risque de flou ou pixellisation.
+* **Recommandations de distance :** Conseils d'affichage selon le type d'impression (lecture en main vs grand format à distance).
 `,);
 
 export default article;
