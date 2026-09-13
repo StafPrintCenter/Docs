@@ -5,6 +5,7 @@ export type EcosystemSiteStatus = "available" | "building";
 
 export interface APIEcosystemSite {
   id: string;
+  docSpaceId?: string;
   name: string;
   description: string;
   url: string;
