@@ -146,7 +146,9 @@ export function SpacesSection() {
   return (
     <section className="pb-12">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-        <h2 className="font-display text-2xl font-semibold text-foreground">Espaces</h2>
+        <h2 className="font-display text-2xl font-semibold text-foreground">
+          Espaces ({isLoading ? "..." : sortedSites.length})
+        </h2>
         <div className="grid gap-3 sm:grid-cols-[minmax(14rem,1fr)_auto_auto]">
           <label className="relative block">
             <span className="sr-only">Rechercher un espace</span>
