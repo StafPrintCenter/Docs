@@ -7,11 +7,30 @@ import type { DocArticle, DocSpace, DocSpaceId, SearchHit } from "@/types/docs";
  */
 export const docsRegistry: DocSpace[] = spaces;
 
+function normalizeLabel(value: string): string {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-zA-Z0-9]/g, "")
+    .toLocaleLowerCase();
+}
+
+export function resolveDocSpaceIdForSite(site: APIEcosystemSite): DocSpaceId | undefined {
+  const explicitSpace = docsRegistry.find((space) => space.id === site.docSpaceId);
+  if (explicitSpace) return explicitSpace.id;
+
+  const mappedSpaceId = resolveLocalDocSpaceId(site.logoKey);
+  if (mappedSpaceId) return mappedSpaceId;
+
+  const normalizedSiteName = normalizeLabel(site.name);
+  return docsRegistry.find((space) => normalizeLabel(space.name) === normalizedSiteName)?.id;
+}
+
 export function applyDocSpaceApiData(sites: APIEcosystemSite[] = []): void {
   const overrides = new Map<string, Partial<DocSpace>>();
 
   for (const site of sites) {
-    const spaceId = resolveLocalDocSpaceId(site.logoKey);
+    const spaceId = resolveDocSpaceIdForSite(site);
     if (!spaceId) continue;
 
     overrides.set(spaceId, {
