@@ -1,24 +1,30 @@
 import { defineSupportArticle } from "@/content/support/define";
 
-export const article = defineSupportArticle("limites-du-chat-public-et-connexion",
-  "Quotas du chat public et état des accès membres",
-  "Limitation quotidienne à 3 messages en mode visiteur et statut de la bêta fermée.",
-  `# Quotas du chat public et état des accès membres
+export const article = defineSupportArticle("creative-toolkit",
+  "Centre de support & assistance technique - SPC Creative Toolkit",
+  "Guide d'utilisation, sécurité des données et résolution des problèmes courants.",
+  `# Centre de support [SPC Creative Toolkit](https://toolkit.stafprint.com/)
 
-## Limite de messages en mode public
+Bienvenue sur le centre d'assistance dédié aux utilitaires prépresse du [SPC Creative Toolkit](https://toolkit.stafprint.com/).
 
-En accès anonyme (sans connexion), l'utilisation de [SPC Intelligence](https://ai.stafprint.com/) est soumise aux règles suivantes :
-* **Quota :** Un compteur autorise **3 messages gratuits par jour**.
-* **Fichiers :** L'envoi et l'analyse de fichiers joints ne sont pas disponibles en mode visiteur.
-* **Historique :** Vos discussions sont enregistrées localement dans votre navigateur (**localStorage**).
+---
 
-## Accès aux Espaces et Bêta Fermée
+## Confidentialité & Sécurité Zéro-Serveur
 
-La page de connexion ([ai.stafprint.com/login](https://ai.stafprint.com/login)) permet de basculer vers les espaces *Client*, *Apprenant* ou *Formateur*.
+* **Traitement 100 % local :** Vos images, fichiers PDF et données de projet ne sont **jamais transférés** sur un serveur distant.
+* **Moteur WebAssembly & Browser Canvas :** L'ensemble des calculs, conversions et extractions est exécuté directement par le processeur de votre appareil via votre navigateur web.
+* **Hors-ligne :** Une fois la page chargée, la majorité des outils restent utilisables même en cas de coupure Internet.
 
-:::note
-Les connexions aux espaces membres sont temporairement désactivées pendant la phase de test. Le chat public reste 100 % accessible dans la limite des 3 messages quotidiens.
-:::`,
-);
+---
+
+## Foire aux questions (FAQ) & Dépannage
+
+* **Pourquoi mon QR Code ne se scanne pas ?**
+  Vérifiez que la couleur de premier plan choisie offre un contraste suffisant par rapport au fond blanc de votre support.
+* **Comment éviter le maculage à l'impression ?**
+  Utilisez le simulateur TAC pour vous assurer que le cumul des encres ne dépasse pas **280 %** pour un papier couché ou **260 %** pour du papier offset.
+* **Mon fichier PDF met du temps à se charger dans la boîte à outils PDF :**
+  Pour les documents de très grande taille (plus de 200 Mo), assurez-vous d'avoir suffisamment de mémoire RAM disponible sur votre navigateur.
+`,);
 
 export default article;
