@@ -3,19 +3,36 @@ import type { } from "@tanstack/react-start";
 import { docsRegistry, spaceArticles } from "@/data/content/docs";
 import { supportArticles, supportCategories } from "@/data/content/support";
 
+// 1. Sécurisation de l'URL de base
 const RAW_URL = import.meta.env.VITE_DOCS_URL;
 const BASE_URL = RAW_URL.replace(/\/$/, "");
 
+// Date du jour pour les entités dépourvues de date ISO
+const TODAY = new Date().toISOString().split("T")[0];
+
 interface SitemapEntry {
   path: string;
+  lastmod?: string;
   changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
   priority?: string;
 }
+
+// Fonction utilitaire pour formater une date ISO au format YYYY-MM-DD
+const formatDate = (dateStr?: string | null): string => {
+  if (!dateStr) return TODAY;
+  try {
+    const parsed = new Date(dateStr);
+    return isNaN(parsed.getTime()) ? TODAY : parsed.toISOString().split("T")[0];
+  } catch {
+    return TODAY;
+  }
+};
 
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
+        // 2. Pages statiques de base
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/support", changefreq: "weekly", priority: "0.9" },
@@ -26,6 +43,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           for (const article of spaceArticles(space)) {
             entries.push({
               path: `/docs/${space.id}/${article.slug}`,
+              lastmod: TODAY,
               changefreq: "monthly",
               priority: "0.8",
             });
@@ -35,6 +53,7 @@ export const Route = createFileRoute("/sitemap.xml")({
         for (const category of supportCategories) {
           entries.push({
             path: `/support/${category.id}`,
+            lastmod: TODAY,
             changefreq: "monthly",
             priority: "0.8",
           });
@@ -43,6 +62,7 @@ export const Route = createFileRoute("/sitemap.xml")({
         for (const article of supportArticles) {
           entries.push({
             path: `/support/${article.category}/${article.slug}`,
+            lastmod: TODAY,
             changefreq: "monthly",
             priority: "0.7",
           });
