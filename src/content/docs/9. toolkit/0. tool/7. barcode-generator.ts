@@ -2,24 +2,26 @@ import { defineArticle } from "@/content/docs/define";
 
 export const article = defineArticle("barcode-generator",
   "Générateur de QR codes et codes-barres vectoriels",
-  "Création de QR Codes et codes-barres 1D/2D prêts pour l'impression prépresse.",
+  "Création de QR Codes et codes-barres avec personnalisation de couleur et export SVG/PDF.",
   ["toolkit", "qrcode", "codebarres", "ean13", "code128", "vectoriel"],
   "updated",
   "13 septembre 2026",
   `# Générateur de QR codes et codes-barres vectoriels
 
-L'outil [QR Code & Code-barres](http://localhost:3001/barcode-generator) produit des codes-barres conformes aux normes d'impression et de traçabilité.
+L'outil [QR Code & Code-barres](http://localhost:3001/barcode-generator) génère des codes-barres 1D et 2D prêts pour l'impression prépresse.
 
 ---
 
 ## Fonctionnalités principales
 
-* **Sélection du type de code :**
-  * **QR Code :** Pour liens web, vCard, textes ou numéros de téléphone.
-  * **EAN-13 :** Pour l'identification des produits du commerce (13 chiffres avec clé de contrôle).
-  * **Code 128 :** Pour l'étiquetage logistique, emballages et suivi interne.
-* **Personnalisation visuelle :** Réglage des couleurs de premier plan et d'arrière-plan avec indicateur de contraste pour garantir la lisibilité au lecteur optique.
-* **Options d'exportation :** Téléchargement au format vectoriel **SVG** (idéal prépresse) ou image **PNG** haute définition.
+* **Types de codes pris en charge :**
+  * **QR Code :** Pour encoder des URL, textes, vCard ou numéros de téléphone.
+  * **EAN-13 :** Pour l'identification des produits commerciaux.
+  * **Code 128 :** Pour le marquage logistique et emballages.
+* **Personnalisation visuelle :**
+  * **Couleur du code :** Ajustement de la couleur du premier plan.
+  * **Pastille SPC (Optionnelle) :** Case à cocher pour incruster le logo/pastille SPC au centre du QR Code.
+* **Formats d'exportation :** Téléchargement aux formats vectoriels **SVG** et **PDF** prêts pour l'impression.
 `,);
 
 export default article;
