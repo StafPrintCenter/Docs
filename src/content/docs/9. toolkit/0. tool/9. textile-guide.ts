@@ -15,11 +15,11 @@ Le [Guide Textile & Flocage](http://localhost:3001/textile-guide) définit les z
 ## Fonctionnalités principales
 
 * **Emplacements du marquage & dimensions :**
-  * **Cœur (petit logo) :** $8 \times 8\text{ cm}$ (Flocage ou broderie).
-  * **A4 poitrine :** $21 \times 29,7\text{ cm}$ (Sérigraphie ou DTF).
-  * **A3 dos :** $29,7 \times 42\text{ cm}$ (Sérigraphie ou DTF).
-  * **Manche :** $7 \times 5\text{ cm}$ (Transfert).
-  * **Dos nuque :** $10 \times 4\text{ cm}$ (Flocage).
+  * **Cœur (petit logo) :** 8 x 8 cm (Flocage ou broderie).
+  * **A4 poitrine :** 21 x 29,7 cm (Sérigraphie ou DTF).
+  * **A3 dos :** 29,7 x 42 cm (Sérigraphie ou DTF).
+  * **Manche :** 7 x 5 cm (Transfert).
+  * **Dos nuque :** $10 x 4 cm (Flocage).
 * **Prévisualisation interactive :** Visualisation dynamique de la zone sélectionnée sur les faces Devant et Dos du vêtement.
 * **Guide des tailles :** Tableau d'équivalences des mesures (largeur poitrine, hauteur) du **S au XXL**.
 `,);
