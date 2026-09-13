@@ -2,22 +2,23 @@ import { defineArticle } from "@/content/docs/define";
 
 export const article = defineArticle("rgb-to-cmyk",
   "Convertisseur RVB vers CMJN & simulateur papier",
-  "Conversion des couleurs écran en encres d'impression et simulation du rendu papier.",
-  ["toolkit", "couleur", "cmjn", "rvb", "simulation"],
-  "new",
-  "12 septembre 2026",
+  "Conversion de couleurs écran, extraction depuis une image et simulation du rendu papier.",
+  ["toolkit", "couleur", "cmjn", "rvb", "simulation", "pipette"],
+  "updated",
+  "13 septembre 2026",
   `# Convertisseur RVB vers CMJN & simulateur papier
 
-L'outil [Convertisseur RVB vers CMJN](https://toolkit.stafprint.com/rgb-to-cmyk) permet de traduire les couleurs d'écran (RVB) en pourcentages d'encres d'impression (CMJN).
+L'outil [Convertisseur RVB vers CMJN](http://localhost:3001/rgb-to-cmyk) traduit les couleurs d'écran en pourcentages d'encres d'impression et simule leur rendu sur papier.
 
 ---
 
 ## Fonctionnalités principales
 
-* **Traduction de profil :** Convertit les valeurs RVB/HEX en taux Cyan, Magenta, Jaune et Noir.
-* **Alerte de gamut :** Signale les couleurs vives (néons, bleus intenses) non reproductibles en quadrichromie.
-* **Simulation de support :** Visualisez la variation du rendu des couleurs selon la finition du papier (*Couché brillant*, *Couché mat*, *Papier offset/recyclé*).
-* **Copie rapide :** Exportez les valeurs CMJN en un clic pour vos logiciels PAO (InDesign, Illustrator, Photoshop).
+* **Conversion de couleur :** Saisissez un code hexadécimal ou ajustez les curseurs R, V, B pour obtenir la conversion exacte en CMJN.
+* **Extraction depuis une image :** Importez une image (JPG, PNG, WebP) et cliquez n'importe où dessus avec la pipette interactive pour analyser la couleur sélectionnée.
+* **Simulateur Avant / Après :** Comparez l'affichage d'origine avec le rendu imprimé grâce à un curseur de comparaison interactif.
+* **Simulation de support :** Visualisez l'absorption et la finition selon le type de papier (*Papier Mat* ou *Papier Brillant*).
+* **Indicateur de gamut :** Alerte visuelle lorsque les valeurs de couleur dépassent les capacités standard d'impression.
 `,);
 
 export default article;
