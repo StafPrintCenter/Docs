@@ -19,7 +19,7 @@ Le [Guide Textile & Flocage](http://localhost:3001/textile-guide) définit les z
   * **A4 poitrine :** 21 x 29,7 cm (Sérigraphie ou DTF).
   * **A3 dos :** 29,7 x 42 cm (Sérigraphie ou DTF).
   * **Manche :** 7 x 5 cm (Transfert).
-  * **Dos nuque :** $10 x 4 cm (Flocage).
+  * **Dos nuque :** 10 x 4 cm (Flocage).
 * **Prévisualisation interactive :** Visualisation dynamique de la zone sélectionnée sur les faces Devant et Dos du vêtement.
 * **Guide des tailles :** Tableau d'équivalences des mesures (largeur poitrine, hauteur) du **S au XXL**.
 `,);
