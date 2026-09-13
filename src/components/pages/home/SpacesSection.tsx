@@ -13,8 +13,8 @@ export function SpacesSection() {
   const supportCount = totalSupportArticlesCount();
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState<"all" | APIEcosystemSite["status"]>("all");
-  const [sortOrder, setSortOrder] = useState<"articles-desc" | "articles-asc" | "name">(
-    "articles-desc",
+  const [sortOrder, setSortOrder] = useState<"name" | "articles-desc" | "articles-asc">(
+    "name",
   );
 
   const visibleSites = filterPublicEcosystemSites(sites).filter((site) => {
@@ -173,9 +173,9 @@ export function SpacesSection() {
                 onChange={(event) => setSortOrder(event.target.value as typeof sortOrder)}
                 className="h-10 w-full rounded-md border border-input bg-card pl-9 pr-3 text-sm text-foreground"
               >
+                <option value="name">Nom</option>
                 <option value="articles-desc">Plus d'articles</option>
                 <option value="articles-asc">Moins d'articles</option>
-                <option value="name">Nom</option>
               </select>
             </span>
           </label>
