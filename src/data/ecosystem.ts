@@ -31,11 +31,7 @@ export interface APIEcosystemSite {
   updatedAt: string;
 }
 
-
-
-
-
-export const LOGO_KEY_TO_SPACE_ID: Record<string, LocalDocSpaceId | undefined> = {
+const LOGO_KEY_TO_SPACE_ID: Record<string, LocalDocSpaceId | undefined> = {
   mc: "landing",
   shortener: "shortener",
   instructor: "instructor",
