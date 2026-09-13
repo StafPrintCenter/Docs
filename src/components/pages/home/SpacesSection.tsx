@@ -157,7 +157,7 @@ export function SpacesSection() {
             <select
               value={statusFilter}
               onChange={(event) => setStatusFilter(event.target.value as typeof statusFilter)}
-              className="h-10 w-full rounded-md border border-input bg-card px-3 text-sm text-foreground"
+              className="h-10 w-full rounded-md border border-input bg-card px-3 text-sm text-foreground cursor-pointer"
             >
               <option value="all">Tous les statuts</option>
               <option value="available">Disponible</option>
