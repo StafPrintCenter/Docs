@@ -14,7 +14,7 @@ Le [Simulateur TAC](https://toolkit.stafprint.com/tac-checker) mesure le Taux d'
 
 ## Fonctionnalités principales
 
-* **Calcul en temps réel :** Ajustez les pourcentages de C, M, J, N via les curseurs ou saisissez une couleur Hexadécimale pour obtenir la somme totale de couverture ($C + M + J + N$).
+* **Calcul en temps réel :** Ajustez les pourcentages de C, M, J, N via les curseurs ou saisissez une couleur Hexadécimale pour obtenir la somme totale de couverture (C + M + J + N).
 * **Évaluation de sécurité :**
   * **Optimal (≤ 280 %) :** Conforme pour la majorité des impressions offset et numériques.
   * **Critique / Risqué (> 300 %) :** Avertissement sur les risques de maculage, de séchage lent ou de surcharge du papier.
