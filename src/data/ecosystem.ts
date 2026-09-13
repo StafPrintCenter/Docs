@@ -24,32 +24,11 @@ export interface APIEcosystemSite {
   updatedAt: string;
 }
 
-export const ECOSYSTEM_CATEGORIES: EcosystemSiteCategory[] = [
-  "principal",
-  "outil",
-  "formation",
-  "communication",
-  "divertissement",
-];
-
-export const ECOSYSTEM_CATEGORY_LABELS: Record<EcosystemSiteCategory, string> = {
-  principal: "Site principal",
-  outil: "Outils",
-  formation: "Formation",
-  communication: "Communication",
-  divertissement: "Divertissement",
-};
-
-export const ECOSYSTEM_STATUS_LABELS: Record<EcosystemSiteStatus | "Tout", string> = {
-  Tout: "Tous les statuts",
-  available: "Disponible",
-  building: "Bientôt",
-};
-
 export const LOCAL_DOC_SPACE_IDS = [
   "landing", "shortener", "instructor", "student",
   "meet", "arcade", "ai", "brief", "toolkit",
 ] as const;
+
 export type LocalDocSpaceId = (typeof LOCAL_DOC_SPACE_IDS)[number];
 
 export const LOGO_KEY_TO_SPACE_ID: Record<string, LocalDocSpaceId | undefined> = {
@@ -75,10 +54,6 @@ export function isOfficialDocsSite(site: Pick<APIEcosystemSite, "logoKey">): boo
 
 export function filterPublicEcosystemSites(sites: APIEcosystemSite[]): APIEcosystemSite[] {
   return sites.filter((site) => !isOfficialDocsSite(site));
-}
-
-export function isLocalDocSpace(site: Pick<APIEcosystemSite, "logoKey">): boolean {
-  return Boolean(resolveLocalDocSpaceId(site.logoKey));
 }
 
 const docSpaceMetaOverrides = new Map<string, Partial<DocSpaceMeta>>();
