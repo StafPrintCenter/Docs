@@ -7,7 +7,6 @@ import { getSpace, articleCount, firstArticleParams } from "@/data/content/docs"
 import { totalSupportArticlesCount } from "@/data/content/support";
 import {
   filterPublicEcosystemSites,
-  isLocalDocSpace,
   resolveLocalDocSpaceId,
   type APIEcosystemSite,
   LOCAL_DOC_SPACE_IDS,
