@@ -3,8 +3,7 @@ import { defineSupportArticle } from "@/content/support/define";
 export const article = defineSupportArticle("creative-toolkit",
   "Centre de support & assistance technique - SPC Creative Toolkit",
   "Guide d'utilisation, sécurité des données et résolution des problèmes courants.",
-  `# Centre de support [SPC Creative Toolkit](https://toolkit.stafprint.com/)
-
+  `# Centre de support SPC Creative Toolkit
 Bienvenue sur le centre d'assistance dédié aux utilitaires prépresse du [SPC Creative Toolkit](https://toolkit.stafprint.com/).
 
 ---
