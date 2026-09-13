@@ -46,14 +46,8 @@ export const ECOSYSTEM_STATUS_LABELS: Record<EcosystemSiteStatus | "Tout", strin
 };
 
 export const LOCAL_DOC_SPACE_IDS = [
-  "landing",
-  "shortener",
-  "instructor",
-  "student",
-  "meet",
-  "arcade",
-  "ai",
-  "brief",
+  "landing", "shortener", "instructor", "student",
+  "meet", "arcade", "ai", "brief", "toolkit",
 ] as const;
 export type LocalDocSpaceId = (typeof LOCAL_DOC_SPACE_IDS)[number];
 
@@ -66,6 +60,7 @@ export const LOGO_KEY_TO_SPACE_ID: Record<string, LocalDocSpaceId | undefined> =
   arcade: "arcade",
   ai: "ai",
   brief: "brief",
+  toolkit: "toolkit",
 };
 
 export function resolveLocalDocSpaceId(logoKey: string | undefined): LocalDocSpaceId | undefined {
