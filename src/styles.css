@@ -191,7 +191,6 @@
   }
 }
 
-/* Remplacez l'ancien @utility paper-grid */
 @utility paper-grid {
   background-image:
     linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
