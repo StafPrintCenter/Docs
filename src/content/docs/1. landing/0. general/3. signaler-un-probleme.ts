@@ -10,6 +10,8 @@ export const article = defineArticle("signaler-un-probleme",
 
 Vous avez la possibilité de signaler tout dysfonctionnement ou erreur directement depuis la page de détail de la ressource concernée (article de blog, service, formation ou réalisation).
 
+![Capture bouton de signalement](https://cdn.jsdelivr.net/gh/stafprintcenter/Files/Images/Captures/Landing-Report.png)
+
 ---
 
 ## Fonctionnement du formulaire
