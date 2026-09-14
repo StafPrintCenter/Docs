@@ -8,7 +8,9 @@ export const article = defineArticle("prendre-un-rendez-vous",
   "20 août 2026",
   `# Prendre un rendez-vous
 
-Le module de prise de rendez-vous permet de réserver un échange avec l'équipe STAF PRINT CENTER en **4 étapes simples**.
+Le module de [prise de rendez-vous](https://stafprint.com/tools/appointment) permet de réserver un échange avec l'équipe STAF PRINT CENTER en **4 étapes simples**.
+
+[![Capture étapes de prise rendez-vous](https://cdn.jsdelivr.net/gh/stafprintcenter/Files/Images/Captures/Landing-Appointment.png)](https://stafprint.com/tools/appointment)
 
 ---
 
