@@ -1,5 +1,5 @@
 import { useEffect, useState, type ReactNode } from "react";
-import { DocsHeader, DocsFooter } from "@/components/site";
+import { DocsHeader, DocsFooter, CookieConsent } from "@/components/site";
 import { SearchModal } from "@/components/docs/SearchModal";
 
 interface DocsShellProps {
@@ -51,6 +51,7 @@ export function DocsShell({
       </div>
 
       <SearchModal open={searchOpen} onOpenChange={setSearchOpen} />
+      <CookieConsent />
     </div>
   );
 }
