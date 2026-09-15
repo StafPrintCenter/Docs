@@ -3,7 +3,7 @@ import { SITE_LINK } from "@/data/site";
 import { getDocSpaceMeta } from "@/data/ecosystem";
 
 const fallback: DocSpaceMeta = {
-  id: "toolkit",
+  id: "tools",
   name: "SPC Creative Toolkit",
   shortName: "Toolkit",
   tagline: "Boîte à outils prépresse, impression & façonnage",
