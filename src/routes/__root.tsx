@@ -7,7 +7,7 @@ import { SITE, SITE_LINK } from "@/data/site";
 import logo from "@/assets/logos.json";
 import { NotFoundComponent, ErrorComponent } from "@/components/errors";
 
-const DOCS_TITLE = `SPC Docs | Centre d'Aide & Documentation Official - ${SITE.name}`;
+const DOCS_TITLE = `${SITE.tool} | Centre d'Aide & Documentation Official - ${SITE.name}`;
 const DOCS_DESC = `Guides d'utilisation, documentation technique et ressources pour l'écosystème ${SITE.name} : services d'impression, suivi de commande et outils de création.`;
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
@@ -24,7 +24,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: DOCS_TITLE },
       { property: "og:description", content: DOCS_DESC },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: `SPC Docs - ${SITE.name}` },
+      { property: "og:site_name", content: `${SITE.tool} - ${SITE.name}` },
       { property: "og:image", content: `${logo.meta}` },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
