@@ -33,9 +33,9 @@ export const Route = createFileRoute("/sitemap.xml")({
 
         // 2. Pages statiques de base
         const entries: SitemapEntry[] = [
-          { path: "/", changefreq: "weekly", priority: "1.0" },
-          { path: "/support", changefreq: "weekly", priority: "0.9" },
-          { path: "/saves", changefreq: "monthly", priority: "0.3" },
+          { path: "/", lastmod: TODAY, changefreq: "weekly", priority: "1.0" },
+          { path: "/support", lastmod: TODAY, changefreq: "weekly", priority: "0.9" },
+          { path: "/saves", lastmod: TODAY, changefreq: "monthly", priority: "0.3" },
         ];
 
         // Documentation espaces & articles
