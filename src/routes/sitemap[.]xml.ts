@@ -50,6 +50,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           }
         }
 
+        // Support catégories
         for (const category of supportCategories) {
           entries.push({
             path: `/support/${category.id}`,
