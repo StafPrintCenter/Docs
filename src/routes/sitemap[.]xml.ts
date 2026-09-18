@@ -60,6 +60,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           });
         }
 
+        // Support articles
         for (const article of supportArticles) {
           entries.push({
             path: `/support/${article.category}/${article.slug}`,
