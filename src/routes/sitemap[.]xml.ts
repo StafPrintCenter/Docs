@@ -3,10 +3,6 @@ import type { } from "@tanstack/react-start";
 import { docsRegistry, spaceArticles } from "@/data/content/docs";
 import { supportArticles, supportCategories } from "@/data/content/support";
 
-// 1. Sécurisation de l'URL de base
-const RAW_URL = import.meta.env.VITE_DOCS_URL;
-const BASE_URL = RAW_URL.replace(/\/$/, "");
-
 // Date du jour pour les entités dépourvues de date ISO
 const TODAY = new Date().toISOString().split("T")[0];
 
