@@ -38,6 +38,7 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/saves", changefreq: "monthly", priority: "0.3" },
         ];
 
+        // Documentation espaces & articles
         for (const space of docsRegistry) {
           for (const article of spaceArticles(space)) {
             entries.push({
