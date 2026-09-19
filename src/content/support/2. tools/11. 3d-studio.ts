@@ -1,29 +1,24 @@
 import { defineSupportArticle } from "@/content/support/define";
 
-export const article = defineSupportArticle("creative-toolkit",
-  "Centre de support & assistance technique - SPC Creative Toolkit",
-  "Guide d'utilisation, sécurité des données et résolution des problèmes courants.",
-  `# Centre de support SPC Creative Toolkit
-Bienvenue sur le centre d'assistance dédié aux utilitaires prépresse du [SPC Creative Toolkit](https://toolkit.stafprint.com/).
+export const article = defineSupportArticle("3d-studio",
+  "Support & Réconciliation B.A.T. / AR — SPC 3D Studio",
+  "Résolution des problèmes d'affichage 3D, préparation des images et mode Réalité Augmentée.",
+  `# Centre d'assistance [SPC 3D Studio](https://studio.stafprint.com/)
+
+Réponses aux questions fréquentes concernant la préparation des visuels, la validation de B.A.T. et le mode Réalité Augmentée.
 
 ---
 
-## Confidentialité & Sécurité Zéro-Serveur
+## Foire Aux Questions (FAQ)
 
-* **Traitement 100 % local :** Vos images, fichiers PDF et données de projet ne sont **jamais transférés** sur un serveur distant.
-* **Moteur WebAssembly & Browser Canvas :** L'ensemble des calculs, conversions et extractions est exécuté directement par le processeur de votre appareil via votre navigateur web.
-* **Hors-ligne :** Une fois la page chargée, la majorité des outils restent utilisables même en cas de coupure Internet.
+### Quel format de fichier utiliser pour le plaquage ?
+Pour un rendu optimal, importez des images au format **PNG** (avec transparence si nécessaire) ou **JPG/WebP** haute définition. Les fichiers vectoriels **SVG** sont également acceptés.
 
----
+### Comment fonctionne le mode Réalité Augmentée (AR) ?
+Cliquez sur le bouton **Mode AR** depuis un mobile ou scannez le QR Code généré pour placer le produit 3D dans votre pièce à l'aide de l'appareil photo (compatible iOS ARQuickLook et Android SceneViewer).
 
-## Foire aux questions (FAQ) & Dépannage
-
-* **Pourquoi mon QR Code ne se scanne pas ?**
-  Vérifiez que la couleur de premier plan choisie offre un contraste suffisant par rapport au fond blanc de votre support.
-* **Comment éviter le maculage à l'impression ?**
-  Utilisez le simulateur TAC pour vous assurer que le cumul des encres ne dépasse pas **280 %** pour un papier couché ou **260 %** pour du papier offset.
-* **Mon fichier PDF met du temps à se charger dans la boîte à outils PDF :**
-  Pour les documents de très grande taille (plus de 200 Mo), assurez-vous d'avoir suffisamment de mémoire RAM disponible sur votre navigateur.
+### Le B.A.T. PDF généré est-il un fichier d'impression ?
+Non. Le Bon À Tirer PDF généré sert de **visuel de validation client**. Il récapitule la vue 3D du produit, la finition choisie, les dimensions et les contraintes techniques.
 `,);
 
 export default article;
