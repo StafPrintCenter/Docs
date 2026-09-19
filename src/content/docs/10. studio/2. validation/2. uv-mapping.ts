@@ -1,28 +1,26 @@
 import { defineArticle } from "@/content/docs/define";
 
-export const article = defineArticle(
-  "uv-mapping",
-  "Plaquage de visuel et transformation UV",
-  "Importation de fichiers graphiques, ajustements d'échelle, de position et de répétition.",
-  ["studio", "uv", "plaquage", "visuel", "echelle", "rotation"],
-  "new",
+export const article = defineArticle("ar-viewer",
+  "Visualisation en Réalité Augmentée (AR)",
+  "Projection du modèle 3D à l'échelle réelle dans son environnement via appareil mobile.",
+  ["studio", "ar", "realite-augmentee", "mobile", "projection", "3d"],
+  "updated",
   "19 septembre 2026",
-  `# Plaquage de visuel et transformation UV
+  `# Visualisation en Réalité Augmentée (AR)
 
-L'inspecteur de [SPC 3D Studio](https://studio.stafprint.com/) permet d'ajuster le placage de votre création sur la surface 3D.
+La fonction Réalité Augmentée de [SPC 3D Studio](https://studio.stafprint.com/ar/AR-K4I6LY) permet de projeter l'imprimé à l'échelle $1:1$ dans son environnement réel.
 
 ---
 
-## Options de transformation
+## Fonctionnalités principales
 
-* **Importation :** Glissez-déposez un fichier (PNG, JPG, WebP ou SVG) directement sur la scène ou via la zone d'importation.
-* **Ajustements UV :**
-  * **Échelle :** Agrandissez ou réduisez la taille du motif.
-  * **Position X & Position Y :** Ajustez le calage du visuel sur les axes horizontal et vertical.
-  * **Rotation :** Pivotez l'image de 0° à 360°.
-  * **Tile X & Tile Y :** Réglez la répétition du motif sur les axes X et Y.
-* **Réinitialiser UV :** Restaurez le positionnement et l'échelle par défaut en un clic.
-`,
-);
+* **Aperçu mobile et QR Code :**
+  * Scannez le **QR Code** présent sur l'interface ordinateur depuis un smartphone ou une tablette pour ouvrir la session AR.
+* **Ancrage dans le monde réel :**
+  * **Mode Sol / Surface :** Détection automatique des plans horizontaux et verticaux (sols, murs ou façades) pour poser ou suspendre le produit.
+  * **Mise à l'échelle 1:1 :** Affichage aux dimensions réelles de fabrication pour vérifier l'encombrement et la lisibilité du visuel dans la pièce ou sur la devanture.
+* **Compatibilité multi-plateformes :**
+  * Prise en charge native via **iOS ARQuickLook** (sur iPhone / iPad) et **Android SceneViewer** (sur smartphones Android compatibles ARCore).
+`,);
 
 export default article;
