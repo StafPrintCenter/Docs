@@ -1,7 +1,7 @@
 import { defineSupportArticle } from "@/content/support/define";
 
 export const article = defineSupportArticle("3d-studio",
-  "Support & Réconciliation B.A.T. / AR — SPC 3D Studio",
+  "Support & Réconciliation B.A.T. / AR - SPC 3D Studio",
   "Résolution des problèmes d'affichage 3D, préparation des images et mode Réalité Augmentée.",
   `# Centre d'assistance [SPC 3D Studio](https://studio.stafprint.com/)
 
