@@ -17,7 +17,7 @@ export const article = defineArticle("guide-complet",
 * **Visualisation 3D temps réel :** Manipulez les modèles 3D avec les contrôles de caméra (rotation, panoramique et zoom).
 * **Plaquage de visuels :** Déposez vos créations (PNG, JPG, WebP, SVG) directement sur la structure 3D.
 * **Finitions de surface :** Simulez l'effet *Mat* ou *Brillant* sur vos imprimés.
-* **Réalité Augmentée (Mode AR) :** Projetez le produit à l'échelle $1:1$ dans votre espace réel depuis un smartphone ou une tablette.
+* **Réalité Augmentée (Mode AR) :** Projetez le produit à l'échelle 1:1 dans votre espace réel depuis un smartphone ou une tablette.
 * **Génération de B.A.T. :** Exportez un Bon À Tirer au format PDF incluant l'aperçu 3D et la fiche technique du produit.
 `,);
 
