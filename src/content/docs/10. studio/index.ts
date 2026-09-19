@@ -3,15 +3,15 @@ import { SITE_LINK } from "@/data/site";
 import { getDocSpaceMeta } from "@/data/ecosystem";
 
 const fallback: DocSpaceMeta = {
-  id: "tools",
-  name: "SPC Creative Toolkit",
-  shortName: "Toolkit",
-  tagline: "Boîte à outils prépresse, impression & façonnage",
-  description: "10 utilitaires prépresse zéro-serveur s'exécutant à 100 % dans votre navigateur.",
-  url: SITE_LINK.toolkitUrl,
+  id: "studio",
+  name: "SPC 3D Studio",
+  shortName: "3D Studio",
+  tagline: "Visualisation 3D, réalité augmentée & B.A.T. interactif",
+  description: "Mise en situation 3D temps réel pour PLV, grand format et signalétique avec export B.A.T. et AR.",
+  url: SITE_LINK.studioUrl,
   status: "available",
 };
 
-export const space: DocSpaceMeta = getDocSpaceMeta("toolkit", fallback);
+export const space: DocSpaceMeta = getDocSpaceMeta("studio", fallback);
 
 export default space;
