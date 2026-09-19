@@ -15,7 +15,7 @@ L'outil [SPC 3D Studio](https://studio.stafprint.com/) intègre les gabarits 3D 
 ## Modèles et formats supportés
 
 ### PLV & Stands
-* **Roll-up kakemono :** Enrouleur aluminium avec toile polyester $220\text{ g}$.
+* **Roll-up kakemono :** Enrouleur aluminium avec toile polyester 220g.
   * Déclinaisons : $85 \times 200\text{ cm}$, $100 \times 200\text{ cm}$, $120 \times 200\text{ cm}$.
 * **Comptoir d'accueil :** Comptoir promotionnel courbe avec façade personnalisable ($90 \times 100\text{ cm}$).
 
