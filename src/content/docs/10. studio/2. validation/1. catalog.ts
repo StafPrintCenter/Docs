@@ -1,33 +1,30 @@
 import { defineArticle } from "@/content/docs/define";
 
-export const article = defineArticle("catalog",
-  "Catalogue des modèles 3D disponibles",
-  "Présentation des gabarits et déclinaisons de formats pour PLV, grand format, signalétique et packaging.",
-  ["studio", "catalogue", "rollup", "kakemono", "bache", "enseigne", "plv"],
-  "new",
+export const article = defineArticle("bat-viewer",
+  "Consultation, validation et partage du Bon À Tirer 3D (B.A.T.)",
+  "Validation en ligne du B.A.T. 3D, aperçu interactif et déblocage des options de partage.",
+  ["studio", "bat", "validation", "partage", "3d", "bon-a-tirer"],
+  "updated",
   "19 septembre 2026",
-  `# Catalogue des modèles 3D disponibles
+  `# Consultation, validation et partage du Bon À Tirer 3D (B.A.T.)
 
-L'outil [SPC 3D Studio](https://studio.stafprint.com/) intègre les gabarits 3D des produits de signalétique et d'affichage les plus courants.
+L'interface B.A.T. 3D de [SPC 3D Studio](https://studio.stafprint.com/bat/BAT-0GRI9P) permet de visualiser et de valider la mise en situation d'un projet d'impression avant production.
 
 ---
 
-## Modèles et formats supportés
+## Fonctionnalités principales
 
-### PLV & Stands
-* **Roll-up kakemono :** Enrouleur aluminium avec toile polyester 220 g.
-  * Déclinaisons : 85 × 200 cm, 100 × 200 cm, 120 × 200 cm.
-* **Comptoir d'accueil :** Comptoir promotionnel courbe avec façade personnalisable (90 × 100 cm).
-
-### Grand Format
-* **Bâche publicitaire extérieure :** Bâche PVC 510 g avec œillets métalliques (300 × 150 cm).
-
-### Signalétique
-* **Enseigne drapeau / façade :** Panneau double face sur potence murale en Dibond 3 mm (60 × 40 cm).
-
-### Packaging
-* Volumes et étuis de boîtes pliantes personnalisables.
-`,
-);
+* **Visualisation 3D interactive :** Manipulez le modèle sous tous les angles (rotation, zoom et inclinaison) avec affichage du sol et des ombres portées.
+* **Informations de commande & B.A.T. :**
+  * **Identifiant B.A.T. :** Référence unique du dossier.
+  * **Status :** État du bon à tirer (*En attente de validation* ou *B.A.T. Validé*).
+  * **Spécifications :** Nom du produit, déclinaisons de dimensions, type de support et finition sélectionnée (mat ou brillant).
+* **Validation client :**
+  * Bouton d'action **Valider le B.A.T.** pour confirmer la conformité de la maquette.
+* **Options de partage (Débloquées après validation) :**
+  * Dès que le B.A.T. est **validé**, la section **Partager la vue 3D** et les options d'export/partage deviennent automatiquement accessibles.
+  * Génération d'un **QR Code de partage** pour ouvrir la scène 3D sur d'autres supports.
+  * Bouton **Copier le lien direct** pour transmettre l'accès au B.A.T. validé aux collaborateurs ou au service d'impression.
+`,);
 
 export default article;
