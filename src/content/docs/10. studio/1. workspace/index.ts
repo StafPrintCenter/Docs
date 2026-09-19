@@ -1,8 +1,8 @@
 import type { DocGroupMeta } from "@/types/docs";
 
 export const group: DocGroupMeta = {
-  id: "tool",
-  title: "Outils",
+  id: "workspace",
+  title: "Espace de travail",
 };
 
 export default group;
