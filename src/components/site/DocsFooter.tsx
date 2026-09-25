@@ -3,6 +3,7 @@ import { FacebookIcon, InstagramIcon, LinkedinIcon, XIcon, WhatsAppIcon } from "
 
 export function DocsFooter() {
   const socialLinks = [
+    { label: "LinkedIn", href: SITE.socials.linkedin, Icon: LinkedinIcon },
     { label: "Facebook", href: SITE.socials.facebook, Icon: FacebookIcon },
     { label: "Instagram", href: SITE.socials.instagram, Icon: InstagramIcon },
     { label: "LinkedIn", href: SITE.socials.linkedin, Icon: LinkedinIcon },
