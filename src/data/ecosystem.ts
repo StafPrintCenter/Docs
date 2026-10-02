@@ -5,7 +5,7 @@ type EcosystemSiteStatus = "available" | "building";
 
 const LOCAL_DOC_SPACE_IDS = [
   "landing", "shortener", "instructor", "student",
-  "meet", "arcade", "ai", "brief", "toolkit",
+  "meet", "arcade", "ai", "brief", "tools",
 ] as const;
 
 type LocalDocSpaceId = (typeof LOCAL_DOC_SPACE_IDS)[number];
