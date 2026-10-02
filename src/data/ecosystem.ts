@@ -40,7 +40,7 @@ const LOGO_KEY_TO_SPACE_ID: Record<string, LocalDocSpaceId | undefined> = {
   arcade: "arcade",
   ai: "ai",
   brief: "brief",
-  toolkit: "toolkit",
+  toolkit: "tools",
 };
 
 export function resolveLocalDocSpaceId(logoKey: string | undefined): LocalDocSpaceId | undefined {
