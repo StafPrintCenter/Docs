@@ -8,20 +8,20 @@ export const article = defineArticle("dieline",
   "4 octobre 2026",
   `# Générateur de tracé de découpe packaging (étui)
 
-Le [Générateur de Tracé de Découpe](https://tools.stafprint.com/dieline) calcule les patrons d'emballage sur-mesure et simule leur assemblage en $3\text{D}$.
+Le [Générateur de Tracé de Découpe](https://tools.stafprint.com/dieline) calcule les patrons d'emballage sur-mesure et simule leur assemblage en 3D.
 
 ---
 
 ## Fonctionnalités principales
 
-* **Saisie des dimensions de la boîte :**
-  * Réglage millimétrique de la **Largeur**, **Profondeur** et **Hauteur** ($L \times P \times H$).
+- **Saisie des dimensions de la boîte :**
+  * Réglage millimétrique de la **Largeur**, **Profondeur** et **Hauteur** (L x P x H).
   * Ajustement de la **Languette de collage** et des **Patte de fermeture**.
-* **Codes couleurs prépresse normalisés :**
+- **Codes couleurs prépresse normalisés :**
   * **Ligne de coupe :** Ligne continue (Cyan / Magenta) indiquant la découpe extérieure.
   * **Ligne de rainage (pliage) :** Ligne pointillée repérant les plis.
-* **Prévisualisation $3\text{D}$ & Exportation :**
-  * Simulation interactive de fermeture du volume en $3\text{D}$.
+- **Prévisualisation 3D & Exportation :**
+  * Simulation interactive de fermeture du volume en 3D.
   * Exportation vectorielle en **SVG** prêt pour la découpe numérique ou l'imposition.
 `,);
 
