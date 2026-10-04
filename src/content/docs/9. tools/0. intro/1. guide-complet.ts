@@ -4,7 +4,7 @@ export const article = defineArticle("guide-complet",
   "Guide complet de la boîte à outils SPC Creative Toolkit",
   "Présentation générale des 10 utilitaires prépresse et impression 100 % locaux.",
   ["toolkit", "prepresse", "impression", "outils", "guide"],
-  "new",
+  "stable",
   "13 septembre 2026",
   `# Guide complet de la boîte à outils [SPC Creative Toolkit](https://toolkit.stafprint.com/)
 
