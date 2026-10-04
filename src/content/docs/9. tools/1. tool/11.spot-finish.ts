@@ -8,21 +8,24 @@ export const article = defineArticle("spot-finish",
   "4 octobre 2026",
   `# Studio Vernis Sélectif UV & Dorure à chaud
 
-L'outil [Studio Vernis Sélectif UV & Dorure à chaud](https://tools.stafprint.com/spot-finish) permet de préparer et valider les fichiers de finition spéciale avant le départ en impression.
+L'outil [Studio Vernis Sélectif UV & Dorure à chaud](https://tools.stafprint.com/spot-finish) permet de préparer et de valider les fichiers de finition spéciale avant leur départ en impression.
 
 ---
 
 ## Fonctionnalités principales
 
-* **Sélection du type de finition :**
-  * **Vernis UV Sélectif :** Apporte de la brillance et du relief localisé.
-  * **Vernis UV $3\text{D}$ (Gonflant) :** Crée une surépaisseur tactile prononcée.
-  * **Dorure à chaud (Or) :** Effet métallisé doré haut de gamme.
-  * **Dorure à chaud (Argent) :** Rendu métallisé argenté réfléchissant.
-* **Seuil de détection du masque :** Ajustement par curseur ($0\,\%$ à $100\,\%$) de la sensibilité d'isolation des zones à recouvrir.
-* **Génération & Export du masque technique :**
-  * Conversion automatique des éléments de finition en **Noir pur $100\,\%$** ($K = 100\,\%$) sur fond blanc.
-  * Bouton **Télécharger le masque** pour obtenir le fichier de calque conforme aux exigences prépresse.
-`,);
+  - ** Sélection du type de finition :**
+  - ** Vernis UV Sélectif:** apporte de la brillance et du relief sur des zones précises.
+  - ** Vernis UV 3D(Gonflant) :** crée une surépaisseur tactile prononcée.
+  - ** Dorure à chaud(Or) :** produit un effet métallisé doré haut de gamme.
+  - ** Dorure à chaud(Argent) :** produit un rendu métallisé argenté et réfléchissant.
+
+- ** Seuil de détection du masque:** ajustez la sensibilité d'isolation des zones à recouvrir avec un curseur de 0 % à 100 %.
+
+  - ** Génération et export du masque technique:**
+    - Conversion automatique des éléments de finition en ** Noir 100 % (K100) ** sur fond blanc.
+  - Bouton ** Télécharger le masque ** pour obtenir le fichier de calque destiné au prépresse.
+`,
+);
 
 export default article;
