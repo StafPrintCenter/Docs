@@ -4,7 +4,7 @@ export const article = defineArticle("tac-checker",
   "Simulateur de taux d'encrage maximum (TAC)",
   "Calcul de la couverture d'encre totale CMJN pour éviter les défauts de séchage.",
   ["toolkit", "tac", "encrage", "cmjn", "impression", "sechage"],
-  "updated",
+  "stable",
   "13 septembre 2026",
   `# Simulateur de taux d'encrage maximum (TAC)
 

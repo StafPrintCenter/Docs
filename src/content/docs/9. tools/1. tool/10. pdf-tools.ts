@@ -4,7 +4,7 @@ export const article = defineArticle("pdf-tools",
   "Boîte à outils PDF Express zéro-serveur",
   "Fusion, extraction de pages et conversion en niveaux de gris directement dans le navigateur.",
   ["toolkit", "pdf", "fusion", "extraction", "niveaudegris", "prepresse"],
-  "updated",
+  "stable",
   "13 septembre 2026",
   `# Boîte à outils PDF Express zéro-serveur
 

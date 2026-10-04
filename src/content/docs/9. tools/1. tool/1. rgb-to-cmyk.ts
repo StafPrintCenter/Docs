@@ -4,7 +4,7 @@ export const article = defineArticle("rgb-to-cmyk",
   "Convertisseur RVB vers CMJN & simulateur papier",
   "Conversion de couleurs écran, extraction depuis une image et simulation du rendu papier.",
   ["toolkit", "couleur", "cmjn", "rvb", "simulation", "pipette"],
-  "updated",
+  "stable",
   "13 septembre 2026",
   `# Convertisseur RVB vers CMJN & simulateur papier
 

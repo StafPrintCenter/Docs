@@ -4,7 +4,7 @@ export const article = defineArticle("spine-calculator",
   "Calculateur d'épaisseur de tranche et de poids",
   "Calcul du dos, du poids unitaire/global et génération de gabarit de couverture à plat.",
   ["toolkit", "tranche", "dos", "poids", "catalogue", "reliure"],
-  "updated",
+  "stable",
   "13 septembre 2026",
   `# Calculateur d'épaisseur de tranche et de poids
 

@@ -4,7 +4,7 @@ export const article = defineArticle("dpi-calculator",
   "Calculateur de DPI & diagnostic de résolution",
   "Analyse de la résolution d'image pour l'impression petit et grand format.",
   ["toolkit", "dpi", "resolution", "pixel", "diagnostic"],
-  "updated",
+  "stable",
   "13 septembre 2026",
   `# Calculateur de DPI & diagnostic de résolution
 

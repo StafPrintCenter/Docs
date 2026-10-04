@@ -4,7 +4,7 @@ export const article = defineArticle("textile-guide",
   "Guide des tailles textiles & zones de flocage",
   "Visualisation des zones de marquage et équivalence des tailles du S au XXL.",
   ["toolkit", "textile", "flocage", "marquage", "dtf", "broderie"],
-  "updated",
+  "stable",
   "13 septembre 2026",
   `# Guide des tailles textiles & zones de flocage
 

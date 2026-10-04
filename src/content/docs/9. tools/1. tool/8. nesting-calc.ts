@@ -4,7 +4,7 @@ export const article = defineArticle("nesting-calc",
   "Calculateur de calepinage bâche et vinyle",
   "Optimisation de la disposition des visuels sur laizes grand format et calcul des chutes.",
   ["toolkit", "calepinage", "bache", "vinyle", "laize", "grandformat"],
-  "updated",
+  "stable",
   "13 septembre 2026",
   `# Calculateur de calepinage bâche et vinyle
 

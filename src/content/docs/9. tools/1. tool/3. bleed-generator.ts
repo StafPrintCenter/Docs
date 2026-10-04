@@ -4,7 +4,7 @@ export const article = defineArticle("bleed-generator",
   "Générateur de gabarits & fonds perdus",
   "Calcul des zones de coupe, fonds perdus et marges de sécurité pour l'impression.",
   ["toolkit", "fondperdu", "coupe", "gabarit", "marge"],
-  "updated",
+  "stable",
   "13 septembre 2026",
   `# Générateur de gabarits & fonds perdus
 

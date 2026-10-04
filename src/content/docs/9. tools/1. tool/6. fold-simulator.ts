@@ -4,7 +4,7 @@ export const article = defineArticle("fold-simulator",
   "Simulateur de pliage : dépliants 2, 3 volets & accordéon",
   "Calcul des cotes en mm, compensations de volets et simulation interactive d'ouverture.",
   ["toolkit", "pliage", "depliant", "volets", "faconnage", "accordeon"],
-  "updated",
+  "stable",
   "13 septembre 2026",
   `# Simulateur de pliage : dépliants 2, 3 volets & accordéon
 

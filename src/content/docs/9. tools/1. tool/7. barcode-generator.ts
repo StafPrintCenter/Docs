@@ -4,7 +4,7 @@ export const article = defineArticle("barcode-generator",
   "Générateur de QR codes et codes-barres vectoriels",
   "Création de QR Codes et codes-barres avec personnalisation de couleur et export SVG/PDF.",
   ["toolkit", "qrcode", "codebarres", "ean13", "code128", "vectoriel"],
-  "updated",
+  "stable",
   "13 septembre 2026",
   `# Générateur de QR codes et codes-barres vectoriels
 
