@@ -28,7 +28,7 @@ const platformCopy: Record<string, { title: string; description: string }> = {
     title: "Votre espace formateur",
     description: "Organisez vos sessions et accompagnez vos apprenants.",
   },
-  "student-hub": {
+  "student": {
     title: "Avancez avec Student Hub",
     description: "Retrouvez votre parcours et vos ressources de formation.",
   },
@@ -46,7 +46,7 @@ export const promotions: Promotion[] = docsRegistry.flatMap((space) => {
     sponsor: space.name,
     category: "STAF",
     ...copy,
-    url: space.url,
-    action: `Visiter ${space.shortName}`,
+    url: targetUrl,
+    action: labelAction,
   }];
 });
