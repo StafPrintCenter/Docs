@@ -10,7 +10,6 @@ export interface Promotion {
   action: string;
 }
 
-// Ajouter ici les annonces partenaires validées (nom, destination et message réels).
 // Les espaces STAF reprennent leurs URLs depuis leurs métadonnées de documentation.
 const platformCopy: Record<string, { title: string; description: string }> = {
   "spc-meet": {
