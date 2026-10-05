@@ -12,7 +12,7 @@ export function CarbonAds() {
           href="https://www.carbonads.net/"
           target="_blank"
           rel="noreferrer sponsored"
-          className="block rounded-lg bg-muted p-3 leading-relaxed text-muted-foreground transition-colors hover:bg-muted/80 hover:border-foreground border-2"
+          className="block rounded-lg border-2 bg-muted p-3 leading-relaxed text-muted-foreground transition-colors hover:border-foreground hover:bg-muted/80"
         >
           <span className="block font-medium text-foreground">
             Annonce SPC.
