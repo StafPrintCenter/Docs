@@ -24,7 +24,7 @@ export function PromoCarousel() {
     <section
       aria-label="À découvrir dans l’écosystème STAF"
       aria-roledescription="carrousel"
-      className="mt-6 min-w-0 border-t border-border pt-5"
+      className="mt-8 min-w-0 border-t pt-5 rounded-xl border border-dashed border-border bg-card p-4 text-xs"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocusCapture={() => setPaused(true)}
@@ -33,13 +33,15 @@ export function PromoCarousel() {
       }}
     >
       <div className="flex items-center justify-between gap-2">
-        <p className="text-[11px] font-semibold uppercase text-muted-foreground">À découvrir</p>
+        <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+          À découvrir
+        </p>
         <span className="text-[11px] tabular-nums text-muted-foreground">
           {index + 1} / {promotions.length}
         </span>
       </div>
 
-      <div className="mt-3 min-h-44 border-l-2 border-brand bg-muted/60 p-4" aria-live="off">
+      <div className="block rounded-lg border-2 bg-muted p-3 leading-relaxed text-muted-foreground transition-colors hover:border-foreground hover:bg-muted/80" aria-live="off">
         <p className="text-[11px] font-medium uppercase text-brand-strong">
           {current.category === "Partenaire" ? "Partenaire · " : "STAF · "}{current.sponsor}
         </p>
