@@ -16,7 +16,11 @@ const platformCopy: Record<string, { title: string; description: string }> = {
     title: "Vos projets d’impression commencent ici",
     description: "Explorez le site STAF PRINT CENTER et demandez votre devis.",
   },
-  "spc-arcade": {
+  "meet": {
+    title: "Réunissez-vous sur SPC Meet",
+    description: "Retrouvez vos échanges et vos salles de réunion en ligne.",
+  },
+  "arcade": {
     title: "Faites une pause à SPC Arcade",
     description: "Découvrez l’espace gaming et préparez votre prochaine session.",
   },
