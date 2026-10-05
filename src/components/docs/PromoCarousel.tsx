@@ -12,7 +12,7 @@ export function PromoCarousel() {
     if (paused || promotions.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const timer = window.setInterval(() => {
       setIndex((previous) => (previous + 1) % promotions.length);
-    }, 7000);
+    }, 5000);
     return () => window.clearInterval(timer);
   }, [paused]);
 
