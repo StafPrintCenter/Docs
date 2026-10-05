@@ -24,7 +24,7 @@ const platformCopy: Record<string, { title: string; description: string }> = {
     title: "Faites une pause à SPC Arcade",
     description: "Découvrez l’espace gaming et préparez votre prochaine session.",
   },
-  "instructor-hub": {
+  "instructor": {
     title: "Votre espace formateur",
     description: "Organisez vos sessions et accompagnez vos apprenants.",
   },
