@@ -72,11 +72,6 @@ export function DocsViewer({ resolved }: { resolved: ResolvedArticle }) {
           <CarbonAds />
           <PromoCarousel />
         </aside>
-        <aside className="sticky top-18 hidden max-h-[calc(100vh-6rem)] w-64 shrink-0 overflow-y-auto rounded-2xl border border-border bg-card p-5 shadow-sm xl:block">
-          <TableOfContents items={toc} />
-          <PromoCarousel />
-          <CarbonAds />
-        </aside>
       </div>
     </DocsShell>
   );
