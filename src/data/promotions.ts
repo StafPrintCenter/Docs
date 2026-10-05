@@ -12,11 +12,7 @@ export interface Promotion {
 
 // Les espaces STAF reprennent leurs URLs depuis leurs métadonnées de documentation.
 const platformCopy: Record<string, { title: string; description: string }> = {
-  "spc-meet": {
-    title: "Réunissez-vous sur SPC Meet",
-    description: "Retrouvez vos échanges et vos salles de réunion en ligne.",
-  },
-  "site-vitrine": {
+  "landing": {
     title: "Vos projets d’impression commencent ici",
     description: "Explorez le site STAF PRINT CENTER et demandez votre devis.",
   },
