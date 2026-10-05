@@ -68,7 +68,6 @@ export function DocsViewer({ resolved }: { resolved: ResolvedArticle }) {
             <PromoCarousel />
           </div>
           <div className="mt-6 xl:hidden">
-
             <PromoCarousel />
             <CarbonAds />
           </div>
