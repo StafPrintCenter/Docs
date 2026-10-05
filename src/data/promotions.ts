@@ -36,7 +36,11 @@ const platformCopy: Record<string, { title: string; description: string }> = {
 
 export const promotions: Promotion[] = docsRegistry.flatMap((space) => {
   const copy = platformCopy[space.id];
-  if (!space.url || !copy) return [];
+  if (!copy) return [];
+
+  const targetUrl = space.url || "#";
+  const labelAction = space.shortName ? `Visiter ${space.shortName}` : "En savoir plus";
+
   return [{
     id: space.id,
     sponsor: space.name,
