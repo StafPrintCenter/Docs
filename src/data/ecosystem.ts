@@ -5,7 +5,7 @@ type EcosystemSiteStatus = "available" | "building";
 
 const LOCAL_DOC_SPACE_IDS = [
   "landing", "shortener", "instructor", "student",
-  "meet", "arcade", "ai", "brief", "tools",
+  "meet", "arcade", "ai", "brief", "tools", "studio"
 ] as const;
 
 type LocalDocSpaceId = (typeof LOCAL_DOC_SPACE_IDS)[number];
@@ -41,6 +41,7 @@ const LOGO_KEY_TO_SPACE_ID: Record<string, LocalDocSpaceId | undefined> = {
   ai: "ai",
   brief: "brief",
   toolkit: "tools",
+  studio: "studio",
 };
 
 export function resolveLocalDocSpaceId(logoKey: string | undefined): LocalDocSpaceId | undefined {
