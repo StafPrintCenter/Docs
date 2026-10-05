@@ -3,7 +3,6 @@ import { ListTree } from "lucide-react";
 import { DocsShell } from "@/components/site/DocsShell";
 import { TableOfContents } from "@/components/docs/TableOfContents";
 import { extractToc } from "@/components/docs/MarkdownRenderer";
-import { CarbonAds } from "@/components/docs/CarbonAds";
 import { PromoCarousel } from "@/components/docs/PromoCarousel";
 import type { ResolvedArticle } from "@/data/content/docs";
 import {
