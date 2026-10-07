@@ -1,26 +1,38 @@
 import { defineArticle } from "@/content/docs/define";
 
-export const article = defineArticle("cmyk-plates",
-  "Contrôle et séparation des plaques offset CMJN",
-  "Décomposition des couches Cyan, Magenta, Jaune, Noir et contrôle de couverture d'encre.",
-  ["toolkit", "cmyk", "offset", "plaques", "couverture", "prepresse", "cyan", "magenta", "jaune", "noir"],
+export const article = defineArticle("booklet-imposition",
+  "Imposition livret piqûre à cheval : ordre des pages et PDF imposé",
+  "Calcul de l'ordre des pages, compensation de la chasse (creep) et génération de planches d'impression recto-verso.",
+  ["toolkit", "imposition", "livret", "piqure-a-cheval", "chasse", "creep", "pdf", "prepresse"],
   "new",
-  "4 octobre 2026",
-  `# Contrôle et séparation des plaques offset CMJN
+  "7 octobre 2026",
+  `# Imposition livret piqûre à cheval : ordre des pages et PDF imposé
 
-L'outil [Contrôle et séparation des plaques offset CMJN](https://tools.stafprint.com/cmyk-plates) permet de vérifier la séparation des couleurs et le taux d'encrage avant l'insoleuse d'imprimerie.
+L'outil [Imposition Livret & Piqûre à cheval](https://tools.stafprint.com/booklet-imposition) permet de calculer le chemin de fer et d'imposer un document PDF en planches recto-verso prêtes pour le tirage et la finition agrafée.
 
 ---
 
 ## Fonctionnalités principales
 
-- **Séparation des canaux CMJN :**
-  * Affichage individuel et combiné des plaques **Cyan (C)**, **Magenta (M)**, **Jaune (J)** et **Noir (N)**.
-  * Isolation de chaque couche de couleur pour déceler les erreurs de surimpression ou de calage.
-- **Analyse de couverture d'encre (TAC) :**
-  * Détection visuelle du taux de couverture d'encre cumulé sur l'ensemble du document.
-  * Alerte prépresse en cas de dépassement des seuils de maculage sur papier couché ou offset.
-- **Contrôle prépresse :** Inspection rigoureuse des textes et des aplats en noir pur (K = 100%) pour éviter le noir soutenu involontaire sur le texte fin.
+* **Saisie du document & Chargement PDF :**
+  * **Nombre de pages :** Saisie libre du nombre de pages du livret (ex: 8 pages).
+  * **Mode simulateur ou import :** Visualisation directe du chemin de fer sans fichier ou glisser-déposer d'un PDF traité à 100 % localement dans le navigateur.
+* **Options d'atelier & Réglages de planche :**
+  * **Mode d'impression :** Sélection entre *Recto-verso continu* et *Deux passes* (séparation rectos/versos).
+  * **Sens de reliure :** Choix entre *Bord long* (format portrait classique) et *Bord court (italienne)*.
+  * **Format de planche :** Sélection de la taille de feuille (*Taille naturelle*, *A4*, *A3*, ou *Personnalisé*).
+  * **Gouttière centrale :** Ajustement de l'espacement central entre les deux pages en mm.
+  * **Compensation de la chasse (creep) :** Activation de la compensation selon le grammage du papier (*80 g*, *115 g*, *135 g*, *170 g*, *250 g*).
+  * **Repères techniques :** Option de coche pour intégrer les repères de pliage, d'agrafage et les traits de coupe.
+* **Table de montage dynamique :**
+  * Calcul automatique du nombre de feuilles et de la taille brute de la planche.
+  * Affichage détaillé du placement des pages par feuille et par face (ex: *Feuille 1 Recto : P8 / P1*, *Feuille 1 Verso : P2 / P7*).
+  * Indication de la valeur de chasse maximale appliquée (en mm) sur les cahiers intérieurs.
+* **Options d'exportation :**
+  * **PDF recto-verso :** Fichier unique assemblé prêt pour le tirage direct.
+  * **Rectos + Versos (2 PDF) :** Séparation des faces pour les presses ou duplicopieurs à passage unique.
+  * **Archive ZIP complète :** Téléchargement de l'ensemble des fichiers de production.
+  * **Consigne atelier (.txt) :** Fiche descriptive récapitulant la séquence de montage et les paramètres pour le façonnier.
 `,);
 
 export default article;
