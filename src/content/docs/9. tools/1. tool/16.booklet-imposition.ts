@@ -16,7 +16,7 @@ L'outil [Imposition Livret & Piqûre à cheval](https://tools.stafprint.com/book
 
 * **Saisie du document & Chargement PDF :**
   * **Nombre de pages :** Saisie libre du nombre de pages du livret (ex: 8 pages).
-  * **Mode simulateur ou import :** Visualisation directe du chemin de fer sans fichier ou glisser-déposer d'un PDF traité à 100 % localement dans le navigateur.
+  * **Mode simulateur ou import :** Visualisation directe du chemin de fer sans fichier ou glisser-déposer d'un PDF traité à 100% localement dans le navigateur.
 * **Options d'atelier & Réglages de planche :**
   * **Mode d'impression :** Sélection entre *Recto-verso continu* et *Deux passes* (séparation rectos/versos).
   * **Sens de reliure :** Choix entre *Bord long* (format portrait classique) et *Bord court (italienne)*.
