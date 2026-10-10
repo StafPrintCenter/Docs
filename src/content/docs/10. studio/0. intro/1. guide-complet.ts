@@ -1,6 +1,6 @@
 import { defineArticle } from "@/content/docs/define";
 
-export const article = defineArticle("guide-complet",
+export const article = defineArticle("index",
   "Guide complet de SPC 3D Studio",
   "Mise en situation 3D, aperçu réalité augmentée et génération de B.A.T. interactif.",
   ["studio", "3d", "bat", "ar", "realite-augmentee", "visualisation"],
