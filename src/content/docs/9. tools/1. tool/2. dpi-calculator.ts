@@ -8,7 +8,7 @@ export const article = defineArticle("dpi-calculator",
   "13 septembre 2026",
   `# Calculateur de DPI & diagnostic de résolution
 
-Le [Calculateur de DPI](https://toolkit.stafprint.com/dpi-calculator) évalue la qualité de vos images par rapport aux dimensions d'impression visées.
+Le [Calculateur de DPI](https://tools.stafprint.com/dpi-calculator) évalue la qualité de vos images par rapport aux dimensions d'impression visées.
 
 ---
 
