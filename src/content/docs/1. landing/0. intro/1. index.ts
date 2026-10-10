@@ -1,7 +1,7 @@
 import { defineArticle } from "@/content/docs/define";
 
 export const article = defineArticle("index",
-  "Guide d'accueil & présentation — STAF PRINT CENTER",
+  "Guide d'accueil & présentation",
   "Découvrez l'écosystme, les services d'impression, de création numérique et les outils professionnels de STAF PRINT CENTER.",
   ["stafprint", "presentation", "impression", "digital", "port-novo", "ecosysteme"],
   "new",
