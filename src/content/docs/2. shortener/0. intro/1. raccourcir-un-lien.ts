@@ -1,6 +1,6 @@
 import { defineArticle } from "@/content/docs/define";
 
-export const article = defineArticle("raccourcir-un-lien",
+export const article = defineArticle("index",
   "Raccourcir un lien avec SPC Shortener",
   "Générer des liens courts sécurisés vers nos contenus officiels, générer un QR code et suivre leurs statistiques.",
   ["outil", "lien", "raccourcisseur", "qrcode", "partage"],
