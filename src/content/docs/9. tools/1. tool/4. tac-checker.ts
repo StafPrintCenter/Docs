@@ -8,7 +8,7 @@ export const article = defineArticle("tac-checker",
   "13 septembre 2026",
   `# Simulateur de taux d'encrage maximum (TAC)
 
-Le [Simulateur TAC](https://toolkit.stafprint.com/tac-checker) mesure le Taux d'Encrage Cumulé (Total Area Coverage) de vos combinaisons de couleurs CMJN.
+Le [Simulateur TAC](https://tools.stafprint.com/tac-checker) mesure le Taux d'Encrage Cumulé (Total Area Coverage) de vos combinaisons de couleurs CMJN.
 
 ---
 
