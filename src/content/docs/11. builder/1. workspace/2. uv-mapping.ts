@@ -1,28 +1,27 @@
 import { defineArticle } from "@/content/docs/define";
 
-export const article = defineArticle(
-  "uv-mapping",
-  "Plaquage de visuel et transformation UV",
-  "Importation de fichiers graphiques, ajustements d'échelle, de position et de répétition.",
-  ["studio", "uv", "plaquage", "visuel", "echelle", "rotation"],
+export const article = defineArticle("export-projects",
+  "Gestion des projets, modèles et exportation du code",
+  "Utilisation des templates de la collection SPC, sauvegarde locale et export de fichiers HTML/ZIP.",
+  ["builder", "projets", "modeles", "export", "zip", "html"],
   "new",
-  "19 septembre 2026",
-  `# Plaquage de visuel et transformation UV
+  "10 octobre 2026",
+  `# Gestion des projets, modèles et exportation du code
 
-L'inspecteur de [SPC 3D Studio](https://studio.stafprint.com/) permet d'ajuster le placage de votre création sur la surface 3D.
+[SPC Site Builder](https://builder.stafprint.com/) intègre des outils complets pour structurer, sauvegarder et exporter vos créations web.
 
 ---
 
-## Options de transformation
+## Fonctionnalités de gestion
 
-* **Importation :** Glissez-déposez un fichier (PNG, JPG, WebP ou SVG) directement sur la scène ou via la zone d'importation.
-* **Ajustements UV :**
-  * **Échelle :** Agrandissez ou réduisez la taille du motif.
-  * **Position X & Position Y :** Ajustez le calage du visuel sur les axes horizontal et vertical.
-  * **Rotation :** Pivotez l'image de 0° à 360°.
-  * **Tile X & Tile Y :** Réglez la répétition du motif sur les axes X et Y.
-* **Réinitialiser UV :** Restaurez le positionnement et l'échelle par défaut en un clic.
-`,
-);
+* **Modèles professionnels ([Modèles](https://builder.stafprint.com/templates)) :**
+  * Partez de bases préconçues comme l' [*Imprimerie complète*](https://builder.stafprint.com/export?id=v2gy0kl9), un *Lancement produit*, un *Portfolio graphiste* ou une *Page vierge*.
+* **Espace Projets ([Mes projets](https://builder.stafprint.com/projects)) :**
+  * Retrouvez toutes vos pages enregistrées localement, avec options d'importation et de réouverture rapide dans l'éditeur.
+* **Options d'exportation ([Export du code](https://builder.stafprint.com/export?id=v2gy0kl9)) :**
+  * **Code HTML :** Copiez ou téléchargez un fichier \`index.html\` propre intégrant Tailwind CSS et les polices Google Fonts.
+  * **Fichier \`.spcbuild\` :** Exportez une sauvegarde portable pour réimporter et modifier votre projet sur un autre appareil.
+  * **Archive ZIP :** Récupérez l'ensemble des éléments prêts à être hébergés.
+`,);
 
 export default article;
