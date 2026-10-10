@@ -1,6 +1,6 @@
 import { defineArticle } from "@/content/docs/define";
 
-export const article = defineArticle("profil-et-progression",
+export const article = defineArticle("index",
   "Profil joueur, XP et progression dans SPC Arcade",
   "Gestion du profil local, calcul de l'XP, attribution des grades et respect de la confidentialité.",
   ["arcade", "profil", "xp", "grades"],
