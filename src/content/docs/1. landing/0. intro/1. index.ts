@@ -1,24 +1,33 @@
 import { defineArticle } from "@/content/docs/define";
 
 export const article = defineArticle("index",
-  "Guide complet de SPC 3D Studio",
-  "Mise en situation 3D, aperçu réalité augmentée et génération de B.A.T. interactif.",
-  ["studio", "3d", "bat", "ar", "realite-augmentee", "visualisation"],
+  "Guide d'accueil & présentation — STAF PRINT CENTER",
+  "Découvrez l'écosystme, les services d'impression, de création numérique et les outils professionnels de STAF PRINT CENTER.",
+  ["stafprint", "presentation", "impression", "digital", "port-novo", "ecosysteme"],
   "new",
-  "19 septembre 2026",
-  `# Guide complet de [SPC 3D Studio](https://studio.stafprint.com/)
+  "10 octobre 2026",
+  `# Bienvenue sur la documentation de [STAF PRINT CENTER](https://stafprint.com/)
 
-[SPC 3D Studio](https://studio.stafprint.com/) est un environnement de visualisation 3D en temps réel permettant de valider l'aspect de vos supports imprimés avant le lancement en fabrication.
+Fondé en 2019 à **Porto-Novo (Bénin)**, **STAF PRINT CENTER** est un studio de création et d'impression global qui accompagne les entreprises, institutions et créateurs dans la concrétisation de leur identité visuelle, de la carte de visite au site web.
 
 ---
 
-## Fonctionnalités clés
+## Nos Domaines d'Activité
 
-* **Visualisation 3D temps réel :** Manipulez les modèles 3D avec les contrôles de caméra (rotation, panoramique et zoom).
-* **Plaquage de visuels :** Déposez vos créations (PNG, JPG, WebP, SVG) directement sur la structure 3D.
-* **Finitions de surface :** Simulez l'effet *Mat* ou *Brillant* sur vos imprimés.
-* **Réalité Augmentée (Mode AR) :** Projetez le produit à l'échelle 1:1 dans votre espace réel depuis un smartphone ou une tablette.
-* **Génération de B.A.T. :** Exportez un Bon À Tirer au format PDF incluant l'aperçu 3D et la fiche technique du produit.
+* **Impression & Grand Format :** Production de supports de communication visuelle (bâches grand format, kakémonos, roll-ups, flyers, cartes de visite, badges, étiquettes, signalétique et enseignes lumineuses).
+* **Développement Digital :** Conception de sites internet vitrines, plateformes e-commerce et applications web sur-mesure.
+* **Formation & Compétences :** Programmes d'apprentissage professionnels aux métiers du design graphique, de la mise en page (InDesign), du motion design (After Effects) et des outils de création express.
+
+---
+
+## L'Écosystème Numérique & Outils
+
+En complément de nos prestations physiques, notre écosystème intègre plusieurs solutions spécialisées :
+
+* **[SPC Creative Toolkit](https://toolkit.stafprint.com/) :** Boîte à outils prépresse et impression $100\,\%$ locale (convertisseur CMJN, calculs de DPI, fonds perdus, épaisseur de tranche, calepinage, typons sérigraphie).
+* **[SPC 3D Studio](https://studio.stafprint.com/) :** Studio de visualisation 3D en temps réel, mise en situation interactive et validation de B.A.T. avec mode Réalité Augmentée.
+* **[SPC Site Builder](https://builder.stafprint.com/) :** Éditeur visuel no-code pour concevoir et exporter des landing pages et sites web.
+* **SPC Interactive Brief & SPC Arcade :** Solutions de cadrage de projets et d'expériences interactives.
 `,);
 
 export default article;
