@@ -1,33 +1,33 @@
 import { defineArticle } from "@/content/docs/define";
 
-export const article = defineArticle("catalog",
-  "Catalogue des modèles 3D disponibles",
-  "Présentation des gabarits et déclinaisons de formats pour PLV, grand format, signalétique et packaging.",
-  ["studio", "catalogue", "rollup", "kakemono", "bache", "enseigne", "plv"],
+export const article = defineArticle("blocks",
+  "Bibliothèque de blocs et éléments",
+  "Organisation des sections, glisser-déposer et personnalisation des composants graphiques.",
+  ["builder", "blocs", "elements", "bibliotheque", "personnalisation"],
   "new",
-  "19 septembre 2026",
-  `# Catalogue des modèles 3D disponibles
+  "10 octobre 2026",
+  `# Bibliothèque de blocs et éléments
 
-L'outil [SPC 3D Studio](https://studio.stafprint.com/) intègre les gabarits 3D des produits de signalétique et d'affichage les plus courants.
+L'[Éditeur SPC Site Builder](https://builder.stafprint.com/editor?id=dpvdijzh) propose une large gamme de sections classées par catégories pour concevoir rapidement vos pages.
 
 ---
 
-## Modèles et formats supportés
+## Catégories de blocs disponibles
 
-### PLV & Stands
-* **Roll-up kakemono :** Enrouleur aluminium avec toile polyester 220 g.
-  * Déclinaisons : 85 × 200 cm, 100 × 200 cm, 120 × 200 cm.
-* **Comptoir d'accueil :** Comptoir promotionnel courbe avec façade personnalisable (90 × 100 cm).
-
-### Grand Format
-* **Bâche publicitaire extérieure :** Bâche PVC 510 g avec œillets métalliques (300 × 150 cm).
-
-### Signalétique
-* **Enseigne drapeau / façade :** Panneau double face sur potence murale en Dibond 3 mm (60 × 40 cm).
-
-### Packaging
-* Volumes et étuis de boîtes pliantes personnalisables.
-`,
-);
+* **Hero & En-têtes :**
+  * *Hero divisé :* Titre percutant avec image ou illustration côte à côte.
+  * *Hero centré :* Grand titre centré accompagné d'un appel à l'action (CTA).
+  * *Barre de navigation :* Logo, liens de navigation et bouton d'action.
+* **Offres & Tarifs :**
+  * *Grille de tarifs :* Comparatif d'offres (ex: Starter, Business, Web) adaptés aux prestations Print et Web.
+  * *Bandeau d'appel :* Titre et bouton sur fond accentué.
+* **Services & Portfolios :**
+  * *Présentation :* Texte d'introduction avec chiffres clés.
+  * *Cartes services :* Grille de mise en avant des prestations (impression numérique, grand format, création web).
+  * *Galerie réalisations :* Grille d'images pour exposer vos projets.
+* **Formulaires & Footers :**
+  * *Formulaire de contact :* Coordonnées et champs de message intégrés.
+  * *Footer simple :* Mention de marque et liens de bas de page.
+`,);
 
 export default article;
