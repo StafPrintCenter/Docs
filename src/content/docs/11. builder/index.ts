@@ -3,15 +3,15 @@ import { SITE_LINK } from "@/data/site";
 import { getDocSpaceMeta } from "@/data/ecosystem";
 
 const fallback: DocSpaceMeta = {
-  id: "studio",
-  name: "SPC 3D Studio",
-  shortName: "3D Studio",
-  tagline: "Visualisation 3D, réalité augmentée & B.A.T. interactif",
-  description: "Mise en situation 3D temps réel pour PLV, grand format et signalétique avec export B.A.T. et AR.",
-  url: SITE_LINK.studioUrl,
+  id: "builder",
+  name: "SPC Site Builder",
+  shortName: "Site Builder",
+  tagline: "Créez votre landing page sans coder",
+  description: "Éditeur visuel zéro-serveur pour assembler des blocs, personnaliser votre design et exporter vos pages web.",
+  url: SITE_LINK.builderUrl,
   status: "available",
 };
 
-export const space: DocSpaceMeta = getDocSpaceMeta("studio", fallback);
+export const space: DocSpaceMeta = getDocSpaceMeta("builder", fallback);
 
 export default space;
