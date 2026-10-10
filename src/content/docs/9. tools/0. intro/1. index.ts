@@ -6,7 +6,7 @@ export const article = defineArticle("index",
   ["toolkit", "prepresse", "impression", "outils", "guide"],
   "stable",
   "13 septembre 2026",
-  `# Guide complet de la boîte à outils [SPC Creative Toolkit](https://toolkit.stafprint.com/)
+  `# Guide complet de la boîte à outils [SPC Creative Toolkit](https://tools.stafprint.com/)
 
 Le [SPC Creative Toolkit](https://toolkit.stafprint.com/) regroupe **10 utilitaires web** conçus pour simplifier et sécuriser la préparation des fichiers PAO avant impression.
 
