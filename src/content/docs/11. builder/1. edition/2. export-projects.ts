@@ -18,7 +18,7 @@ export const article = defineArticle("export-projects",
   * Partez de bases préconçues comme l' *Imprimerie complète*, un *Lancement produit*, un *Portfolio graphiste* ou une *Page vierge*.
 * **Espace Projets ([Mes projets](https://builder.stafprint.com/projects)) :**
   * Retrouvez toutes vos pages enregistrées localement, avec options d'importation et de réouverture rapide dans l'éditeur.
-* **Options d'exportation ([Export du code](https://builder.stafprint.com/export?id=v2gy0kl9)) :**
+* **Options d'exportation (Export du code) :**
   * **Code HTML :** Copiez ou téléchargez un fichier \`index.html\` propre intégrant Tailwind CSS et les polices Google Fonts.
   * **Fichier \`.spcbuild\` :** Exportez une sauvegarde portable pour réimporter et modifier votre projet sur un autre appareil.
   * **Archive ZIP :** Récupérez l'ensemble des éléments prêts à être hébergés.
