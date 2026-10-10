@@ -4,8 +4,10 @@ type EcosystemSiteCategory = "principal" | "outil" | "formation" | "communicatio
 type EcosystemSiteStatus = "available" | "building";
 
 const LOCAL_DOC_SPACE_IDS = [
-  "landing", "shortener", "instructor", "student",
-  "meet", "arcade", "ai", "brief", "tools", "studio"
+  "landing", "shortener",
+  "instructor", "student",
+  "meet", "arcade", "ai", "brief",
+  "tools", "studio", "builder"
 ] as const;
 
 type LocalDocSpaceId = (typeof LOCAL_DOC_SPACE_IDS)[number];
