@@ -8,7 +8,7 @@ export const article = defineArticle("bleed-generator",
   "13 septembre 2026",
   `# Générateur de gabarits & fonds perdus
 
-Le [Générateur de Gabarits](https://toolkit.stafprint.com/bleed-generator) calcule les zones techniques nécessaires pour préparer vos fichiers avant la coupe au massif.
+Le [Générateur de Gabarits](https://tools.stafprint.com/bleed-generator) calcule les zones techniques nécessaires pour préparer vos fichiers avant la coupe au massif.
 
 ---
 
