@@ -1,24 +1,24 @@
 import { defineArticle } from "@/content/docs/define";
 
-export const article = defineArticle("guide-complet",
-  "Guide complet de SPC 3D Studio",
-  "Mise en situation 3D, aperçu réalité augmentée et génération de B.A.T. interactif.",
-  ["studio", "3d", "bat", "ar", "realite-augmentee", "visualisation"],
+export const article = defineArticle("index",
+  "Guide complet de SPC Site Builder",
+  "Présentation générale de l'éditeur visuel, de la bibliothèque de blocs et des options d'exportation.",
+  ["builder", "landing-page", "editeur", "no-code", "guide"],
   "new",
-  "19 septembre 2026",
-  `# Guide complet de [SPC 3D Studio](https://studio.stafprint.com/)
+  "10 octobre 2026",
+  `# Guide complet de [SPC Site Builder](https://builder.stafprint.com/)
 
-[SPC 3D Studio](https://studio.stafprint.com/) est un environnement de visualisation 3D en temps réel permettant de valider l'aspect de vos supports imprimés avant le lancement en fabrication.
+[SPC Site Builder](https://builder.stafprint.com/) est un outil de création de sites web et de landing pages en glisser-déposer, conçu pour les amateurs, débutants, professionnels et entreprises. 
 
 ---
 
-## Fonctionnalités clés
+## Fonctionnalités principales
 
-* **Visualisation 3D temps réel :** Manipulez les modèles 3D avec les contrôles de caméra (rotation, panoramique et zoom).
-* **Plaquage de visuels :** Déposez vos créations (PNG, JPG, WebP, SVG) directement sur la structure 3D.
-* **Finitions de surface :** Simulez l'effet *Mat* ou *Brillant* sur vos imprimés.
-* **Réalité Augmentée (Mode AR) :** Projetez le produit à l'échelle 1:1 dans votre espace réel depuis un smartphone ou une tablette.
-* **Génération de B.A.T. :** Exportez un Bon À Tirer au format PDF incluant l'aperçu 3D et la fiche technique du produit.
+* **Zéro serveur, zéro compte :** Vos projets sont stockés directement dans le navigateur de votre appareil. Vos données restent privées et sécurisées.
+* **Bibliothèque de blocs prêts à l'emploi :** Assemblez des sections complètes (Hero, Services, Tarifs, Réalisations, Témoignages, Contact, Footer).
+* **Édition visuelle en direct :** Cliquez directement sur n'importe quel texte pour le modifier instantanément et ajustez les couleurs, images et espacements via l'inspecteur.
+* **Aperçu multi-écrans :** Basculez en un clic entre les modes **Desktop**, **Tablette** et **Mobile** pour vérifier la responsivité de votre page.
+* **Exportation flexible :** Téléchargez votre code au format HTML/Tailwind, récupérez une archive ZIP ou exportez un fichier de sauvegarde \`.spcbuild\`.
 `,);
 
 export default article;
