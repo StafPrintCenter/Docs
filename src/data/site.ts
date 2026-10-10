@@ -36,4 +36,5 @@ export const SITE_LINK = {
   toolkitUrl: import.meta.env.VITE_TOOLKIT_URL,
   roadmapUrl: import.meta.env.VITE_ROADMAP_URL,
   studioUrl: import.meta.env.VITE_STUDIO_URL,
+  builderUrl: import.meta.env.VITE_BUILDER_URL,
 };
