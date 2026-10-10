@@ -1,6 +1,6 @@
 import { defineArticle } from "@/content/docs/define";
 
-export const article = defineArticle("parcours-de-qualification",
+export const article = defineArticle("index",
   "Parcours de qualification de projet en 6 étapes",
   "Explication détaillée des 6 étapes du formulaire SPC Interactive Brief.",
   ["brief", "qualification", "etapes", "projet"],
