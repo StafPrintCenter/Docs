@@ -1,6 +1,6 @@
 import { defineArticle } from "@/content/docs/define";
 
-export const article = defineArticle("guide-complet",
+export const article = defineArticle("index",
   "Guide complet de la boîte à outils SPC Creative Toolkit",
   "Présentation générale des 10 utilitaires prépresse et impression 100 % locaux.",
   ["toolkit", "prepresse", "impression", "outils", "guide"],
