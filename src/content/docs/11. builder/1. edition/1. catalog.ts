@@ -8,7 +8,7 @@ export const article = defineArticle("blocks",
   "10 octobre 2026",
   `# Bibliothèque de blocs et éléments
 
-L'[Éditeur SPC Site Builder](https://builder.stafprint.com/editor?id=dpvdijzh) propose une large gamme de sections classées par catégories pour concevoir rapidement vos pages.
+L'[Éditeur SPC Site Builder](https://builder.stafprint.com/editor) propose une large gamme de sections classées par catégories pour concevoir rapidement vos pages.
 
 ---
 
